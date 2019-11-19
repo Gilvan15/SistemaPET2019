@@ -3,3 +3,8 @@ C:\Repositorio\SistemaPetShop\Entidades\bin\Debug\Entidades.pdb
 C:\Repositorio\SistemaPetShop\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Repositorio\SistemaPetShop\Entidades\obj\Debug\Entidades.dll
 C:\Repositorio\SistemaPetShop\Entidades\obj\Debug\Entidades.pdb
+C:\Repositorio\SistemaPET2019\Entidades\bin\Debug\Entidades.dll
+C:\Repositorio\SistemaPET2019\Entidades\bin\Debug\Entidades.pdb
+C:\Repositorio\SistemaPET2019\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Repositorio\SistemaPET2019\Entidades\obj\Debug\Entidades.dll
+C:\Repositorio\SistemaPET2019\Entidades\obj\Debug\Entidades.pdb

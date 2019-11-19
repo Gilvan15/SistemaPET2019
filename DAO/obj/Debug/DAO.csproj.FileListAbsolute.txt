@@ -7,3 +7,12 @@ C:\Repositorio\SistemaPetShop\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Repositorio\SistemaPetShop\DAO\obj\Debug\DAO.dll
 C:\Repositorio\SistemaPetShop\DAO\obj\Debug\DAO.pdb
 C:\Repositorio\SistemaPetShop\DAO\bin\Debug\DAO.dll.config
+C:\Repositorio\SistemaPET2019\DAO\bin\Debug\DAO.dll.config
+C:\Repositorio\SistemaPET2019\DAO\bin\Debug\DAO.dll
+C:\Repositorio\SistemaPET2019\DAO\bin\Debug\DAO.pdb
+C:\Repositorio\SistemaPET2019\DAO\bin\Debug\Entidades.dll
+C:\Repositorio\SistemaPET2019\DAO\bin\Debug\Entidades.pdb
+C:\Repositorio\SistemaPET2019\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Repositorio\SistemaPET2019\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Repositorio\SistemaPET2019\DAO\obj\Debug\DAO.dll
+C:\Repositorio\SistemaPET2019\DAO\obj\Debug\DAO.pdb

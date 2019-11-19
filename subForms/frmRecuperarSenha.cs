@@ -30,5 +30,23 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\click.wav");
             player.Play();
         }
+
+        private void btnLogar_Click(object sender, EventArgs e)
+        {
+            if (ValidarEmail(textEmail.Text) == false)
+            {
+                MessageBox.Show("Email com formato incorreto!","Aviso!!!", MessageBoxButtons.OK);
+            }
+        }
+
+        public static bool ValidarEmail(string strEmail)
+        {
+            string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            if (System.Text.RegularExpressions.Regex.IsMatch(strEmail, strModelo))
+            {return true;} else {return false;}
+        }
     }
+
+
+
 }

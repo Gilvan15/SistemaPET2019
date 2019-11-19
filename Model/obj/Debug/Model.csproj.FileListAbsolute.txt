@@ -9,3 +9,14 @@ C:\Repositorio\SistemaPetShop\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Repositorio\SistemaPetShop\Model\obj\Debug\Model.dll
 C:\Repositorio\SistemaPetShop\Model\obj\Debug\Model.pdb
 C:\Repositorio\SistemaPetShop\Model\bin\Debug\DAO.dll.config
+C:\Repositorio\SistemaPET2019\Model\bin\Debug\Model.dll
+C:\Repositorio\SistemaPET2019\Model\bin\Debug\Model.pdb
+C:\Repositorio\SistemaPET2019\Model\bin\Debug\DAO.dll
+C:\Repositorio\SistemaPET2019\Model\bin\Debug\Entidades.dll
+C:\Repositorio\SistemaPET2019\Model\bin\Debug\DAO.pdb
+C:\Repositorio\SistemaPET2019\Model\bin\Debug\DAO.dll.config
+C:\Repositorio\SistemaPET2019\Model\bin\Debug\Entidades.pdb
+C:\Repositorio\SistemaPET2019\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Repositorio\SistemaPET2019\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Repositorio\SistemaPET2019\Model\obj\Debug\Model.dll
+C:\Repositorio\SistemaPET2019\Model\obj\Debug\Model.pdb
