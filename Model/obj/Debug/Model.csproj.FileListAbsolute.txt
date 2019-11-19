@@ -1,0 +1,11 @@
+C:\Repositorio\SistemaPetShop\Model\bin\Debug\Model.dll
+C:\Repositorio\SistemaPetShop\Model\bin\Debug\Model.pdb
+C:\Repositorio\SistemaPetShop\Model\bin\Debug\DAO.dll
+C:\Repositorio\SistemaPetShop\Model\bin\Debug\Entidades.dll
+C:\Repositorio\SistemaPetShop\Model\bin\Debug\DAO.pdb
+C:\Repositorio\SistemaPetShop\Model\bin\Debug\Entidades.pdb
+C:\Repositorio\SistemaPetShop\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Repositorio\SistemaPetShop\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Repositorio\SistemaPetShop\Model\obj\Debug\Model.dll
+C:\Repositorio\SistemaPetShop\Model\obj\Debug\Model.pdb
+C:\Repositorio\SistemaPetShop\Model\bin\Debug\DAO.dll.config

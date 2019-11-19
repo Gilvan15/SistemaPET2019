@@ -1,0 +1,5 @@
+C:\Repositorio\SistemaPetShop\Entidades\bin\Debug\Entidades.dll
+C:\Repositorio\SistemaPetShop\Entidades\bin\Debug\Entidades.pdb
+C:\Repositorio\SistemaPetShop\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Repositorio\SistemaPetShop\Entidades\obj\Debug\Entidades.dll
+C:\Repositorio\SistemaPetShop\Entidades\obj\Debug\Entidades.pdb
