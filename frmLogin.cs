@@ -97,7 +97,7 @@ namespace SistemaPet
         {
             try
             {
-                if (textEmail.Text == "" || textSenha.Text == "")
+                if (textEmail.Text == string.Empty || textSenha.Text == string.Empty)
                 {
                     sound3();
                     MessageBox.Show("Preencha o campo vazio!", "Aviso!", MessageBoxButtons.OK);
@@ -113,7 +113,7 @@ namespace SistemaPet
 
                 if (obj.Email == null || obj.Senha == null)
                 {
-                    sound2();
+                    sound3();
                     MessageBox.Show("Usuário ou Senha inválidos!", "Aviso!", MessageBoxButtons.OK);
                     return;
                 }
@@ -132,9 +132,9 @@ namespace SistemaPet
         {
             try
             {
-                if (textEmail.Text == "" || textSenha.Text == "")
+                if (textEmail.Text == string.Empty || textSenha.Text == string.Empty)
                 {
-                    sound2();
+                    sound3();
                     MessageBox.Show("Preencha o campo vazio!", "Aviso!", MessageBoxButtons.OK);
                     textEmail.Focus();
                     return;
@@ -148,7 +148,7 @@ namespace SistemaPet
 
                 if (obj.Email == null || obj.Senha == null)
                 {
-                    sound2();
+                    sound3();
                     MessageBox.Show("Usuário ou Senha inválidos!", "Aviso!", MessageBoxButtons.OK);
                     return;
                 }
