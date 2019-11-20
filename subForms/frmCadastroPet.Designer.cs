@@ -117,7 +117,7 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(7, 29);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(795, 22);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(778, 22);
             this.bunifuSeparator1.TabIndex = 70;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -149,7 +149,7 @@
             this.textNome.Location = new System.Drawing.Point(67, 183);
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(335, 29);
+            this.textNome.Size = new System.Drawing.Size(318, 29);
             this.textNome.TabIndex = 77;
             this.textNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -226,7 +226,7 @@
             this.textTelefone.Location = new System.Drawing.Point(108, 307);
             this.textTelefone.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone.Name = "textTelefone";
-            this.textTelefone.Size = new System.Drawing.Size(234, 29);
+            this.textTelefone.Size = new System.Drawing.Size(217, 29);
             this.textTelefone.TabIndex = 82;
             this.textTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -284,7 +284,7 @@
             this.textAlegMedic.Location = new System.Drawing.Point(289, 480);
             this.textAlegMedic.Margin = new System.Windows.Forms.Padding(5);
             this.textAlegMedic.Name = "textAlegMedic";
-            this.textAlegMedic.Size = new System.Drawing.Size(513, 29);
+            this.textAlegMedic.Size = new System.Drawing.Size(496, 29);
             this.textAlegMedic.TabIndex = 100;
             this.textAlegMedic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textAlegMedic.Visible = false;
@@ -318,7 +318,7 @@
             this.textRaca.Location = new System.Drawing.Point(68, 121);
             this.textRaca.Margin = new System.Windows.Forms.Padding(5);
             this.textRaca.Name = "textRaca";
-            this.textRaca.Size = new System.Drawing.Size(334, 29);
+            this.textRaca.Size = new System.Drawing.Size(317, 29);
             this.textRaca.TabIndex = 111;
             this.textRaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -351,7 +351,7 @@
             this.textEmail.Location = new System.Drawing.Point(465, 307);
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(337, 29);
+            this.textEmail.Size = new System.Drawing.Size(320, 29);
             this.textEmail.TabIndex = 113;
             this.textEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -377,7 +377,7 @@
             this.bunifuSeparator4.Location = new System.Drawing.Point(13, 771);
             this.bunifuSeparator4.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuSeparator4.Name = "bunifuSeparator4";
-            this.bunifuSeparator4.Size = new System.Drawing.Size(761, 26);
+            this.bunifuSeparator4.Size = new System.Drawing.Size(744, 26);
             this.bunifuSeparator4.TabIndex = 114;
             this.bunifuSeparator4.Transparency = 255;
             this.bunifuSeparator4.Vertical = false;
@@ -420,7 +420,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(731, 731);
+            this.btnEditar.Location = new System.Drawing.Point(714, 731);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(71, 26);
             this.btnEditar.TabIndex = 117;
@@ -437,7 +437,7 @@
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(577, 701);
+            this.btnPesquisar.Location = new System.Drawing.Point(560, 701);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(148, 26);
             this.btnPesquisar.TabIndex = 118;
@@ -454,7 +454,7 @@
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(731, 701);
+            this.btnExcluir.Location = new System.Drawing.Point(714, 701);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(71, 26);
             this.btnExcluir.TabIndex = 119;
@@ -473,7 +473,7 @@
             "FELINA"});
             this.comboEspecie.Location = new System.Drawing.Point(239, 64);
             this.comboEspecie.Name = "comboEspecie";
-            this.comboEspecie.Size = new System.Drawing.Size(166, 28);
+            this.comboEspecie.Size = new System.Drawing.Size(149, 28);
             this.comboEspecie.TabIndex = 120;
             // 
             // pictureCamera
@@ -481,7 +481,7 @@
             this.pictureCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureCamera.Image = ((System.Drawing.Image)(resources.GetObject("pictureCamera.Image")));
-            this.pictureCamera.Location = new System.Drawing.Point(502, 56);
+            this.pictureCamera.Location = new System.Drawing.Point(485, 56);
             this.pictureCamera.Name = "pictureCamera";
             this.pictureCamera.Size = new System.Drawing.Size(300, 200);
             this.pictureCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -505,7 +505,7 @@
             this.btnAtivarCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtivarCamera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnAtivarCamera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtivarCamera.Location = new System.Drawing.Point(414, 56);
+            this.btnAtivarCamera.Location = new System.Drawing.Point(397, 56);
             this.btnAtivarCamera.Name = "btnAtivarCamera";
             this.btnAtivarCamera.Size = new System.Drawing.Size(82, 44);
             this.btnAtivarCamera.TabIndex = 123;
@@ -522,7 +522,7 @@
             this.btnTirarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTirarFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnTirarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTirarFoto.Location = new System.Drawing.Point(414, 134);
+            this.btnTirarFoto.Location = new System.Drawing.Point(397, 134);
             this.btnTirarFoto.Name = "btnTirarFoto";
             this.btnTirarFoto.Size = new System.Drawing.Size(82, 44);
             this.btnTirarFoto.TabIndex = 124;
@@ -539,7 +539,7 @@
             this.btnOffCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffCamera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnOffCamera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOffCamera.Location = new System.Drawing.Point(414, 212);
+            this.btnOffCamera.Location = new System.Drawing.Point(397, 212);
             this.btnOffCamera.Name = "btnOffCamera";
             this.btnOffCamera.Size = new System.Drawing.Size(82, 44);
             this.btnOffCamera.TabIndex = 125;
@@ -556,7 +556,7 @@
             this.btnSalvarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnSalvarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarFoto.Location = new System.Drawing.Point(608, 262);
+            this.btnSalvarFoto.Location = new System.Drawing.Point(591, 262);
             this.btnSalvarFoto.Name = "btnSalvarFoto";
             this.btnSalvarFoto.Size = new System.Drawing.Size(105, 30);
             this.btnSalvarFoto.TabIndex = 126;
@@ -573,7 +573,7 @@
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(577, 733);
+            this.btnNovo.Location = new System.Drawing.Point(560, 733);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(71, 26);
             this.btnNovo.TabIndex = 127;
@@ -587,7 +587,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxCE.Location = new System.Drawing.Point(169, 378);
             this.richTextBoxCE.Name = "richTextBoxCE";
-            this.richTextBoxCE.Size = new System.Drawing.Size(633, 41);
+            this.richTextBoxCE.Size = new System.Drawing.Size(616, 41);
             this.richTextBoxCE.TabIndex = 128;
             this.richTextBoxCE.Text = "";
             // 
@@ -595,7 +595,7 @@
             // 
             this.pictureLupa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureLupa.Image = ((System.Drawing.Image)(resources.GetObject("pictureLupa.Image")));
-            this.pictureLupa.Location = new System.Drawing.Point(118, 426);
+            this.pictureLupa.Location = new System.Drawing.Point(101, 426);
             this.pictureLupa.Name = "pictureLupa";
             this.pictureLupa.Size = new System.Drawing.Size(30, 30);
             this.pictureLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -612,7 +612,7 @@
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(654, 731);
+            this.btnLimpar.Location = new System.Drawing.Point(637, 731);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(71, 26);
             this.btnLimpar.TabIndex = 131;
@@ -626,7 +626,7 @@
             this.comboProprietario.FormattingEnabled = true;
             this.comboProprietario.Location = new System.Drawing.Point(108, 246);
             this.comboProprietario.Name = "comboProprietario";
-            this.comboProprietario.Size = new System.Drawing.Size(345, 28);
+            this.comboProprietario.Size = new System.Drawing.Size(280, 28);
             this.comboProprietario.TabIndex = 132;
             this.comboProprietario.SelectedIndexChanged += new System.EventHandler(this.comboProprietario_SelectedIndexChanged);
             // 
@@ -652,7 +652,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(5, 531);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(797, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(780, 201);
             this.dataGridView1.TabIndex = 133;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -754,7 +754,7 @@
             this.textPesquisar.LineIdleColor = System.Drawing.Color.Gray;
             this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textPesquisar.LineThickness = 3;
-            this.textPesquisar.Location = new System.Drawing.Point(156, 427);
+            this.textPesquisar.Location = new System.Drawing.Point(139, 427);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
             this.textPesquisar.Size = new System.Drawing.Size(646, 29);

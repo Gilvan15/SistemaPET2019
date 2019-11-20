@@ -187,6 +187,7 @@
             this.btnSalvar.TabIndex = 94;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnFecharRecibo
             // 

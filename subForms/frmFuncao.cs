@@ -16,11 +16,13 @@ namespace SistemaPet.subForms
     public partial class frmFuncao : Form
     {
         FuncaoEnt objTabela = new FuncaoEnt();
-        
+        string pasta_aplicacao = "";
+
         private string opc = "";
         public frmFuncao()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
         }
         private void InicarOpc()
         {
@@ -415,17 +417,17 @@ namespace SistemaPet.subForms
 
         public void sound1()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\click.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
             player.Play();
         }
         public void sound2()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\limpar.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\limpar.wav");
             player.Play();
         }
         public void sound3()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\aviso.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
 

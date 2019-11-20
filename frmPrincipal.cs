@@ -20,10 +20,12 @@ namespace SistemaPet
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+        string pasta_aplicacao = "";
         public frmPrincipal()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
+
         }
 
         private void ocutarPaineis()
@@ -136,9 +138,8 @@ namespace SistemaPet
         }
         private void sond1() 
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\Entrada.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\Entrada.wav");
             player.Play();
-
         }
 
         private void label1_Click(object sender, EventArgs e)

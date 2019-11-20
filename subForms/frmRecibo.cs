@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,10 +18,12 @@ namespace SistemaPet.subForms
     {
         private PrintDocument printDocument1 = new PrintDocument();
         Bitmap memoryImage;
+        string pasta_aplicacao = "";
 
         public frmRecibo()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
         }
 
         public frmRecibo(string valor, string numero, string Nome)
@@ -61,6 +64,7 @@ namespace SistemaPet.subForms
         }
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+            sound1();
             Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, textNome.Text);
             frmrec.Show();
             
@@ -77,6 +81,7 @@ namespace SistemaPet.subForms
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            sound1();
             btnImprimir.Visible = false;
             btnFecharRecibo.Visible = false;
             CaptureScreen();
@@ -87,7 +92,29 @@ namespace SistemaPet.subForms
         }
         private void btnFecharRecibo_Click(object sender, EventArgs e)
         {
+            sound1();
             Close();
+        }
+
+        public void sound1()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
+            player.Play();
+        }
+        public void sound2()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\limpar.wav");
+            player.Play();
+        }
+        public void sound3()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
+            player.Play();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            sound1();
         }
     }
 }

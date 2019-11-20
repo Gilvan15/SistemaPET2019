@@ -17,10 +17,11 @@ namespace SistemaPet.subForms
     {
         PessoaFisicaEnt objTabela = new PessoaFisicaEnt();
         private string opc = "";
-
+        string pasta_aplicacao = "";
         public frmPessoaFisica()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
         }
 
         private void InicarOpc()
@@ -293,24 +294,21 @@ namespace SistemaPet.subForms
             ListarGrid();
             DesabilitarCampos();
         }
-
         public void sound1()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\click.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
             player.Play();
         }
         public void sound2()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\limpar.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\limpar.wav");
             player.Play();
         }
-
         public void sound3()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\aviso.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
-
         private void textPesquisar_OnValueChanged(object sender, EventArgs e)
         {
             if (textPesquisar.Text == "")

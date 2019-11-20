@@ -17,15 +17,20 @@ namespace SistemaPet
 {
     public partial class frmLogin : Form
     {
+        
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+        string pasta_aplicacao = "";
         public frmLogin()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
+
+            
+                
         }
 
         private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)
@@ -46,23 +51,23 @@ namespace SistemaPet
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //sound2();
+            sound2();
         }
 
         public void sound1()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\click.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
             player.Play();
         }
 
         public void sound2()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\camp.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao +"wavs\\camp.wav");
             player.Play();
         }
         public void sound3()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\aviso.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\wavs\aviso.wav");
             player.Play();
         }
 

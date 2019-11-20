@@ -23,14 +23,14 @@ namespace SistemaPet.subForms
     {
         //private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoSource;
-
         AnimalEnt objTabela = new AnimalEnt();
         private string opc = "";
-
+        string pasta_aplicacao = "";
         //private bool DeviceExist = false;
         public frmCadastroPet()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
         }
 
         private void DesabilitarCampos()
@@ -294,38 +294,33 @@ namespace SistemaPet.subForms
             }
         }
 
-        public void sound3()
+        public void sound1()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\aviso.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
             player.Play();
         }
 
         public void sound2()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\Limpar.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\Limpar.wav");
             player.Play();
         }
 
-
+        public void sound3()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
+            player.Play();
+        }
         public void sound4()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\klickfoto.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\klickfoto.wav");
             player.Play();
         }
-
         public void sound5()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\stopcamera.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\stopcamera.wav");
             player.Play();
         }
-
-
-        public void sound1()
-        {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\click.wav");
-            player.Play();
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             sound1();
