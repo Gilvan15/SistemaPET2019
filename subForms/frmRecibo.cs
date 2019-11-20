@@ -66,9 +66,8 @@ namespace SistemaPet.subForms
         {
             sound1();
             Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, textNome.Text);
+            frmrec.TopMost = true;
             frmrec.Show();
-            
-
         }
 
        private void hiderButtons() 
