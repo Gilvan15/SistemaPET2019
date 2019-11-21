@@ -141,34 +141,26 @@ namespace SistemaPet
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\Entrada.wav");
             player.Play();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmLogo());
         }
-
         private void label1_Click_1(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmLogo());
-            
         }
-
         private void label1_MouseHover(object sender, EventArgs e)
         {
             label1.ForeColor = Color.GreenYellow;
         }
-
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             label1.ForeColor = Color.White;
         }
-
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmPessoaFisica());
         }
-
-
         private void btnMenuValores_Click(object sender, EventArgs e)
         {
             if (panelSubValores.Visible == false)
@@ -180,7 +172,6 @@ namespace SistemaPet
                 hideSubMenu();
             }
         }
-
         private void btnMenuRelatorio_Click(object sender, EventArgs e)
         {
             if (panelSubRelatorio.Visible == false)
@@ -192,11 +183,6 @@ namespace SistemaPet
                 hideSubMenu();
             }
         }
-        private void btnMenuServicos_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -206,22 +192,14 @@ namespace SistemaPet
         {
             AbrirFormWrapper(new frmRecibo());
         }
-
-        private void bunifuFlatButton4_Click(object sender, EventArgs e)
-        {
-            AbrirFormWrapper(new frmCadastroPet());
-        }
-
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmCamera());
         }
-
         private void btnMenuFuncao_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmFuncao());
         }
-
         private void btnMenuUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormWrapper(new frmUsuario());
@@ -233,7 +211,6 @@ namespace SistemaPet
             this.Close();
             frmLog.Show();
         }
-
         private void minimizar_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -251,6 +228,15 @@ namespace SistemaPet
             WindowState = FormWindowState.Maximized;
             maximizar.Visible = false;
             restaurar.Visible = true;
+        }
+        private void bunifuFlatButton5_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmCadastroPet());
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            AbrirFormWrapper(new frmPessoaFisica());
         }
     }
 }

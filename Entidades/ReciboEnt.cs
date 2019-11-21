@@ -9,21 +9,27 @@ namespace Entidades
     public class ReciboEnt
     {
         private int id;
-        private string Numero;
-        private double Valor;
-        private string nome;
-        private string importancia;
-        private string referente;
-        private string atendente;
-        private DateTime data_emissao;
+        private string numero;
+        private string valor;
+        private string recebemosde;
+        private string importancia1;
+        private string importancia2;
+        private string referentea1;
+        private string referentea2;
+        private string emitente;
+        private string cnpj;
+        private DateTime data;
 
         public int Id { get => id; set => id = value; }
-        public string Numero1 { get => Numero; set => Numero = value; }
-        public double Valor1 { get => Valor; set => Valor = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Importancia { get => importancia; set => importancia = value; }
-        public string Referente { get => referente; set => referente = value; }
-        public string Atendente { get => atendente; set => atendente = value; }
-        public DateTime Data_emissao { get => data_emissao; set => data_emissao = value; }
+        public string Numero { get => numero; set => numero = value; }
+        public string Valor { get => valor; set => valor = value; }
+        public string Recebemosde { get => recebemosde; set => recebemosde = value; }
+        public string Importancia1 { get => importancia1; set => importancia1 = value; }
+        public string Importancia2 { get => importancia2; set => importancia2 = value; }
+        public string Referentea1 { get => referentea1; set => referentea1 = value; }
+        public string Referentea2 { get => referentea2; set => referentea2 = value; }
+        public string Emitente { get => emitente; set => emitente = value; }
+        public string Cnpj { get => cnpj; set => cnpj = value; }
+        public DateTime Data { get => data; set => data = value; }
     }
 }

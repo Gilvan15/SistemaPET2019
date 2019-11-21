@@ -37,7 +37,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnPrepararImpressao = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnFecharRecibo = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -56,8 +55,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbldata = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textValorRecibo
@@ -164,30 +171,13 @@
             this.btnPrepararImpressao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrepararImpressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrepararImpressao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnPrepararImpressao.Location = new System.Drawing.Point(719, 524);
+            this.btnPrepararImpressao.Location = new System.Drawing.Point(713, 524);
             this.btnPrepararImpressao.Name = "btnPrepararImpressao";
             this.btnPrepararImpressao.Size = new System.Drawing.Size(124, 47);
             this.btnPrepararImpressao.TabIndex = 95;
             this.btnPrepararImpressao.Text = "Preparar Impressão";
             this.btnPrepararImpressao.UseVisualStyleBackColor = false;
-            this.btnPrepararImpressao.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.Enabled = false;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnSalvar.Location = new System.Drawing.Point(719, 481);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(124, 34);
-            this.btnSalvar.TabIndex = 94;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnPrepararImpressao.Click += new System.EventHandler(this.btnPrepararImpressao_Click);
             // 
             // btnFecharRecibo
             // 
@@ -197,7 +187,7 @@
             this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFecharRecibo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnFecharRecibo.Location = new System.Drawing.Point(719, 398);
+            this.btnFecharRecibo.Location = new System.Drawing.Point(713, 398);
             this.btnFecharRecibo.Name = "btnFecharRecibo";
             this.btnFecharRecibo.Size = new System.Drawing.Size(124, 32);
             this.btnFecharRecibo.TabIndex = 96;
@@ -214,7 +204,7 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnImprimir.Location = new System.Drawing.Point(719, 439);
+            this.btnImprimir.Location = new System.Drawing.Point(713, 439);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(124, 33);
             this.btnImprimir.TabIndex = 97;
@@ -429,11 +419,11 @@
             this.panel1.Controls.Add(this.lbldata);
             this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.btnFecharRecibo);
             this.panel1.Controls.Add(this.bunifuMaterialTextbox2);
             this.panel1.Controls.Add(this.btnPrepararImpressao);
             this.panel1.Controls.Add(this.bunifuMaterialTextbox1);
-            this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.bunifuCustomLabel2);
             this.panel1.Controls.Add(this.bunifuMaterialTextbox4);
             this.panel1.Controls.Add(this.label5);
@@ -452,17 +442,104 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(5, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(863, 576);
+            this.panel1.Size = new System.Drawing.Size(857, 576);
             this.panel1.TabIndex = 98;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnSalvar.Location = new System.Drawing.Point(713, 481);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(124, 34);
+            this.btnSalvar.TabIndex = 94;
+            this.btnSalvar.Text = "Novo";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnNovo);
+            this.panel2.Controls.Add(this.btnPesquisar);
+            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(12, 594);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(856, 170);
+            this.panel2.TabIndex = 104;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnNovo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovo.Enabled = false;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnNovo.Location = new System.Drawing.Point(0, 126);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(124, 34);
+            this.btnNovo.TabIndex = 107;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisar.Enabled = false;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnPesquisar.Location = new System.Drawing.Point(262, 126);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(124, 34);
+            this.btnPesquisar.TabIndex = 106;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Enabled = false;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnEditar.Location = new System.Drawing.Point(130, 126);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(124, 34);
+            this.btnEditar.TabIndex = 105;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 13);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(857, 107);
+            this.dataGridView1.TabIndex = 104;
             // 
             // frmRecibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(880, 650);
+            this.ClientSize = new System.Drawing.Size(880, 788);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRecibo";
@@ -472,6 +549,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,7 +564,6 @@
         private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;
         private System.Windows.Forms.Button btnPrepararImpressao;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnFecharRecibo;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -504,5 +582,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbldata;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

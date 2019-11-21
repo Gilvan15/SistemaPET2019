@@ -120,7 +120,7 @@ namespace SistemaPet
 
                 frmPrincipal frmP = new frmPrincipal();
                 this.Hide();
-                frmP.ShowDialog();
+                frmP.Show();
             }
             catch (Exception ex)
             {

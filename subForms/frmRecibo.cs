@@ -25,16 +25,16 @@ namespace SistemaPet.subForms
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
         }
-
         public frmRecibo(string valor, string numero, string Nome)
         {
             InitializeComponent();
             textValorRecibo.Text = valor;
             textNumeroRecibo.Text = numero;
             textNome.Text = Nome;
+            this.Size = new Size(880, 650);
+            panel2.Visible = false;
             hiderButtons();
         }
-
         private void CaptureScreen()
         {
             Graphics myGraphics = this.CreateGraphics();
@@ -62,13 +62,7 @@ namespace SistemaPet.subForms
             string data = diasemana + ", " + dia + " de " + mes + " de " + ano + "." ;
             lbldata.Text = data;
         }
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            sound1();
-            Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, textNome.Text);
-            frmrec.TopMost = true;
-            frmrec.Show();
-        }
+        
 
        private void hiderButtons() 
        {
@@ -92,9 +86,14 @@ namespace SistemaPet.subForms
         private void btnFecharRecibo_Click(object sender, EventArgs e)
         {
             sound1();
-            Close();
+            this.Close();
+            /*
+            dataGridView1.Visible = false;
+            btnSalvar.Visible = false;
+            btnEditar.Visible = false;
+            btnPesquisar.Visible = false;
+            */
         }
-
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
@@ -110,10 +109,17 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             sound1();
+        }
+
+        private void btnPrepararImpressao_Click(object sender, EventArgs e)
+        {
+            sound1();
+            Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, textNome.Text);
+            frmrec.TopMost = true;
+            frmrec.Show();
         }
     }
 }
