@@ -12,35 +12,27 @@ namespace Model
     {
         public static int Inseir(ReciboEnt objTabela)
         {
-            return new UsuarioDAO().Inserir(objTabela);
+            return new ReciboDAO().Inserir(objTabela);
         }
 
         public List<ReciboEnt> Lista()
         {
-            return new UsuarioDAO().Lista();
+            return new ReciboDAO().Lista();
         }
-
-        public DataTable ListaJonn()
-        {
-            return new UsuarioDAO().ListaJonn();
-        }
-
-
 
         public static int Excluir(ReciboEnt objTabela)
         {
-            return new UsuarioDAO().Excluir(objTabela);
+            return new ReciboDAO().Excluir(objTabela);
         }
 
         public static int Editar(ReciboEnt objTabela)
         {
-            return new UsuarioDAO().Editar(objTabela);
+            return new ReciboDAO().Editar(objTabela);
         }
         public List<ReciboEnt> Buscar(ReciboEnt objTabela)
         {
-            return new UsuarioDAO().Buscar(objTabela);
+            return new ReciboDAO().Buscar(objTabela);
         }
-
         
     }
 }

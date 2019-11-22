@@ -23,16 +23,16 @@ namespace DAO
                     cn.CommandType = CommandType.Text;
                     con.Open();
                     cn.CommandText = "INSERT INTO Recibo ([numero], [valor], [recebemosde], [importanciade1], [importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data]) VALUES (@numero, @valor, @recebemosde, @importanciade1, @importanciade2, @referente1, @referente2, @emitente, @cjpj, @data)";
-                    cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Numero;
-                    cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Valor;
-                    cn.Parameters.Add("senha", SqlDbType.VarChar).Value = objTabela.Recebemosde;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Importancia1;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Importancia2;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Referentea1;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Referentea2;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Emitente;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Cnpj;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Data;
+                    cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
+                    cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
+                    cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
+                    cn.Parameters.Add("importanciade1", SqlDbType.Int).Value = objTabela.Importancia1;
+                    cn.Parameters.Add("importanciade2", SqlDbType.Int).Value = objTabela.Importancia2;
+                    cn.Parameters.Add("referente1", SqlDbType.Int).Value = objTabela.Referentea1;
+                    cn.Parameters.Add("referente2", SqlDbType.Int).Value = objTabela.Referentea2;
+                    cn.Parameters.Add("emitente", SqlDbType.Int).Value = objTabela.Emitente;
+                    cn.Parameters.Add("cnpj", SqlDbType.Int).Value = objTabela.Cnpj;
+                    cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
                     cn.Connection = con;
                     qtd = cn.ExecuteNonQuery();
                 }
@@ -42,7 +42,6 @@ namespace DAO
                 }
                 return qtd;
             }
-
         }
 
         public List<ReciboEnt> Buscar(ReciboEnt objTabela)
@@ -53,8 +52,8 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM Recibo WHERE nome like @nome";
-                cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome + "%";
+                cn.CommandText = "SELECT * FROM Recibo WHERE numero like @numero";
+                cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Numero + "%";
                 cn.Connection = con;
                 SqlDataReader dr;
                 List<ReciboEnt> lista = new List<ReciboEnt>();
@@ -67,10 +66,16 @@ namespace DAO
                     {
                         ReciboEnt dado = new ReciboEnt();
                         dado.Id = Convert.ToInt32(dr["id"]);
-                        dado.Nome = Convert.ToString(dr["nome"]);
-                        dado.Email = Convert.ToString(dr["email"]);
-                        dado.Senha = Convert.ToString(dr["senha"]);
-                        dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
+                        dado.Numero = Convert.ToString(dr["numero"]);
+                        dado.Valor = Convert.ToString(dr["valor"]);
+                        dado.Recebemosde = Convert.ToString(dr["recebemosde"]);
+                        dado.Importancia1 = Convert.ToString(dr["importancia1"]);
+                        dado.Importancia2 = Convert.ToString(dr["importancia2"]);
+                        dado.Referentea1 = Convert.ToString(dr["referentea1"]);
+                        dado.Referentea2 = Convert.ToString(dr["referentea2"]);
+                        dado.Emitente = Convert.ToString(dr["emitente"]);
+                        dado.Cnpj = Convert.ToString(dr["cnpj"]);
+                        dado.Data = Convert.ToDateTime(dr["data"]);
                         lista.Add(dado);
                     }
                 }
@@ -87,19 +92,25 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Recibo SET nome = @nome, email = @email, senha = @senha, id_funcao = @id_funcao WHERE id = @id";
-                cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
-                cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
-                cn.Parameters.Add("senha", SqlDbType.VarChar).Value = objTabela.Senha;
-                cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id_funcao);
+                cn.CommandText = "UPDATE Recibo SET numero = @numero, valor = @valor, recebemosde = @recebemosde, " +
+                    "importancia1 = @importancia1, importancia2 = @importancia2, referentea1 = @referentea1, " +
+                    "referentea2 = @referentea2, emitente = @emitente, cnpj = @cnpj, data = @data " + "WHERE id = @id";
+                cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
+                cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
+                cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
+                cn.Parameters.Add("importancia1", SqlDbType.VarChar).Value = objTabela.Importancia1;
+                cn.Parameters.Add("importancia2", SqlDbType.VarChar).Value = objTabela.Importancia2;
+                cn.Parameters.Add("referentea1", SqlDbType.VarChar).Value = objTabela.Referentea1;
+                cn.Parameters.Add("referentea2", SqlDbType.VarChar).Value = objTabela.Referentea2;
+                cn.Parameters.Add("emitente", SqlDbType.VarChar).Value = objTabela.Emitente;
+                cn.Parameters.Add("cnpj", SqlDbType.VarChar).Value = objTabela.Cnpj;
+                cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();
                 return qtd;
             }
-
         }
-
         public int Excluir(ReciboEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
@@ -115,41 +126,6 @@ namespace DAO
                 return qtd;
             }
         }
-        public ReciboEnt Login(ReciboEnt obj)
-        {
-            using (SqlConnection con = new SqlConnection())
-            {
-                con.ConnectionString = DAO.Properties.Settings.Default.banco;
-                SqlCommand cn = new SqlCommand();
-                cn.CommandType = CommandType.Text;
-                con.Open();
-                cn.CommandText = "SELECT * FROM Recibo WHERE email = @email AND senha = @senha";
-                cn.Connection = con;
-
-                cn.Parameters.Add("email", SqlDbType.VarChar).Value = obj.Email;
-                cn.Parameters.Add("senha", SqlDbType.VarChar).Value = obj.Senha;
-                SqlDataReader dr;
-
-                dr = cn.ExecuteReader();
-
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        ReciboEnt dado = new ReciboEnt();
-
-                        dado.Email = Convert.ToString(dr["email"]);
-                        dado.Senha = Convert.ToString(dr["senha"]);
-                    }
-                }
-                else
-                {
-                    obj.Email = null;
-                    obj.Senha = null;
-                }
-                return obj;
-            }
-        }
 
         public List<ReciboEnt> Lista()
         {
@@ -159,54 +135,35 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT Recibo.[id], [Nome], [email], [senha], [descricao] FROM Recibo INNER JOIN Funcao ON Recibo.id_funcao = Funcao.id";
-                //"SELECT * FROM Recibo ORDER BY nome ASC";
-
-
+                cn.CommandText = "SELECT * FROM Recibo ORDER BY numero ASC";
                 cn.Connection = con;
                 SqlDataReader dr;
                 List<ReciboEnt> lista = new List<ReciboEnt>();
 
                 dr = cn.ExecuteReader();
 
-
-                /*if (dr.HasRows)
+                if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
                         ReciboEnt dado = new ReciboEnt();
 
                         dado.Id = Convert.ToInt32(dr["id"]);
-                        dado.Nome = Convert.ToString(dr["nome"]);
-                        dado.Email = Convert.ToString(dr["email"]);
-                        dado.Senha = Convert.ToString(dr["senha"]);
-                        dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
+                        dado.Numero= Convert.ToString(dr["numero"]);
+                        dado.Valor = Convert.ToString(dr["valor"]);
+                        dado.Recebemosde = Convert.ToString(dr["redebemosde"]);
+                        dado.Importancia1 = Convert.ToString(dr["importancia1"]);
+                        dado.Importancia2 = Convert.ToString(dr["importancia2"]);
+                        dado.Referentea1 = Convert.ToString(dr["referente1"]);
+                        dado.Referentea2 = Convert.ToString(dr["referente2"]);
+                        dado.Emitente = Convert.ToString(dr["emitente"]);
+                        dado.Cnpj= Convert.ToString(dr["cnpj"]);
+                        dado.Data = Convert.ToDateTime(dr["data"]);
                         lista.Add(dado);
                     }
                 }
-                */
+                
                 return lista;
-            }
-        }
-
-        public DataTable ListaJonn()
-        {
-            using (SqlConnection con = new SqlConnection())
-            {
-                con.ConnectionString = DAO.Properties.Settings.Default.banco;
-                con.Open();
-                string query = "SELECT Recibo.[id], [Nome], [email], [senha], [descricao] FROM Recibo INNER JOIN Funcao ON Recibo.id_funcao = Funcao.id";
-
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                return dt;
-
-
             }
         }
 
