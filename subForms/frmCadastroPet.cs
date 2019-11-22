@@ -351,9 +351,20 @@ namespace SistemaPet.subForms
                 sound1();
                 if (videosources != null)
                 {
-                    videoSource = new VideoCaptureDevice(videosources[0].MonikerString);
-                    videoSource.NewFrame += (s, i) => pictureCamera.Image = (Bitmap)i.Frame.Clone();
-                    videoSource.Start();
+                    try
+                    {
+                        videoSource = new VideoCaptureDevice(videosources[0].MonikerString);
+                        videoSource.NewFrame += (s, i) => pictureCamera.Image = (Bitmap)i.Frame.Clone();
+                        videoSource.Start();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        sound3();
+                        MessageBox.Show("Erro Câmera: " + "WebCam não encontrada neste dispositivo!", "Aviso", MessageBoxButtons.OK);
+                    }
+                    
+                    
                 }
             }
         }
