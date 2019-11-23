@@ -22,16 +22,20 @@ namespace DAO
                     SqlCommand cn = new SqlCommand();
                     cn.CommandType = CommandType.Text;
                     con.Open();
-                    cn.CommandText = "INSERT INTO Recibo ([numero], [valor], [recebemosde], [importanciade1], [importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data]) VALUES (@numero, @valor, @recebemosde, @importanciade1, @importanciade2, @referente1, @referente2, @emitente, @cjpj, @data)";
+                    cn.CommandText = "INSERT INTO Recibo ([numero], [valor], [recebemosde], [importanciade1], " +
+                        "[importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data]) " +
+                        "VALUES (@numero, @valor, @recebemosde, @importanciade1, @importanciade2, " +
+                        "@referentea1, @referentea2, @emitente, @cnpj, @data)";
+
                     cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
                     cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
                     cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
-                    cn.Parameters.Add("importanciade1", SqlDbType.Int).Value = objTabela.Importancia1;
-                    cn.Parameters.Add("importanciade2", SqlDbType.Int).Value = objTabela.Importancia2;
-                    cn.Parameters.Add("referente1", SqlDbType.Int).Value = objTabela.Referentea1;
-                    cn.Parameters.Add("referente2", SqlDbType.Int).Value = objTabela.Referentea2;
-                    cn.Parameters.Add("emitente", SqlDbType.Int).Value = objTabela.Emitente;
-                    cn.Parameters.Add("cnpj", SqlDbType.Int).Value = objTabela.Cnpj;
+                    cn.Parameters.Add("importanciade1", SqlDbType.VarChar).Value = objTabela.Importancia1;
+                    cn.Parameters.Add("importanciade2", SqlDbType.VarChar).Value = objTabela.Importancia2;
+                    cn.Parameters.Add("referentea1", SqlDbType.VarChar).Value = objTabela.Referentea1;
+                    cn.Parameters.Add("referentea2", SqlDbType.VarChar).Value = objTabela.Referentea2;
+                    cn.Parameters.Add("emitente", SqlDbType.VarChar).Value = objTabela.Emitente;
+                    cn.Parameters.Add("cnpj", SqlDbType.VarChar).Value = objTabela.Cnpj;
                     cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
                     cn.Connection = con;
                     qtd = cn.ExecuteNonQuery();
@@ -151,11 +155,11 @@ namespace DAO
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.Numero= Convert.ToString(dr["numero"]);
                         dado.Valor = Convert.ToString(dr["valor"]);
-                        dado.Recebemosde = Convert.ToString(dr["redebemosde"]);
-                        dado.Importancia1 = Convert.ToString(dr["importancia1"]);
-                        dado.Importancia2 = Convert.ToString(dr["importancia2"]);
-                        dado.Referentea1 = Convert.ToString(dr["referente1"]);
-                        dado.Referentea2 = Convert.ToString(dr["referente2"]);
+                        dado.Recebemosde = Convert.ToString(dr["recebemosde"]);
+                        dado.Importancia1 = Convert.ToString(dr["importanciade1"]);
+                        dado.Importancia2 = Convert.ToString(dr["importanciade2"]);
+                        dado.Referentea1 = Convert.ToString(dr["referentea1"]);
+                        dado.Referentea2 = Convert.ToString(dr["referentea2"]);
                         dado.Emitente = Convert.ToString(dr["emitente"]);
                         dado.Cnpj= Convert.ToString(dr["cnpj"]);
                         dado.Data = Convert.ToDateTime(dr["data"]);

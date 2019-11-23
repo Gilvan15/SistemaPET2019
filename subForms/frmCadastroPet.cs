@@ -338,7 +338,6 @@ namespace SistemaPet.subForms
             }
 
         }
-
         private void btnAtivarCamera_Click(object sender, EventArgs e)
         {
             if (videoSource != null)
@@ -359,7 +358,6 @@ namespace SistemaPet.subForms
                     }
                     catch (Exception ex)
                     {
-
                         sound3();
                         MessageBox.Show("Erro Câmera: " + "WebCam não encontrada neste dispositivo!", "Aviso", MessageBoxButtons.OK);
                     }
