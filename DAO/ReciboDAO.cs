@@ -56,8 +56,8 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM Recibo WHERE numero like @numero";
-                cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Numero + "%";
+                cn.CommandText = "SELECT * FROM Recibo WHERE recebemosde like @recebemosde";
+                cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde + "%";
                 cn.Connection = con;
                 SqlDataReader dr;
                 List<ReciboEnt> lista = new List<ReciboEnt>();
@@ -73,8 +73,8 @@ namespace DAO
                         dado.Numero = Convert.ToString(dr["numero"]);
                         dado.Valor = Convert.ToString(dr["valor"]);
                         dado.Recebemosde = Convert.ToString(dr["recebemosde"]);
-                        dado.Importancia1 = Convert.ToString(dr["importancia1"]);
-                        dado.Importancia2 = Convert.ToString(dr["importancia2"]);
+                        dado.Importancia1 = Convert.ToString(dr["importanciade1"]);
+                        dado.Importancia2 = Convert.ToString(dr["importanciade2"]);
                         dado.Referentea1 = Convert.ToString(dr["referentea1"]);
                         dado.Referentea2 = Convert.ToString(dr["referentea2"]);
                         dado.Emitente = Convert.ToString(dr["emitente"]);

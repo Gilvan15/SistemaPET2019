@@ -24,6 +24,7 @@ namespace SistemaPet.subForms
         private string opc = "";
         ReciboEnt objTabela = new ReciboEnt();
 
+
         public frmRecibo()
         {
             InitializeComponent();
@@ -60,7 +61,12 @@ namespace SistemaPet.subForms
             //btnSalvar.Enabled = false;
             CarregarGrid();
             DesabilitarCampos();
+            atualizaData();
 
+        }
+
+        private void atualizaData() 
+        {
             CultureInfo culture = new CultureInfo("pt-BR");
             DateTimeFormatInfo dtfi = culture.DateTimeFormat;
 
@@ -68,7 +74,7 @@ namespace SistemaPet.subForms
             int ano = DateTime.Now.Year;
             string mes = culture.TextInfo.ToTitleCase(dtfi.GetMonthName(DateTime.Now.Month));
             string diasemana = culture.TextInfo.ToTitleCase(dtfi.GetDayName(DateTime.Now.DayOfWeek));
-            string data = diasemana + ", " + dia + " de " + mes + " de " + ano + "." ;
+            string data = diasemana + ", " + dia + " de " + mes + " de " + ano + ".";
             lbldata.Text = data;
         }
         
@@ -193,8 +199,9 @@ namespace SistemaPet.subForms
             sound1();
             opc = "Salvar";
             HabilitarCampos();
+            atualizaData();
             LimparCampos();
-            textRecebemosde.Focus();
+            textValorRecibo.Focus();
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -298,7 +305,7 @@ namespace SistemaPet.subForms
             }
             opc = "Editar";
             HabilitarCampos();
-            textRecebemosde.Focus();
+            textValorRecibo.Focus();
             btnSalvar.Enabled = true;
         }
         private void btnDeletar_Click_1(object sender, EventArgs e)
@@ -347,11 +354,67 @@ namespace SistemaPet.subForms
             btnSalvar.Enabled = false;
         }
 
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            if (pictureBox1.Visible == false)
+            {
+                pictureBox1.Visible = true;
+                textPesquisar.Visible = true;
+                textPesquisar.Text = null;
+                textPesquisar.Focus();
+            }
+            else
+            {
+                pictureBox1.Visible = false;
+                textPesquisar.Visible = false;
+            }
+
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                textNumeroRecibo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textValorRecibo.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textRecebemosde.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textImportanciade1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textImportanciade2.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textReferentea1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textReferentea2.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textEmitente.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                textCnpj.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                lbldata.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error DataGrid: " + ex.Message);
+            }
+        }
 
-
-
+        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textPesquisar.Text == "")
+            {
+                CarregarGrid();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    objTabela.Recebemosde = textPesquisar.Text;
+                    List<ReciboEnt> lista = new List<ReciboEnt>();
+                    lista = new ReciboModel().Buscar(objTabela);
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.DataSource = lista;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error ao Listar Dados: " + ex.Message);
+                }
+            }
         }
     }
 }

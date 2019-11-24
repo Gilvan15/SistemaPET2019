@@ -13,9 +13,13 @@ namespace SistemaPet.subForms
 {
     public partial class frmRecuperarSenha : Form
     {
+
+        string pasta_aplicacao = "";
         public frmRecuperarSenha()
         {
             InitializeComponent();
+            pasta_aplicacao = Application.StartupPath + @"\";
+
         }
         private void Fechar_Click_1(object sender, EventArgs e)
         {
@@ -27,7 +31,7 @@ namespace SistemaPet.subForms
 
         public void sound1()
         {
-            SoundPlayer player = new SoundPlayer(@"C:\Repositorio\SistemaPetShop\wavs\click.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
             player.Play();
         }
 

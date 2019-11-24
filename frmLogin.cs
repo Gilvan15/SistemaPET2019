@@ -51,7 +51,7 @@ namespace SistemaPet
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            sound2();
+            //sound2();
         }
 
         public void sound1()
