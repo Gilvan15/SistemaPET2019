@@ -95,17 +95,17 @@ namespace DAO
                 cn.CommandType = CommandType.Text;
                 con.Open();
                 cn.CommandText = "UPDATE Recibo SET  valor = @valor, recebemosde = @recebemosde, " +
-                    "importancia1 = @importancia1, importancia2 = @importancia2, referentea1 = @referentea1, " +
-                    "referentea2 = @referentea2, emitente = @emitente, cnpj = @cnpj, data = @data " + "WHERE id = @id";
+                    "importanciade1 = @importanciade1, importanciade2 = @importanciade2, referentea1 = @referentea1, " +
+                    "referentea2 = @referentea2, emitente = @emitente, cnpj = @cnpj " + "WHERE id = @id";
                 cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
                 cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
-                cn.Parameters.Add("importancia1", SqlDbType.VarChar).Value = objTabela.Importancia1;
-                cn.Parameters.Add("importancia2", SqlDbType.VarChar).Value = objTabela.Importancia2;
+                cn.Parameters.Add("importanciade1", SqlDbType.VarChar).Value = objTabela.Importancia1;
+                cn.Parameters.Add("importanciade2", SqlDbType.VarChar).Value = objTabela.Importancia2;
                 cn.Parameters.Add("referentea1", SqlDbType.VarChar).Value = objTabela.Referentea1;
                 cn.Parameters.Add("referentea2", SqlDbType.VarChar).Value = objTabela.Referentea2;
                 cn.Parameters.Add("emitente", SqlDbType.VarChar).Value = objTabela.Emitente;
                 cn.Parameters.Add("cnpj", SqlDbType.VarChar).Value = objTabela.Cnpj;
-                cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
+                //cn.Parameters.Add("data", SqlDbType.DateTime).Value = objTabela.Data;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();

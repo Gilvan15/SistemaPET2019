@@ -89,7 +89,7 @@ namespace SistemaPet.subForms
 
             //btnSalvar.Enabled = false;
             CarregarGrid();
-            //DesabilitarCampos();
+            DesabilitarCampos();
             atualizaData();
         }
 
@@ -169,9 +169,6 @@ namespace SistemaPet.subForms
                 }
             }
 
-
-
-
         }
         private void LimparCampos()
         {
@@ -182,6 +179,7 @@ namespace SistemaPet.subForms
             textImportanciade2.Text = null;
             textReferentea1.Text = null;
             textReferentea2.Text = null;
+            textPesquisar.Text = null;
             //textEmitente.Text = null;
             //textCnpj.Text = null;
         }
@@ -324,6 +322,7 @@ namespace SistemaPet.subForms
                             objTabela.Referentea2 = textReferentea2.Text;
                             objTabela.Emitente = textEmitente.Text;
                             objTabela.Cnpj = textCnpj.Text;
+                            
 
                             int x = ReciboModel.Editar(objTabela);
 

@@ -54,6 +54,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbldata = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textNumeroRecibo = new System.Windows.Forms.TextBox();
             this.textValorRecibo = new System.Windows.Forms.TextBox();
             this.btnNovo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,7 +67,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textNumeroRecibo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -446,6 +446,14 @@
             this.panel1.Size = new System.Drawing.Size(857, 576);
             this.panel1.TabIndex = 98;
             // 
+            // textNumeroRecibo
+            // 
+            this.textNumeroRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNumeroRecibo.Location = new System.Drawing.Point(339, 3);
+            this.textNumeroRecibo.Name = "textNumeroRecibo";
+            this.textNumeroRecibo.Size = new System.Drawing.Size(148, 29);
+            this.textNumeroRecibo.TabIndex = 99;
+            // 
             // textValorRecibo
             // 
             this.textValorRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -571,7 +579,6 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Transparent;
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.Enabled = false;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
@@ -606,14 +613,6 @@
             // 
             this.dbpetsepetsDataSetBindingSource.DataSource = this.dbpetsepetsDataSet;
             this.dbpetsepetsDataSetBindingSource.Position = 0;
-            // 
-            // textNumeroRecibo
-            // 
-            this.textNumeroRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNumeroRecibo.Location = new System.Drawing.Point(339, 3);
-            this.textNumeroRecibo.Name = "textNumeroRecibo";
-            this.textNumeroRecibo.Size = new System.Drawing.Size(148, 29);
-            this.textNumeroRecibo.TabIndex = 99;
             // 
             // frmRecibo
             // 
