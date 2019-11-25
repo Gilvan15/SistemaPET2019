@@ -22,12 +22,11 @@ namespace DAO
                     SqlCommand cn = new SqlCommand();
                     cn.CommandType = CommandType.Text;
                     con.Open();
-                    cn.CommandText = "INSERT INTO Recibo ([numero], [valor], [recebemosde], [importanciade1], " +
+                    cn.CommandText = "INSERT INTO Recibo ([valor], [recebemosde], [importanciade1], " +
                         "[importanciade2], [referentea1], [referentea2], [emitente], [cnpj], [data]) " +
-                        "VALUES (@numero, @valor, @recebemosde, @importanciade1, @importanciade2, " +
+                        "VALUES (@valor, @recebemosde, @importanciade1, @importanciade2, " +
                         "@referentea1, @referentea2, @emitente, @cnpj, @data)";
 
-                    cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
                     cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
                     cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
                     cn.Parameters.Add("importanciade1", SqlDbType.VarChar).Value = objTabela.Importancia1;
@@ -70,7 +69,6 @@ namespace DAO
                     {
                         ReciboEnt dado = new ReciboEnt();
                         dado.Id = Convert.ToInt32(dr["id"]);
-                        dado.Numero = Convert.ToString(dr["numero"]);
                         dado.Valor = Convert.ToString(dr["valor"]);
                         dado.Recebemosde = Convert.ToString(dr["recebemosde"]);
                         dado.Importancia1 = Convert.ToString(dr["importanciade1"]);
@@ -96,10 +94,9 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Recibo SET numero = @numero, valor = @valor, recebemosde = @recebemosde, " +
+                cn.CommandText = "UPDATE Recibo SET  valor = @valor, recebemosde = @recebemosde, " +
                     "importancia1 = @importancia1, importancia2 = @importancia2, referentea1 = @referentea1, " +
                     "referentea2 = @referentea2, emitente = @emitente, cnpj = @cnpj, data = @data " + "WHERE id = @id";
-                cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
                 cn.Parameters.Add("valor", SqlDbType.VarChar).Value = objTabela.Valor;
                 cn.Parameters.Add("recebemosde", SqlDbType.VarChar).Value = objTabela.Recebemosde;
                 cn.Parameters.Add("importancia1", SqlDbType.VarChar).Value = objTabela.Importancia1;
@@ -139,7 +136,7 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM Recibo ORDER BY numero ASC";
+                cn.CommandText = "SELECT * FROM Recibo ORDER BY id ASC";
                 cn.Connection = con;
                 SqlDataReader dr;
                 List<ReciboEnt> lista = new List<ReciboEnt>();
@@ -153,7 +150,6 @@ namespace DAO
                         ReciboEnt dado = new ReciboEnt();
 
                         dado.Id = Convert.ToInt32(dr["id"]);
-                        dado.Numero= Convert.ToString(dr["numero"]);
                         dado.Valor = Convert.ToString(dr["valor"]);
                         dado.Recebemosde = Convert.ToString(dr["recebemosde"]);
                         dado.Importancia1 = Convert.ToString(dr["importanciade1"]);
@@ -163,6 +159,7 @@ namespace DAO
                         dado.Emitente = Convert.ToString(dr["emitente"]);
                         dado.Cnpj= Convert.ToString(dr["cnpj"]);
                         dado.Data = Convert.ToDateTime(dr["data"]);
+
                         lista.Add(dado);
                     }
                 }

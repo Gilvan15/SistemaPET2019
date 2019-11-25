@@ -10,6 +10,7 @@ using System.Globalization;
 using System.Linq;
 using System.Media;
 using System.Text;
+using Bunifu.Framework.UI;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,20 +23,30 @@ namespace SistemaPet.subForms
         Bitmap memoryImage;
         string pasta_aplicacao = "";
         private string opc = "";
+        string valor;
         ReciboEnt objTabela = new ReciboEnt();
-
-
         public frmRecibo()
         {
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
         }
-        public frmRecibo(string valor, string numero, string Nome)
+
+        public frmRecibo(string valor, string numero, string Nome, string import1,
+            string import2, string refer1, string refer2, string emitent, string cnpj)
         {
             InitializeComponent();
             textValorRecibo.Text = valor;
             textNumeroRecibo.Text = numero;
             textRecebemosde.Text = Nome;
+            textImportanciade1.Text = import1;
+            textImportanciade2.Text = import2;
+            textReferentea1.Text = refer1;
+            textReferentea2.Text = refer2;
+            textEmitente.Text = emitent;
+            textCnpj.Text = emitent;
+            //DesabilitarCampos();
+            apenasLeitura();
+            //HabilitarCampos();
             this.Size = new Size(880, 650);
             panel2.Visible = false;
             hiderButtons();
@@ -49,6 +60,27 @@ namespace SistemaPet.subForms
             memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
         }
 
+        private void apenasLeitura() 
+        {
+
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    
+                    ((TextBox)ctrl).ReadOnly = true;
+                }
+
+                if (ctrl is BunifuMaterialTextbox)
+                {
+                    ((BunifuMaterialTextbox)ctrl).Enabled = false;
+                }
+
+
+
+            }
+        }
+
         private void printDocument1_PrintPage(System.Object sender,
                System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -60,9 +92,8 @@ namespace SistemaPet.subForms
 
             //btnSalvar.Enabled = false;
             CarregarGrid();
-            DesabilitarCampos();
+            //DesabilitarCampos();
             atualizaData();
-
         }
 
         private void atualizaData() 
@@ -123,6 +154,8 @@ namespace SistemaPet.subForms
             textReferentea2.Enabled = false;
             textEmitente.Enabled = false;
             textCnpj.Enabled = false;
+            textAssinatura.Enabled = false;
+
         }
         private void LimparCampos()
         {
@@ -133,8 +166,8 @@ namespace SistemaPet.subForms
             textImportanciade2.Text = null;
             textReferentea1.Text = null;
             textReferentea2.Text = null;
-            textEmitente.Text = null;
-            textCnpj.Text = null;
+            //textEmitente.Text = null;
+            //textCnpj.Text = null;
         }
 
         private void CarregarGrid()
@@ -146,15 +179,15 @@ namespace SistemaPet.subForms
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
                 dataGridView1.Columns[0].HeaderText = "ID";
-                dataGridView1.Columns[1].HeaderText = "NÚMERO";
-                dataGridView1.Columns[2].HeaderText = "VALOR";
-                dataGridView1.Columns[3].HeaderText = "RECEBEMOSDE";
-                dataGridView1.Columns[4].HeaderText = "IMPORTÂNCIA";
-                dataGridView1.Columns[5].HeaderText = "IMPORTÂNCIA...";
-                dataGridView1.Columns[6].HeaderText = "REFERENTE";
-                dataGridView1.Columns[7].HeaderText = "REFERENTE...";
-                dataGridView1.Columns[8].HeaderText = "EMITENTE";
-                dataGridView1.Columns[9].HeaderText = "CNPJ";
+                dataGridView1.Columns[1].HeaderText = "VALOR";
+                dataGridView1.Columns[2].HeaderText = "RECEBEMOSDE";
+                dataGridView1.Columns[3].HeaderText = "IMPORTÂNCIA";
+                dataGridView1.Columns[4].HeaderText = "IMPORTÂNCIA...";
+                dataGridView1.Columns[5].HeaderText = "REFERENTE";
+                dataGridView1.Columns[6].HeaderText = "REFERENTE...";
+                dataGridView1.Columns[7].HeaderText = "EMITENTE";
+                dataGridView1.Columns[8].HeaderText = "CNPJ";
+                dataGridView1.Columns[9].HeaderText = "DATA/HORA";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
@@ -189,7 +222,9 @@ namespace SistemaPet.subForms
         private void btnPrepararImpressao_Click(object sender, EventArgs e)
         {
             sound1();
-            Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, textRecebemosde.Text);
+            Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, 
+                textRecebemosde.Text, textImportanciade1.Text, textImportanciade2.Text, 
+                textReferentea1.Text, textReferentea2.Text, textEmitente.Text, textCnpj.Text);
             frmrec.TopMost = true;
             frmrec.Show();
         }
@@ -201,6 +236,7 @@ namespace SistemaPet.subForms
             HabilitarCampos();
             atualizaData();
             LimparCampos();
+            //textValorRecibo.Text = Convert.ToDouble(textValorRecibo.Text).ToString("C");
             textValorRecibo.Focus();
         }
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -216,7 +252,7 @@ namespace SistemaPet.subForms
                         DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
                         if (result1 == DialogResult.Yes)
                         {
-                            objTabela.Numero = textNumeroRecibo.Text;
+                            
                             objTabela.Valor = textValorRecibo.Text;
                             objTabela.Recebemosde = textRecebemosde.Text;
                             objTabela.Importancia1 = textImportanciade1.Text;
@@ -376,22 +412,46 @@ namespace SistemaPet.subForms
         {
             try
             {
-                textNumeroRecibo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textValorRecibo.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textRecebemosde.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textImportanciade1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textImportanciade2.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textReferentea1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                textReferentea2.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textEmitente.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                textCnpj.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                lbldata.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                textNumeroRecibo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textValorRecibo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textRecebemosde.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textImportanciade1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textImportanciade2.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textReferentea1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textReferentea2.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                textEmitente.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textCnpj.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                lbldata.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
         }
+        private void Moeda(ref TextBox txt)
+        {
+            //procedure para formatar textbox em formato moeda c/2 casas decimais
+            string n = string.Empty;
+            double v = 0;
+            try
+            {
+                n = txt.Text.Replace(",", "").Replace(".", "");
+                if (n.Equals(""))
+                    n = "";
+                n = n.PadLeft(3, '0');
+                if (n.Length > 3 & n.Substring(0, 1) == "0")
+                    n = n.Substring(1, n.Length - 1);
+                v = Convert.ToDouble(n) / 100;
+                txt.Text = string.Format("{0:N}", v);
+                txt.SelectionStart = txt.Text.Length;
+            }
+            catch (Exception c)
+            {
+                //MessageBox.Show(c.Message);
+            }
+        }
+
+
 
         private void textPesquisar_OnValueChanged(object sender, EventArgs e)
         {
@@ -414,6 +474,71 @@ namespace SistemaPet.subForms
                 {
                     MessageBox.Show("Error ao Listar Dados: " + ex.Message);
                 }
+            }
+        }
+
+        private void textValorRecibo_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Moeda(ref textValorRecibo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+        private void textValorRecibo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == 13)
+            {
+                //valor =   Convert.ToDouble(textValorRecibo.Text).ToString("C");
+                //textValorRecibo.Text = valor;
+                textRecebemosde.Focus();
+            }
+        }
+
+        private void textRecebemosde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textImportanciade1.Focus();
+            }
+        }
+
+        private void textImportanciade1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textImportanciade2.Focus();
+            }
+        }
+
+        private void textReferentea1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textReferentea2.Focus();
+            }
+
+        }
+
+        private void textImportanciade2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textReferentea1.Focus();
+            }
+
+        }
+
+        private void textReferentea2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSalvar.Focus();
             }
         }
     }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecibo));
-            this.textValorRecibo = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textEmitente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textAssinatura = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textCnpj = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -48,13 +48,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textImportanciade2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.textNumeroRecibo = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textReferentea1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textReferentea2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label7 = new System.Windows.Forms.Label();
             this.lbldata = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textValorRecibo = new System.Windows.Forms.TextBox();
             this.btnNovo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -64,21 +64,17 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
+            this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textNumeroRecibo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textValorRecibo
-            // 
-            this.textValorRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textValorRecibo.Location = new System.Drawing.Point(706, 5);
-            this.textValorRecibo.Mask = "$ 999.999,00";
-            this.textValorRecibo.Name = "textValorRecibo";
-            this.textValorRecibo.Size = new System.Drawing.Size(152, 31);
-            this.textValorRecibo.TabIndex = 0;
             // 
             // label4
             // 
@@ -93,7 +89,7 @@
             // textEmitente
             // 
             this.textEmitente.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textEmitente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textEmitente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEmitente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textEmitente.HintForeColor = System.Drawing.Color.Empty;
             this.textEmitente.HintText = "";
@@ -101,32 +97,33 @@
             this.textEmitente.LineFocusedColor = System.Drawing.Color.Blue;
             this.textEmitente.LineIdleColor = System.Drawing.Color.Gray;
             this.textEmitente.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textEmitente.LineThickness = 3;
+            this.textEmitente.LineThickness = 4;
             this.textEmitente.Location = new System.Drawing.Point(98, 363);
             this.textEmitente.Margin = new System.Windows.Forms.Padding(4);
             this.textEmitente.Name = "textEmitente";
             this.textEmitente.Size = new System.Drawing.Size(389, 33);
             this.textEmitente.TabIndex = 6;
+            this.textEmitente.Text = "PETS E PETS BANHO E TOSA LTDA.";
             this.textEmitente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox4
+            // textAssinatura
             // 
-            this.bunifuMaterialTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.bunifuMaterialTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox4.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox4.HintText = "";
-            this.bunifuMaterialTextbox4.isPassword = false;
-            this.bunifuMaterialTextbox4.LineFocusedColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox4.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox4.LineThickness = 3;
-            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(110, 437);
-            this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
-            this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(377, 33);
-            this.bunifuMaterialTextbox4.TabIndex = 89;
-            this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textAssinatura.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textAssinatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textAssinatura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textAssinatura.HintForeColor = System.Drawing.Color.Empty;
+            this.textAssinatura.HintText = "";
+            this.textAssinatura.isPassword = false;
+            this.textAssinatura.LineFocusedColor = System.Drawing.Color.Blue;
+            this.textAssinatura.LineIdleColor = System.Drawing.Color.Gray;
+            this.textAssinatura.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textAssinatura.LineThickness = 4;
+            this.textAssinatura.Location = new System.Drawing.Point(110, 437);
+            this.textAssinatura.Margin = new System.Windows.Forms.Padding(4);
+            this.textAssinatura.Name = "textAssinatura";
+            this.textAssinatura.Size = new System.Drawing.Size(377, 33);
+            this.textAssinatura.TabIndex = 89;
+            this.textAssinatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label5
             // 
@@ -151,7 +148,7 @@
             // textCnpj
             // 
             this.textCnpj.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCnpj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textCnpj.HintForeColor = System.Drawing.Color.Empty;
             this.textCnpj.HintText = "";
@@ -159,12 +156,13 @@
             this.textCnpj.LineFocusedColor = System.Drawing.Color.Blue;
             this.textCnpj.LineIdleColor = System.Drawing.Color.Gray;
             this.textCnpj.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textCnpj.LineThickness = 3;
+            this.textCnpj.LineThickness = 4;
             this.textCnpj.Location = new System.Drawing.Point(546, 363);
             this.textCnpj.Margin = new System.Windows.Forms.Padding(4);
             this.textCnpj.Name = "textCnpj";
             this.textCnpj.Size = new System.Drawing.Size(297, 33);
             this.textCnpj.TabIndex = 7;
+            this.textCnpj.Text = "66.272.256/0001-66";
             this.textCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnPrepararImpressao
@@ -252,7 +250,7 @@
             // textRecebemosde
             // 
             this.textRecebemosde.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textRecebemosde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textRecebemosde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textRecebemosde.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textRecebemosde.HintForeColor = System.Drawing.Color.Empty;
             this.textRecebemosde.HintText = "";
@@ -260,13 +258,14 @@
             this.textRecebemosde.LineFocusedColor = System.Drawing.Color.Blue;
             this.textRecebemosde.LineIdleColor = System.Drawing.Color.Gray;
             this.textRecebemosde.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textRecebemosde.LineThickness = 3;
+            this.textRecebemosde.LineThickness = 4;
             this.textRecebemosde.Location = new System.Drawing.Point(156, 78);
             this.textRecebemosde.Margin = new System.Windows.Forms.Padding(4);
             this.textRecebemosde.Name = "textRecebemosde";
             this.textRecebemosde.Size = new System.Drawing.Size(687, 33);
             this.textRecebemosde.TabIndex = 1;
             this.textRecebemosde.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textRecebemosde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textRecebemosde_KeyPress);
             // 
             // label2
             // 
@@ -281,7 +280,7 @@
             // textImportanciade1
             // 
             this.textImportanciade1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textImportanciade1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textImportanciade1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textImportanciade1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textImportanciade1.HintForeColor = System.Drawing.Color.Empty;
             this.textImportanciade1.HintText = "";
@@ -289,13 +288,14 @@
             this.textImportanciade1.LineFocusedColor = System.Drawing.Color.Blue;
             this.textImportanciade1.LineIdleColor = System.Drawing.Color.Gray;
             this.textImportanciade1.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textImportanciade1.LineThickness = 3;
+            this.textImportanciade1.LineThickness = 4;
             this.textImportanciade1.Location = new System.Drawing.Point(177, 131);
             this.textImportanciade1.Margin = new System.Windows.Forms.Padding(4);
             this.textImportanciade1.Name = "textImportanciade1";
             this.textImportanciade1.Size = new System.Drawing.Size(666, 33);
             this.textImportanciade1.TabIndex = 2;
             this.textImportanciade1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textImportanciade1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textImportanciade1_KeyPress);
             // 
             // label3
             // 
@@ -310,7 +310,7 @@
             // textImportanciade2
             // 
             this.textImportanciade2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textImportanciade2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textImportanciade2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textImportanciade2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textImportanciade2.HintForeColor = System.Drawing.Color.Empty;
             this.textImportanciade2.HintText = "";
@@ -318,13 +318,14 @@
             this.textImportanciade2.LineFocusedColor = System.Drawing.Color.Blue;
             this.textImportanciade2.LineIdleColor = System.Drawing.Color.Gray;
             this.textImportanciade2.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textImportanciade2.LineThickness = 3;
+            this.textImportanciade2.LineThickness = 4;
             this.textImportanciade2.Location = new System.Drawing.Point(23, 184);
             this.textImportanciade2.Margin = new System.Windows.Forms.Padding(4);
             this.textImportanciade2.Name = "textImportanciade2";
             this.textImportanciade2.Size = new System.Drawing.Size(820, 33);
             this.textImportanciade2.TabIndex = 3;
             this.textImportanciade2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textImportanciade2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textImportanciade2_KeyPress);
             // 
             // bunifuCustomLabel1
             // 
@@ -338,20 +339,12 @@
             this.bunifuCustomLabel1.TabIndex = 80;
             this.bunifuCustomLabel1.Text = "Nº";
             // 
-            // textNumeroRecibo
-            // 
-            this.textNumeroRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNumeroRecibo.Location = new System.Drawing.Point(331, 5);
-            this.textNumeroRecibo.Name = "textNumeroRecibo";
-            this.textNumeroRecibo.Size = new System.Drawing.Size(141, 31);
-            this.textNumeroRecibo.TabIndex = 82;
-            // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(633, 10);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(628, 10);
             this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(65, 22);
@@ -361,7 +354,7 @@
             // textReferentea1
             // 
             this.textReferentea1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textReferentea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textReferentea1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textReferentea1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textReferentea1.HintForeColor = System.Drawing.Color.Empty;
             this.textReferentea1.HintText = "";
@@ -369,18 +362,19 @@
             this.textReferentea1.LineFocusedColor = System.Drawing.Color.Blue;
             this.textReferentea1.LineIdleColor = System.Drawing.Color.Gray;
             this.textReferentea1.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textReferentea1.LineThickness = 3;
+            this.textReferentea1.LineThickness = 4;
             this.textReferentea1.Location = new System.Drawing.Point(113, 238);
             this.textReferentea1.Margin = new System.Windows.Forms.Padding(4);
             this.textReferentea1.Name = "textReferentea1";
             this.textReferentea1.Size = new System.Drawing.Size(730, 33);
             this.textReferentea1.TabIndex = 4;
             this.textReferentea1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textReferentea1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textReferentea1_KeyPress);
             // 
             // textReferentea2
             // 
             this.textReferentea2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textReferentea2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textReferentea2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textReferentea2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textReferentea2.HintForeColor = System.Drawing.Color.Empty;
             this.textReferentea2.HintText = "";
@@ -388,13 +382,14 @@
             this.textReferentea2.LineFocusedColor = System.Drawing.Color.Blue;
             this.textReferentea2.LineIdleColor = System.Drawing.Color.Gray;
             this.textReferentea2.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textReferentea2.LineThickness = 3;
+            this.textReferentea2.LineThickness = 4;
             this.textReferentea2.Location = new System.Drawing.Point(23, 294);
             this.textReferentea2.Margin = new System.Windows.Forms.Padding(4);
             this.textReferentea2.Name = "textReferentea2";
             this.textReferentea2.Size = new System.Drawing.Size(820, 33);
             this.textReferentea2.TabIndex = 5;
             this.textReferentea2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textReferentea2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textReferentea2_KeyPress);
             // 
             // label7
             // 
@@ -420,6 +415,8 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.textNumeroRecibo);
+            this.panel1.Controls.Add(this.textValorRecibo);
             this.panel1.Controls.Add(this.lbldata);
             this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.label7);
@@ -429,10 +426,9 @@
             this.panel1.Controls.Add(this.btnPrepararImpressao);
             this.panel1.Controls.Add(this.textReferentea1);
             this.panel1.Controls.Add(this.bunifuCustomLabel2);
-            this.panel1.Controls.Add(this.bunifuMaterialTextbox4);
+            this.panel1.Controls.Add(this.textAssinatura);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.textCnpj);
-            this.panel1.Controls.Add(this.textNumeroRecibo);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Controls.Add(this.textImportanciade2);
@@ -441,7 +437,6 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textImportanciade1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textValorRecibo);
             this.panel1.Controls.Add(this.textRecebemosde);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
@@ -450,6 +445,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(857, 576);
             this.panel1.TabIndex = 98;
+            // 
+            // textValorRecibo
+            // 
+            this.textValorRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textValorRecibo.Location = new System.Drawing.Point(689, 3);
+            this.textValorRecibo.Name = "textValorRecibo";
+            this.textValorRecibo.Size = new System.Drawing.Size(154, 29);
+            this.textValorRecibo.TabIndex = 98;
+            this.textValorRecibo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textValorRecibo.TextChanged += new System.EventHandler(this.textValorRecibo_TextChanged_1);
+            this.textValorRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textValorRecibo_KeyPress);
             // 
             // btnNovo
             // 
@@ -582,12 +588,32 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.dbpetsepetsDataSet;
             this.dataGridView1.Location = new System.Drawing.Point(11, 594);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(857, 126);
             this.dataGridView1.TabIndex = 105;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dbpetsepetsDataSet
+            // 
+            this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
+            this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dbpetsepetsDataSetBindingSource
+            // 
+            this.dbpetsepetsDataSetBindingSource.DataSource = this.dbpetsepetsDataSet;
+            this.dbpetsepetsDataSetBindingSource.Position = 0;
+            // 
+            // textNumeroRecibo
+            // 
+            this.textNumeroRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNumeroRecibo.Location = new System.Drawing.Point(339, 3);
+            this.textNumeroRecibo.Name = "textNumeroRecibo";
+            this.textNumeroRecibo.Size = new System.Drawing.Size(148, 29);
+            this.textNumeroRecibo.TabIndex = 99;
             // 
             // frmRecibo
             // 
@@ -610,15 +636,16 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.MaskedTextBox textValorRecibo;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textEmitente;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textAssinatura;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textCnpj;
@@ -634,7 +661,6 @@
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textImportanciade2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.TextBox textNumeroRecibo;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textReferentea1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textReferentea2;
@@ -650,5 +676,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textPesquisar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textValorRecibo;
+        private System.Windows.Forms.BindingSource dbpetsepetsDataSetBindingSource;
+        private SistemaPet.dbpetsepetsDataSet dbpetsepetsDataSet;
+        private System.Windows.Forms.TextBox textNumeroRecibo;
     }
 }

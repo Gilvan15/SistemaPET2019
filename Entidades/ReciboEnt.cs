@@ -9,7 +9,6 @@ namespace Entidades
     public class ReciboEnt
     {
         private int id;
-        private string numero;
         private string valor;
         private string recebemosde;
         private string importancia1;
@@ -21,7 +20,6 @@ namespace Entidades
         private DateTime data;
 
         public int Id { get => id; set => id = value; }
-        public string Numero { get => numero; set => numero = value; }
         public string Valor { get => valor; set => valor = value; }
         public string Recebemosde { get => recebemosde; set => recebemosde = value; }
         public string Importancia1 { get => importancia1; set => importancia1 = value; }
