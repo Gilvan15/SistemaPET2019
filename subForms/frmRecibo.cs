@@ -75,9 +75,6 @@ namespace SistemaPet.subForms
                 {
                     ((BunifuMaterialTextbox)ctrl).Enabled = false;
                 }
-
-
-
             }
         }
 
@@ -145,6 +142,7 @@ namespace SistemaPet.subForms
 
         private void DesabilitarCampos()
         {
+            /*
             textNumeroRecibo.Enabled = false;
             textValorRecibo.Enabled = false;
             textRecebemosde.Enabled = false;
@@ -155,6 +153,24 @@ namespace SistemaPet.subForms
             textEmitente.Enabled = false;
             textCnpj.Enabled = false;
             textAssinatura.Enabled = false;
+            */
+
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+
+                    ((TextBox)ctrl).Enabled = false;
+                }
+
+                if (ctrl is BunifuMaterialTextbox)
+                {
+                    ((BunifuMaterialTextbox)ctrl).Enabled = false;
+                }
+            }
+
+
+
 
         }
         private void LimparCampos()
@@ -217,11 +233,18 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
-        
 
         private void btnPrepararImpressao_Click(object sender, EventArgs e)
         {
             sound1();
+
+            if (textNumeroRecibo.Text == string.Empty) 
+            {
+                sound3();
+                MessageBox.Show("Salve primeiro o registro para preparar a impressão ok!", "AVISO!", MessageBoxButtons.OK);
+                return;
+            }
+
             Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, 
                 textRecebemosde.Text, textImportanciade1.Text, textImportanciade2.Text, 
                 textReferentea1.Text, textReferentea2.Text, textEmitente.Text, textCnpj.Text);

@@ -234,7 +234,7 @@ namespace SistemaPet.subForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error DataGrid: " + ex.Message);
+                MessageBox.Show("Error DataGrid: TESTE! " + ex.Message);
             }
         }
         private void btnNovo_Click_1(object sender, EventArgs e)
