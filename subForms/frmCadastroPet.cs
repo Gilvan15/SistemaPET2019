@@ -359,7 +359,7 @@ namespace SistemaPet.subForms
                     catch (Exception ex)
                     {
                         sound3();
-                        MessageBox.Show("Erro Câmera: " + "WebCam não encontrada neste dispositivo!", "Aviso", MessageBoxButtons.OK);
+                        MessageBox.Show("Erro Câmera: " + "Dispositivo WebCam não encontrado neste computador!", "Aviso", MessageBoxButtons.OK);
                     }
                     
                     
