@@ -21,8 +21,9 @@ namespace SistemaPet.subForms
 {
     public partial class frmCadastroPet : Form
     {
-        //private FilterInfoCollection videoDevices;
+        private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoSource;
+        private bool DeviceExist = false;
         AnimalEnt objTabela = new AnimalEnt();
         private string opc = "";
         string pasta_aplicacao = "";
@@ -31,6 +32,7 @@ namespace SistemaPet.subForms
         {
             InitializeComponent();
             pasta_aplicacao = Application.StartupPath + @"\";
+            carregarCamera();
         }
 
         private void DesabilitarCampos()
@@ -56,7 +58,9 @@ namespace SistemaPet.subForms
             textEmail.Text = null;
             richTextBoxCE.Text = null;
             textAlegMedic.Text = null;
-            pictureCamera.Image = null;
+            pictureCamera.Image = Image.FromFile(pasta_aplicacao + "img\\dog1.png");
+            textPesquisar.Text = null;
+
         }
 
         private void HabilitarCampos()
@@ -182,7 +186,7 @@ namespace SistemaPet.subForms
                     try
                     {
 
-                        if (textCod.Text == Convert.ToString(null) || textNome.Text == "")
+                        if (textCod.Text == Convert.ToString(null))
                         {
                             sound3();
                             MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
@@ -278,22 +282,6 @@ namespace SistemaPet.subForms
             }
         }
 
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            sound1();
-            if (checkBox2.Checked == true)
-            {
-                lblQuais.Visible = true;
-                textAlegMedic.Visible = true;
-            }
-            else 
-            {
-                lblQuais.Visible = false;
-                textAlegMedic.Visible = false;
-            }
-        }
-
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
@@ -321,7 +309,69 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\stopcamera.wav");
             player.Play();
         }
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void frmCadastroPet_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'dbpetsepetsDataSet.Animal'. Você pode movê-la ou removê-la conforme necessário.
+            this.animalTableAdapter.Fill(this.dbpetsepetsDataSet.Animal);
+            CarregaCombo();
+            ListarGrid();
+            DesabilitarCampos();
+        }
+
+        private void carregarCamera() 
+        {
+            try
+            {
+                videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                comboCamera.Items.Clear();
+                if (videoDevices.Count == 0)
+                    throw new ApplicationException();
+
+                DeviceExist = true;
+                foreach (FilterInfo device in videoDevices)
+                {
+                    comboCamera.Items.Add(device.Name);
+                }
+                comboCamera.SelectedIndex = 0; //make dafault to first cam
+            }
+            catch (ApplicationException)
+            {
+                DeviceExist = false;
+                comboCamera.Items.Add("Nenhum dispositivo encontrado!");
+            }
+        }
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Salvar";
+            InicarOpc();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                HabilitarCampos();
+                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                comboEspecie.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textRaca.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textNome.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                comboProprietario.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textTelefone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textEmail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                richTextBoxCE.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textAlegMedic.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                CarregarFoto();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("BADE!! ERROR DataGrid: " + ex.Message);
+            }
+
+        }
+
+        private void btnPesquisar_Click_1(object sender, EventArgs e)
         {
             sound1();
             if (pictureLupa.Visible == false)
@@ -336,18 +386,44 @@ namespace SistemaPet.subForms
                 pictureLupa.Visible = false;
                 textPesquisar.Visible = false;
             }
-
         }
-        private void btnAtivarCamera_Click(object sender, EventArgs e)
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Excluir";
+            InicarOpc();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Editar";
+            InicarOpc();
+        }
+
+        private void btnLimpar_Click_1(object sender, EventArgs e)
+        {
+            sound2();
+            LimparCampos();
+            DesabilitarCampos();
+        }
+
+        private void btnNovo_Click_1(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Novo";
+            InicarOpc();
+        }
+        private void btnAtivarCamera_Click_1(object sender, EventArgs e)
         {
             if (videoSource != null)
             {
                 MessageBox.Show("A câmera já está ativada!", "Aviso!", MessageBoxButtons.OK);
             }
-            else 
+            else
             {
-                FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
                 sound1();
+                FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
                 if (videosources != null)
                 {
                     try
@@ -356,25 +432,21 @@ namespace SistemaPet.subForms
                         videoSource.NewFrame += (s, i) => pictureCamera.Image = (Bitmap)i.Frame.Clone();
                         videoSource.Start();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         sound3();
                         MessageBox.Show("Erro Câmera: " + "Dispositivo WebCam não encontrado neste computador!", "Aviso", MessageBoxButtons.OK);
                     }
-                    
-                    
                 }
             }
         }
-
-        private void btnTirarFoto_Click(object sender, EventArgs e)
+        private void btnTirarFoto_Click_1(object sender, EventArgs e)
         {
-            if (videoSource == null) 
+            if (videoSource == null)
             {
                 MessageBox.Show("Ative primerio a camera!", "Aviso!", MessageBoxButtons.OK);
                 return;
             }
-
             sound4();
             base.OnClosed(e);
             if (videoSource != null && videoSource.IsRunning)
@@ -382,31 +454,25 @@ namespace SistemaPet.subForms
                 videoSource.SignalToStop();
                 videoSource = null;
             }
-
         }
-
-        private void btnOffCamera_Click(object sender, EventArgs e)
+        private void btnOffCamera_Click_1(object sender, EventArgs e)
         {
             try
             {
-                if (videoSource != null) 
+                if (videoSource != null)
                 {
                     sound5();
                     videoSource.SignalToStop();
                     pictureCamera.Image = null;
                     videoSource = null;
                 }
-
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error: " + ex.Message );
+                MessageBox.Show("Error: " + ex.Message);
             }
-            
         }
-
-        private void btnSalvarFoto_Click(object sender, EventArgs e)
+        private void btnSalvarFoto_Click_1(object sender, EventArgs e)
         {
             if (pictureCamera.Image == null)
             {
@@ -434,12 +500,10 @@ namespace SistemaPet.subForms
             {
                 try
                 {
-                    
                     cn.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Foto Cadastrada com Sucesso!");
                     ListarGrid();
-
                 }
                 catch (Exception ex)
                 {
@@ -451,81 +515,14 @@ namespace SistemaPet.subForms
                 pictureCamera.Image = null;
                 return;
             }
-
-
-
-
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Salvar";
-            InicarOpc();
-
-
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Editar";
-            InicarOpc();
-
-
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
-            sound1();
-            opc = "Excluir";
-            InicarOpc();
-
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Novo";
-            InicarOpc();
-
-
-        }
-
-        private void frmCadastroPet_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'dbpetsepetsDataSet.Animal'. Você pode movê-la ou removê-la conforme necessário.
-            this.animalTableAdapter.Fill(this.dbpetsepetsDataSet.Animal);
-
-            CarregaCombo();
-            ListarGrid();
-            DesabilitarCampos();
-        }
-
-        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
-        {
-            if (textPesquisar.Text == "")
-            {
-                ListarGrid();
-                return;
-            }
-            opc = "Buscar";
-            InicarOpc();
-        }
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            sound2();
-            LimparCampos();
-            DesabilitarCampos();
-        }
-        private void comboProprietario_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboProprietario_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection())
             {
                 try
                 {
-                    
                     con.ConnectionString = Settings.Default.dbpetsepetsConnectionString;
                     con.Open();
                     SqlCommand cmd = con.CreateCommand();
@@ -535,7 +532,7 @@ namespace SistemaPet.subForms
                     DataTable dt = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
-                    foreach (DataRow dr in dt.Rows) 
+                    foreach (DataRow dr in dt.Rows)
                     {
                         textTelefone.Text = dr["telefone1"].ToString();
                         textEmail.Text = dr["email"].ToString();
@@ -548,26 +545,35 @@ namespace SistemaPet.subForms
                 }
             }
         }
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            sound1();
+            if (checkBox2.Checked == true)
             {
-                HabilitarCampos();
-                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                comboEspecie.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textRaca.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textNome.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                comboProprietario.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textTelefone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textEmail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                richTextBoxCE.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textAlegMedic.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                CarregarFoto();
+                lblQuais.Visible = true;
+                textAlegMedic.Visible = true;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("BADE!! ERROR DataGrid: " + ex.Message);
+                lblQuais.Visible = false;
+                textAlegMedic.Visible = false;
             }
+        }
+
+        private void comboCamera_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show("passou aqui!");
+        }
+
+        private void textPesquisar_OnValueChanged_1(object sender, EventArgs e)
+        {
+            if (textPesquisar.Text == "")
+            {
+                ListarGrid();
+                return;
+            }
+            opc = "Buscar";
+            InicarOpc();
 
         }
     }

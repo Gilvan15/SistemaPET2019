@@ -45,35 +45,9 @@ namespace SistemaPet.subForms
 
         }
 
-
         private void frmCamera_Load(object sender, EventArgs e)
         {
 
-            Image myimage = new Bitmap(@"C:\Repositorio\SistemaPetShop\img\pn01.jpg");
-            this.BackgroundImage = myimage;
-
-
-            //código do carregamento (load) do Form
-            //lista os dispositivos de captura de imagem do computador/notebook
-            try
-            {
-                videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-                comboCamera.Items.Clear();
-                if (videoDevices.Count == 0)
-                    throw new ApplicationException();
-
-                DeviceExist = true;
-                foreach (FilterInfo device in videoDevices)
-                {
-                    comboCamera.Items.Add(device.Name);
-                }
-                comboCamera.SelectedIndex = 0; //make dafault to first cam
-            }
-            catch (ApplicationException)
-            {
-                DeviceExist = false;
-                comboCamera.Items.Add("Nenhum dispositivo encontrado!");
-            }
 
         }
 
