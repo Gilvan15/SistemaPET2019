@@ -348,9 +348,9 @@
             this.bunifuCustomLabel8.Location = new System.Drawing.Point(42, 1);
             this.bunifuCustomLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(331, 29);
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(266, 29);
             this.bunifuCustomLabel8.TabIndex = 65;
-            this.bunifuCustomLabel8.Text = "- Cadastro de Pessoa Física";
+            this.bunifuCustomLabel8.Text = "- Cadastro de Clientes";
             // 
             // bunifuCustomLabel9
             // 
@@ -732,6 +732,8 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
