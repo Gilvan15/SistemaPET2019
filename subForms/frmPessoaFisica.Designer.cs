@@ -123,7 +123,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(227, 70);
+            this.pictureBox1.Location = new System.Drawing.Point(227, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,7 +215,7 @@
             // 
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(13, 332);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(13, 359);
             this.bunifuCustomLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(55, 20);
@@ -278,7 +278,7 @@
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(13, 269);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(13, 298);
             this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(43, 20);
@@ -289,7 +289,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(13, 143);
+            this.lblNome.Location = new System.Drawing.Point(13, 115);
             this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(55, 20);
@@ -300,7 +300,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(13, 80);
+            this.lblCodigo.Location = new System.Drawing.Point(13, 54);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(63, 20);
@@ -357,7 +357,7 @@
             this.bunifuCustomLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(486, 269);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(477, 298);
             this.bunifuCustomLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(69, 20);
@@ -369,7 +369,7 @@
             this.bunifuCustomLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(329, 332);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(330, 359);
             this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(112, 20);
@@ -380,7 +380,7 @@
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(13, 395);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(13, 420);
             this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(67, 20);
@@ -415,7 +415,7 @@
             this.textCod.LineIdleColor = System.Drawing.Color.Gray;
             this.textCod.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textCod.LineThickness = 3;
-            this.textCod.Location = new System.Drawing.Point(76, 71);
+            this.textCod.Location = new System.Drawing.Point(76, 45);
             this.textCod.Margin = new System.Windows.Forms.Padding(5);
             this.textCod.Name = "textCod";
             this.textCod.Size = new System.Drawing.Size(143, 29);
@@ -436,7 +436,7 @@
             this.textPesquisar.LineIdleColor = System.Drawing.Color.Gray;
             this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textPesquisar.LineThickness = 3;
-            this.textPesquisar.Location = new System.Drawing.Point(265, 71);
+            this.textPesquisar.Location = new System.Drawing.Point(265, 45);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
             this.textPesquisar.Size = new System.Drawing.Size(433, 29);
@@ -459,7 +459,7 @@
             this.textNome.LineIdleColor = System.Drawing.Color.Gray;
             this.textNome.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textNome.LineThickness = 3;
-            this.textNome.Location = new System.Drawing.Point(74, 134);
+            this.textNome.Location = new System.Drawing.Point(74, 106);
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(624, 29);
@@ -480,7 +480,7 @@
             this.textRua.LineIdleColor = System.Drawing.Color.Gray;
             this.textRua.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textRua.LineThickness = 3;
-            this.textRua.Location = new System.Drawing.Point(74, 260);
+            this.textRua.Location = new System.Drawing.Point(65, 289);
             this.textRua.Margin = new System.Windows.Forms.Padding(5);
             this.textRua.Name = "textRua";
             this.textRua.Size = new System.Drawing.Size(403, 29);
@@ -500,7 +500,7 @@
             this.textNumero.LineIdleColor = System.Drawing.Color.Gray;
             this.textNumero.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textNumero.LineThickness = 3;
-            this.textNumero.Location = new System.Drawing.Point(554, 260);
+            this.textNumero.Location = new System.Drawing.Point(554, 289);
             this.textNumero.Margin = new System.Windows.Forms.Padding(5);
             this.textNumero.Name = "textNumero";
             this.textNumero.Size = new System.Drawing.Size(144, 29);
@@ -521,7 +521,7 @@
             this.textBairro.LineIdleColor = System.Drawing.Color.Gray;
             this.textBairro.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textBairro.LineThickness = 3;
-            this.textBairro.Location = new System.Drawing.Point(76, 323);
+            this.textBairro.Location = new System.Drawing.Point(77, 350);
             this.textBairro.Margin = new System.Windows.Forms.Padding(5);
             this.textBairro.Name = "textBairro";
             this.textBairro.Size = new System.Drawing.Size(244, 29);
@@ -541,7 +541,7 @@
             this.textComplemento.LineIdleColor = System.Drawing.Color.Gray;
             this.textComplemento.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textComplemento.LineThickness = 3;
-            this.textComplemento.Location = new System.Drawing.Point(440, 323);
+            this.textComplemento.Location = new System.Drawing.Point(441, 350);
             this.textComplemento.Margin = new System.Windows.Forms.Padding(5);
             this.textComplemento.Name = "textComplemento";
             this.textComplemento.Size = new System.Drawing.Size(258, 29);
@@ -562,7 +562,7 @@
             this.textFuncao.LineIdleColor = System.Drawing.Color.Gray;
             this.textFuncao.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textFuncao.LineThickness = 3;
-            this.textFuncao.Location = new System.Drawing.Point(76, 386);
+            this.textFuncao.Location = new System.Drawing.Point(76, 412);
             this.textFuncao.Margin = new System.Windows.Forms.Padding(5);
             this.textFuncao.Name = "textFuncao";
             this.textFuncao.Size = new System.Drawing.Size(365, 29);
@@ -574,7 +574,7 @@
             this.bunifuCustomLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(247, 206);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(250, 173);
             this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(34, 20);
@@ -586,7 +586,7 @@
             this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(447, 206);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(450, 173);
             this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(38, 20);
@@ -606,7 +606,7 @@
             this.textRg.LineIdleColor = System.Drawing.Color.Gray;
             this.textRg.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textRg.LineThickness = 3;
-            this.textRg.Location = new System.Drawing.Point(280, 197);
+            this.textRg.Location = new System.Drawing.Point(283, 164);
             this.textRg.Margin = new System.Windows.Forms.Padding(5);
             this.textRg.Name = "textRg";
             this.textRg.Size = new System.Drawing.Size(161, 29);
@@ -626,10 +626,10 @@
             this.textCpf.LineIdleColor = System.Drawing.Color.Gray;
             this.textCpf.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textCpf.LineThickness = 3;
-            this.textCpf.Location = new System.Drawing.Point(490, 197);
+            this.textCpf.Location = new System.Drawing.Point(493, 164);
             this.textCpf.Margin = new System.Windows.Forms.Padding(5);
             this.textCpf.Name = "textCpf";
-            this.textCpf.Size = new System.Drawing.Size(211, 29);
+            this.textCpf.Size = new System.Drawing.Size(205, 29);
             this.textCpf.TabIndex = 4;
             this.textCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -647,10 +647,10 @@
             this.textEmail.LineIdleColor = System.Drawing.Color.Gray;
             this.textEmail.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textEmail.LineThickness = 3;
-            this.textEmail.Location = new System.Drawing.Point(74, 197);
+            this.textEmail.Location = new System.Drawing.Point(74, 164);
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(167, 29);
+            this.textEmail.Size = new System.Drawing.Size(170, 29);
             this.textEmail.TabIndex = 2;
             this.textEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -658,7 +658,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(13, 206);
+            this.lblEmail.Location = new System.Drawing.Point(13, 173);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(52, 20);
@@ -678,10 +678,10 @@
             this.textTelefone1.LineIdleColor = System.Drawing.Color.Gray;
             this.textTelefone1.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textTelefone1.LineThickness = 3;
-            this.textTelefone1.Location = new System.Drawing.Point(95, 236);
+            this.textTelefone1.Location = new System.Drawing.Point(74, 228);
             this.textTelefone1.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone1.Name = "textTelefone1";
-            this.textTelefone1.Size = new System.Drawing.Size(225, 29);
+            this.textTelefone1.Size = new System.Drawing.Size(223, 29);
             this.textTelefone1.TabIndex = 94;
             this.textTelefone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -690,12 +690,12 @@
             this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(13, 245);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(6, 237);
             this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(84, 20);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(59, 20);
             this.bunifuCustomLabel2.TabIndex = 95;
-            this.bunifuCustomLabel2.Text = "Telefone1:";
+            this.bunifuCustomLabel2.Text = "Fone1:";
             // 
             // textTelefone2
             // 
@@ -710,10 +710,10 @@
             this.textTelefone2.LineIdleColor = System.Drawing.Color.Gray;
             this.textTelefone2.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textTelefone2.LineThickness = 3;
-            this.textTelefone2.Location = new System.Drawing.Point(425, 236);
+            this.textTelefone2.Location = new System.Drawing.Point(374, 228);
             this.textTelefone2.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone2.Name = "textTelefone2";
-            this.textTelefone2.Size = new System.Drawing.Size(211, 29);
+            this.textTelefone2.Size = new System.Drawing.Size(223, 29);
             this.textTelefone2.TabIndex = 96;
             this.textTelefone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -722,12 +722,12 @@
             this.bunifuCustomLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(329, 245);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(306, 237);
             this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(84, 20);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(59, 20);
             this.bunifuCustomLabel3.TabIndex = 97;
-            this.bunifuCustomLabel3.Text = "Telefone2:";
+            this.bunifuCustomLabel3.Text = "Fone2:";
             // 
             // dataGridView1
             // 
