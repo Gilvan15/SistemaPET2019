@@ -328,9 +328,11 @@ namespace SistemaPet.subForms
                 HabilitarCampos();
                 textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textNome.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textRg.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textCpf.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textEmail.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textEmail.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textRg.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textCpf.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textTelefone1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textTelefone1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 textRua.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 textNumero.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 textBairro.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
