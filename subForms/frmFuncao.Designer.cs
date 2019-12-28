@@ -52,17 +52,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.funcaoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.funcaoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcaoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcaoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNovo
@@ -370,6 +368,11 @@
             this.funcaoBindingSource1.DataMember = "Funcao";
             this.funcaoBindingSource1.DataSource = this.dbpetsepetsDataSet;
             // 
+            // funcaoBindingSource2
+            // 
+            this.funcaoBindingSource2.DataMember = "Funcao";
+            this.funcaoBindingSource2.DataSource = this.dbpetsepetsDataSet;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
@@ -378,7 +381,6 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -388,38 +390,15 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.descricaoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.funcaoBindingSource2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 395);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 399);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(853, 162);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // funcaoBindingSource2
-            // 
-            this.funcaoBindingSource2.DataMember = "Funcao";
-            this.funcaoBindingSource2.DataSource = this.dbpetsepetsDataSet;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridView1.TabIndex = 69;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // frmFuncao
             // 
@@ -454,8 +433,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcaoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcaoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,9 +463,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private System.Windows.Forms.BindingSource funcaoBindingSource1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource funcaoBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

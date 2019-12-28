@@ -13,7 +13,7 @@ namespace Entidades
         private string rg;
         private string cpf;
         private string email;
-        private string telefone1;
+        private string telefone1;   
         private string telefone2;
         private string rua;
         private int numero;

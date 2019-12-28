@@ -400,21 +400,7 @@ namespace SistemaPet.subForms
             }
             
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                //HabilitarCampos();
-                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textDescricao.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error DataGrid: " + ex.Message);
-            }
-        }
-
+        
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
@@ -436,6 +422,21 @@ namespace SistemaPet.subForms
             if (e.KeyChar == 13)
             {
                 btnSalvar.Focus();
+            }
+        }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //HabilitarCampos();
+                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textDescricao.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error DataGrid: " + ex.Message);
             }
         }
     }

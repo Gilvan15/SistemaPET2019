@@ -30,22 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroPet));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.comboCamera = new System.Windows.Forms.ComboBox();
             this.comboProprietario = new System.Windows.Forms.ComboBox();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alergicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.animalBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -86,8 +76,8 @@
             this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.animalBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLupa)).BeginInit();
@@ -96,17 +86,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.bunifuCustomLabel6);
             this.panel1.Controls.Add(this.comboCamera);
             this.panel1.Controls.Add(this.comboProprietario);
             this.panel1.Controls.Add(this.btnLimpar);
-            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.textPesquisar);
             this.panel1.Controls.Add(this.pictureLupa);
             this.panel1.Controls.Add(this.richTextBoxCE);
@@ -143,7 +134,7 @@
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(892, 812);
+            this.panel1.Size = new System.Drawing.Size(875, 812);
             this.panel1.TabIndex = 0;
             // 
             // bunifuCustomLabel6
@@ -152,7 +143,7 @@
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(494, 264);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(477, 264);
             this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(79, 20);
@@ -164,7 +155,7 @@
             this.comboCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboCamera.FormattingEnabled = true;
-            this.comboCamera.Location = new System.Drawing.Point(580, 260);
+            this.comboCamera.Location = new System.Drawing.Point(563, 260);
             this.comboCamera.Name = "comboCamera";
             this.comboCamera.Size = new System.Drawing.Size(189, 28);
             this.comboCamera.TabIndex = 171;
@@ -189,105 +180,13 @@
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(729, 733);
+            this.btnLimpar.Location = new System.Drawing.Point(712, 733);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(71, 26);
             this.btnLimpar.TabIndex = 168;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click_1);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.alergicoDataGridViewTextBoxColumn,
-            this.dataGridViewImageColumn1});
-            this.dataGridView1.DataSource = this.animalBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 527);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(866, 170);
-            this.dataGridView1.TabIndex = 170;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "especie";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Espécie";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "raca";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Raça";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "nome";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "proprietario";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Proprietário";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "telefone";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Telefone";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "email";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "cuidados_esp";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Cuidados Especiais";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 200;
-            // 
-            // alergicoDataGridViewTextBoxColumn
-            // 
-            this.alergicoDataGridViewTextBoxColumn.DataPropertyName = "alergico";
-            this.alergicoDataGridViewTextBoxColumn.HeaderText = "Alérgico a Medicamentos";
-            this.alergicoDataGridViewTextBoxColumn.Name = "alergicoDataGridViewTextBoxColumn";
-            this.alergicoDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "foto";
-            this.dataGridViewImageColumn1.HeaderText = "foto";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // animalBindingSource2
             // 
@@ -316,7 +215,7 @@
             this.textPesquisar.Location = new System.Drawing.Point(214, 423);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
-            this.textPesquisar.Size = new System.Drawing.Size(664, 29);
+            this.textPesquisar.Size = new System.Drawing.Size(647, 29);
             this.textPesquisar.TabIndex = 166;
             this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textPesquisar.Visible = false;
@@ -339,7 +238,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxCE.Location = new System.Drawing.Point(176, 374);
             this.richTextBoxCE.Name = "richTextBoxCE";
-            this.richTextBoxCE.Size = new System.Drawing.Size(705, 41);
+            this.richTextBoxCE.Size = new System.Drawing.Size(688, 41);
             this.richTextBoxCE.TabIndex = 165;
             this.richTextBoxCE.Text = "";
             // 
@@ -352,7 +251,7 @@
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(652, 735);
+            this.btnNovo.Location = new System.Drawing.Point(635, 735);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(71, 26);
             this.btnNovo.TabIndex = 164;
@@ -369,7 +268,7 @@
             this.btnSalvarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnSalvarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarFoto.Location = new System.Drawing.Point(775, 258);
+            this.btnSalvarFoto.Location = new System.Drawing.Point(758, 258);
             this.btnSalvarFoto.Name = "btnSalvarFoto";
             this.btnSalvarFoto.Size = new System.Drawing.Size(105, 30);
             this.btnSalvarFoto.TabIndex = 163;
@@ -386,7 +285,7 @@
             this.btnOffCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffCamera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnOffCamera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOffCamera.Location = new System.Drawing.Point(492, 208);
+            this.btnOffCamera.Location = new System.Drawing.Point(475, 208);
             this.btnOffCamera.Name = "btnOffCamera";
             this.btnOffCamera.Size = new System.Drawing.Size(82, 44);
             this.btnOffCamera.TabIndex = 162;
@@ -403,7 +302,7 @@
             this.btnTirarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTirarFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnTirarFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTirarFoto.Location = new System.Drawing.Point(492, 130);
+            this.btnTirarFoto.Location = new System.Drawing.Point(475, 130);
             this.btnTirarFoto.Name = "btnTirarFoto";
             this.btnTirarFoto.Size = new System.Drawing.Size(82, 44);
             this.btnTirarFoto.TabIndex = 161;
@@ -420,7 +319,7 @@
             this.btnAtivarCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtivarCamera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnAtivarCamera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtivarCamera.Location = new System.Drawing.Point(492, 52);
+            this.btnAtivarCamera.Location = new System.Drawing.Point(475, 52);
             this.btnAtivarCamera.Name = "btnAtivarCamera";
             this.btnAtivarCamera.Size = new System.Drawing.Size(82, 44);
             this.btnAtivarCamera.TabIndex = 160;
@@ -432,7 +331,7 @@
             // 
             this.pictureCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureCamera.Location = new System.Drawing.Point(580, 52);
+            this.pictureCamera.Location = new System.Drawing.Point(563, 52);
             this.pictureCamera.Name = "pictureCamera";
             this.pictureCamera.Size = new System.Drawing.Size(300, 200);
             this.pictureCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -450,7 +349,7 @@
             "FELINA"});
             this.comboEspecie.Location = new System.Drawing.Point(246, 60);
             this.comboEspecie.Name = "comboEspecie";
-            this.comboEspecie.Size = new System.Drawing.Size(205, 28);
+            this.comboEspecie.Size = new System.Drawing.Size(188, 28);
             this.comboEspecie.TabIndex = 158;
             // 
             // btnExcluir
@@ -462,7 +361,7 @@
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(806, 703);
+            this.btnExcluir.Location = new System.Drawing.Point(789, 703);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(71, 26);
             this.btnExcluir.TabIndex = 157;
@@ -479,7 +378,7 @@
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(652, 703);
+            this.btnPesquisar.Location = new System.Drawing.Point(635, 703);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(148, 26);
             this.btnPesquisar.TabIndex = 156;
@@ -496,7 +395,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(806, 733);
+            this.btnEditar.Location = new System.Drawing.Point(789, 733);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(71, 26);
             this.btnEditar.TabIndex = 155;
@@ -543,7 +442,7 @@
             this.bunifuSeparator4.Location = new System.Drawing.Point(12, 792);
             this.bunifuSeparator4.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuSeparator4.Name = "bunifuSeparator4";
-            this.bunifuSeparator4.Size = new System.Drawing.Size(866, 26);
+            this.bunifuSeparator4.Size = new System.Drawing.Size(849, 26);
             this.bunifuSeparator4.TabIndex = 152;
             this.bunifuSeparator4.Transparency = 255;
             this.bunifuSeparator4.Vertical = false;
@@ -565,7 +464,7 @@
             this.textEmail.Location = new System.Drawing.Point(566, 303);
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(315, 29);
+            this.textEmail.Size = new System.Drawing.Size(298, 29);
             this.textEmail.TabIndex = 151;
             this.textEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -598,7 +497,7 @@
             this.textRaca.Location = new System.Drawing.Point(75, 117);
             this.textRaca.Margin = new System.Windows.Forms.Padding(5);
             this.textRaca.Name = "textRaca";
-            this.textRaca.Size = new System.Drawing.Size(376, 29);
+            this.textRaca.Size = new System.Drawing.Size(359, 29);
             this.textRaca.TabIndex = 149;
             this.textRaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -643,7 +542,7 @@
             this.textAlegMedic.Location = new System.Drawing.Point(296, 476);
             this.textAlegMedic.Margin = new System.Windows.Forms.Padding(5);
             this.textAlegMedic.Name = "textAlegMedic";
-            this.textAlegMedic.Size = new System.Drawing.Size(582, 29);
+            this.textAlegMedic.Size = new System.Drawing.Size(565, 29);
             this.textAlegMedic.TabIndex = 146;
             this.textAlegMedic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textAlegMedic.Visible = false;
@@ -690,7 +589,7 @@
             this.textTelefone.Location = new System.Drawing.Point(115, 303);
             this.textTelefone.Margin = new System.Windows.Forms.Padding(5);
             this.textTelefone.Name = "textTelefone";
-            this.textTelefone.Size = new System.Drawing.Size(336, 29);
+            this.textTelefone.Size = new System.Drawing.Size(319, 29);
             this.textTelefone.TabIndex = 143;
             this.textTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -723,7 +622,7 @@
             this.textNome.Location = new System.Drawing.Point(74, 179);
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(377, 29);
+            this.textNome.Size = new System.Drawing.Size(360, 29);
             this.textNome.TabIndex = 141;
             this.textNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -816,7 +715,7 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(14, 25);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(867, 22);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(850, 22);
             this.bunifuSeparator1.TabIndex = 134;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -838,6 +737,33 @@
             this.dbpetsepetsDataSetBindingSource.DataSource = this.dbpetsepetsDataSet;
             this.dbpetsepetsDataSetBindingSource.Position = 0;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 515);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(849, 182);
+            this.dataGridView1.TabIndex = 173;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
             // frmCadastroPet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,7 +778,6 @@
             this.Load += new System.EventHandler(this.frmCadastroPet_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLupa)).EndInit();
@@ -861,6 +786,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -879,17 +805,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboProprietario;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alergicoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.BindingSource animalBindingSource2;
         private dbpetsepetsDataSet dbpetsepetsDataSet;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textPesquisar;
@@ -932,5 +847,6 @@
         private System.Windows.Forms.BindingSource dbpetsepetsDataSetBindingSource;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private System.Windows.Forms.ComboBox comboCamera;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

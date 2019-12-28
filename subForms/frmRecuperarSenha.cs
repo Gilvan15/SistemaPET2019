@@ -40,7 +40,12 @@ namespace SistemaPet.subForms
             if (ValidarEmail(textEmail.Text) == false)
             {
                 MessageBox.Show("Email com formato incorreto!","Aviso!!!", MessageBoxButtons.OK);
+                return;
             }
+
+            MessageBox.Show("Email Enviado com sucesso!", "Aviso!!!", MessageBoxButtons.OK);
+
+
         }
 
         public static bool ValidarEmail(string strEmail)

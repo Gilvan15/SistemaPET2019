@@ -122,16 +122,28 @@ namespace SistemaPet.subForms
                comboProprietario.Items.Add(item.Nome);
             }
         }
-        
-
         private void ListarGrid()
         {
             try
             {
                 List<AnimalEnt> lista = new List<AnimalEnt>();
                 lista = new AnimalModel().Lista();
-                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
+                
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "ESPÉCIE";
+                dataGridView1.Columns[2].HeaderText = "RAÇA";
+                dataGridView1.Columns[3].HeaderText = "NOME";
+                dataGridView1.Columns[4].HeaderText = "PROPRIETÁRIO";
+                dataGridView1.Columns[5].HeaderText = "TELEFONE";
+                dataGridView1.Columns[6].HeaderText = "EMAIL";
+                dataGridView1.Columns[7].HeaderText = "CUIDADOS ESPECIAIS";
+                dataGridView1.Columns[8].HeaderText = "ALÉRGICO";
+                dataGridView1.Columns[9].HeaderText = "FOTO";
+                
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             }
             catch (Exception ex)
             {
@@ -347,30 +359,6 @@ namespace SistemaPet.subForms
             InicarOpc();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            try
-            {
-                HabilitarCampos();
-                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                comboEspecie.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textRaca.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textNome.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                comboProprietario.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                textTelefone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                textEmail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                richTextBoxCE.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                textAlegMedic.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                CarregarFoto();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("BADE!! ERROR DataGrid: " + ex.Message);
-            }
-
-        }
-
         private void btnPesquisar_Click_1(object sender, EventArgs e)
         {
             sound1();
@@ -574,6 +562,31 @@ namespace SistemaPet.subForms
             }
             opc = "Buscar";
             InicarOpc();
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                HabilitarCampos();
+                textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                comboEspecie.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textRaca.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textNome.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                comboProprietario.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textTelefone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textEmail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                richTextBoxCE.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textAlegMedic.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                CarregarFoto();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("BADE!! ERROR DataGrid: " + ex.Message);
+            }
+
+
 
         }
     }
