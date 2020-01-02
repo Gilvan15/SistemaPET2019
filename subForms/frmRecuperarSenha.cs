@@ -8,6 +8,8 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 namespace SistemaPet.subForms
 {
@@ -34,7 +36,6 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
             player.Play();
         }
-
         private void btnLogar_Click(object sender, EventArgs e)
         {
             if (ValidarEmail(textEmail.Text) == false)
@@ -43,8 +44,39 @@ namespace SistemaPet.subForms
                 return;
             }
 
-            MessageBox.Show("Email Enviado com sucesso!", "Aviso!!!", MessageBoxButtons.OK);
+            MailMessage mail = new MailMessage();
 
+            string Textemail =  textEmail.Text;
+
+            try
+            {
+
+                mail.From = new MailAddress("gilvanx10@gmail.com");
+                mail.To.Add(Textemail); // para
+                mail.Subject = "Teste de envio de email"; // assunto
+                mail.Body = "Testando recuparção de senha..."; // mensagem
+
+                using (var smtp = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtp.EnableSsl = true; // GMail requer SSL
+                    smtp.Port = 587;       // porta para SSL
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network; // modo de envio
+                    smtp.UseDefaultCredentials = false; // vamos utilizar credencias especificas
+
+                    // seu usuário e senha para autenticação
+                    smtp.Credentials = new NetworkCredential("gilvanx10@gmail.com", "ramona10101515");
+                    // envia o e-mail
+                    smtp.Send(mail);
+
+                    MessageBox.Show("Email Enviado com sucesso!, senha Enviada para Email informado! ", "Aviso!!!", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de envio:", ex.Message);
+            }
+            // em caso de anexos
+            //mail.Attachments.Add(new Attachment(@"C:\teste.txt"));
 
         }
 
