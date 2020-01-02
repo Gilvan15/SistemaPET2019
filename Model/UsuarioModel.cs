@@ -42,10 +42,14 @@ namespace Model
         {
             return new UsuarioDAO().Buscar(objTabela);
         }
-
+        
         public UsuarioEnt Login(UsuarioEnt obj) 
         {
             return new UsuarioDAO().Login(obj);
+        }
+        public UsuarioEnt RecoverEmail(UsuarioEnt obj)
+        {
+            return new UsuarioDAO().RecoverEmail(obj);
         }
 
     }

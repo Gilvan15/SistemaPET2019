@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using Entidades;
+using Model;
 
 namespace SistemaPet.subForms
 {
@@ -43,40 +45,53 @@ namespace SistemaPet.subForms
                 MessageBox.Show("Email com formato incorreto!","Aviso!!!", MessageBoxButtons.OK);
                 return;
             }
-
             MailMessage mail = new MailMessage();
-
             string Textemail =  textEmail.Text;
 
-            try
+            UsuarioEnt obj = new UsuarioEnt();
+            obj.Email = Textemail;
+
+            obj = new UsuarioModel().RecoverEmail(obj);
+
+            if (obj.Email == null)
             {
+                MessageBox.Show("Email inexistente!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+            else 
+            {
+               // MessageBox.Show("Result: " + obj.Senha);
 
-                mail.From = new MailAddress("gilvanx10@gmail.com");
-                mail.To.Add(Textemail); // para
-                mail.Subject = "Teste de envio de email"; // assunto
-                mail.Body = "Testando recuparção de senha..."; // mensagem
-
-                using (var smtp = new SmtpClient("smtp.gmail.com"))
+                try
                 {
-                    smtp.EnableSsl = true; // GMail requer SSL
-                    smtp.Port = 587;       // porta para SSL
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network; // modo de envio
-                    smtp.UseDefaultCredentials = false; // vamos utilizar credencias especificas
 
-                    // seu usuário e senha para autenticação
-                    smtp.Credentials = new NetworkCredential("gilvanx10@gmail.com", "ramona10101515");
-                    // envia o e-mail
-                    smtp.Send(mail);
+                    mail.From = new MailAddress("gilvanx10@gmail.com");
+                    mail.To.Add(Textemail); // para
+                    mail.Subject = "Recuparação de Senha Sistema Pets e Pets"; // assunto
+                    mail.Body = "Sua senha Cadastrada é: "  + obj.Senha; // mensagem
 
-                    MessageBox.Show("Email Enviado com sucesso!, senha Enviada para Email informado! ", "Aviso!!!", MessageBoxButtons.OK);
+                    using (var smtp = new SmtpClient("smtp.gmail.com"))
+                    {
+                        smtp.EnableSsl = true; // GMail requer SSL
+                        smtp.Port = 587;       // porta para SSL
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network; // modo de envio
+                        smtp.UseDefaultCredentials = false; // vamos utilizar credencias especificas
+
+                        // seu usuário e senha para autenticação
+                        smtp.Credentials = new NetworkCredential("gilvanx10@gmail.com", "ramona10101515");
+                        // envia o e-mail
+                        smtp.Send(mail);
+
+                        MessageBox.Show("Email Enviado com sucesso!, senha Enviada para Email informado! ", "Aviso!!!", MessageBoxButtons.OK);
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de envio:", ex.Message);
+                }
+                // em caso de anexos
+                //mail.Attachments.Add(new Attachment(@"C:\teste.txt"));
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de envio:", ex.Message);
-            }
-            // em caso de anexos
-            //mail.Attachments.Add(new Attachment(@"C:\teste.txt"));
 
         }
 

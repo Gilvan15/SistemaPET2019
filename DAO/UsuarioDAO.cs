@@ -122,11 +122,10 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM usuario WHERE email = @email AND senha = @senha";
+                cn.CommandText = "SELECT * FROM usuario WHERE email = @email";
                 cn.Connection = con;
 
                 cn.Parameters.Add("email", SqlDbType.VarChar).Value = obj.Email;
-                cn.Parameters.Add("senha", SqlDbType.VarChar).Value = obj.Senha;
                 SqlDataReader dr;
 
                 dr = cn.ExecuteReader();
@@ -149,6 +148,53 @@ namespace DAO
                 return obj;
             }
         }
+
+        public UsuarioEnt RecoverEmail(UsuarioEnt obj)
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = DAO.Properties.Settings.Default.banco;
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;
+                con.Open();
+                cn.CommandText = "SELECT * FROM usuario WHERE email = @email";
+                cn.Parameters.Add("email", SqlDbType.VarChar).Value = obj.Email;
+                cn.Connection = con;
+                SqlDataReader dr;
+                List<UsuarioEnt> lista = new List<UsuarioEnt>();
+
+                dr = cn.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        UsuarioEnt dado = new UsuarioEnt();
+                        dado.Id = Convert.ToInt32(dr["id"]);
+                        dado.Nome = Convert.ToString(dr["nome"]);
+                        dado.Email = Convert.ToString(dr["email"]);
+                        dado.Senha = Convert.ToString(dr["senha"]);
+                        dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
+                        lista.Add(dado);
+                    }
+                    foreach (var item in lista)
+                    {
+                        obj.Email = item.Email;
+                        obj.Senha = item.Senha;
+                    }
+                }
+                else
+                {
+                    obj.Email = null;
+                    obj.Senha = null;
+                }
+                return obj;
+            }
+        }
+
+
+
+
 
         public List<UsuarioEnt> Lista()
         {
