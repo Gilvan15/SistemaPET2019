@@ -38,10 +38,18 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
             player.Play();
         }
+
+        public void sound2()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
+            player.Play();
+        }
+
         private void btnLogar_Click(object sender, EventArgs e)
         {
             if (ValidarEmail(textEmail.Text) == false)
             {
+                sound2();
                 MessageBox.Show("Email com formato incorreto!","Aviso!!!", MessageBoxButtons.OK);
                 return;
             }
@@ -55,6 +63,7 @@ namespace SistemaPet.subForms
 
             if (obj.Email == null)
             {
+                sound2();
                 MessageBox.Show("Email inexistente!", "Aviso!", MessageBoxButtons.OK);
                 return;
             }
@@ -67,8 +76,8 @@ namespace SistemaPet.subForms
 
                     mail.From = new MailAddress("gilvanx10@gmail.com");
                     mail.To.Add(Textemail); // para
-                    mail.Subject = "Recuparação de Senha Sistema Pets e Pets"; // assunto
-                    mail.Body = "Sua senha Cadastrada é: "  + obj.Senha; // mensagem
+                    mail.Subject = "Pets e Pets Recuperação de Senha"; // assunto
+                    mail.Body = "Sua senha Cadastrada no Sistema Pets e Pets é: "  + obj.Senha; // mensagem
 
                     using (var smtp = new SmtpClient("smtp.gmail.com"))
                     {
@@ -82,11 +91,13 @@ namespace SistemaPet.subForms
                         // envia o e-mail
                         smtp.Send(mail);
 
-                        MessageBox.Show("Email Enviado com sucesso!, senha Enviada para Email informado! ", "Aviso!!!", MessageBoxButtons.OK);
+                        MessageBox.Show("Email enviado com sucesso!, Senha enviada para o Email informado!", "Aviso!!!", MessageBoxButtons.OK);
+                        textEmail.Text = null;
                     }
                 }
                 catch (Exception ex)
                 {
+                    sound2();
                     MessageBox.Show("Error de envio:", ex.Message);
                 }
                 // em caso de anexos
