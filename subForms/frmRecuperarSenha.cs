@@ -32,7 +32,6 @@ namespace SistemaPet.subForms
             this.Close();
             frmLog.Show();
         }
-
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
@@ -44,7 +43,6 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
-
         private void btnLogar_Click(object sender, EventArgs e)
         {
             if (ValidarEmail(textEmail.Text) == false)
@@ -103,9 +101,7 @@ namespace SistemaPet.subForms
                 // em caso de anexos
                 //mail.Attachments.Add(new Attachment(@"C:\teste.txt"));
             }
-
         }
-
         public static bool ValidarEmail(string strEmail)
         {
             string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
@@ -113,7 +109,4 @@ namespace SistemaPet.subForms
             {return true;} else {return false;}
         }
     }
-
-
-
 }

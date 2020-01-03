@@ -57,6 +57,7 @@
             this.textNumeroRecibo = new System.Windows.Forms.TextBox();
             this.textValorRecibo = new System.Windows.Forms.TextBox();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -69,6 +70,7 @@
             this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,7 +105,7 @@
             this.textEmitente.Name = "textEmitente";
             this.textEmitente.Size = new System.Drawing.Size(389, 33);
             this.textEmitente.TabIndex = 6;
-            this.textEmitente.Text = "PETS E PETS BANHO E TOSA LTDA.";
+            this.textEmitente.Text = "PETS & PETS RACOES E ACESSORIOS";
             this.textEmitente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textAssinatura
@@ -162,7 +164,7 @@
             this.textCnpj.Name = "textCnpj";
             this.textCnpj.Size = new System.Drawing.Size(297, 33);
             this.textCnpj.TabIndex = 7;
-            this.textCnpj.Text = "66.272.256/0001-66";
+            this.textCnpj.Text = "33.555.177/0001-03";
             this.textCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnPrepararImpressao
@@ -441,6 +443,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(857, 576);
@@ -480,6 +483,16 @@
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(564, 403);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(147, 140);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 100;
+            this.pictureBox3.TabStop = false;
             // 
             // panel2
             // 
@@ -632,6 +645,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -679,5 +693,6 @@
         private System.Windows.Forms.BindingSource dbpetsepetsDataSetBindingSource;
         private SistemaPet.dbpetsepetsDataSet dbpetsepetsDataSet;
         private System.Windows.Forms.TextBox textNumeroRecibo;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
