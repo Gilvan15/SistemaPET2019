@@ -122,10 +122,11 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM usuario WHERE email = @email";
+                cn.CommandText = "SELECT * FROM usuario WHERE email = @email AND senha = @senha ";
                 cn.Connection = con;
 
                 cn.Parameters.Add("email", SqlDbType.VarChar).Value = obj.Email;
+                cn.Parameters.Add("senha", SqlDbType.VarChar).Value = obj.Senha;
                 SqlDataReader dr;
 
                 dr = cn.ExecuteReader();

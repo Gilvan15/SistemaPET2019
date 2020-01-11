@@ -43,7 +43,6 @@ C:\Repositorio\SistemaPET2019\bin\Debug\SistemaPet.exe
 C:\Repositorio\SistemaPET2019\bin\Debug\SistemaPet.pdb
 C:\Repositorio\SistemaPET2019\bin\Debug\AForge.Video.DirectShow.dll
 C:\Repositorio\SistemaPET2019\bin\Debug\AForge.Video.dll
-C:\Repositorio\SistemaPET2019\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Repositorio\SistemaPET2019\bin\Debug\DAO.dll
 C:\Repositorio\SistemaPET2019\bin\Debug\Entidades.dll
 C:\Repositorio\SistemaPET2019\bin\Debug\Model.dll

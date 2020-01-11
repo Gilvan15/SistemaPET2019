@@ -67,7 +67,7 @@ namespace SistemaPet
         }
         public void sound3()
         {
-            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\wavs\aviso.wav");
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
 
@@ -110,6 +110,7 @@ namespace SistemaPet
                 obj.Senha = textSenha.Text;
 
                 obj = new UsuarioModel().Login(obj);
+                
 
                 if (obj.Email == null || obj.Senha == null)
                 {
