@@ -274,8 +274,7 @@ namespace SistemaPet.subForms
             {
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
-        }
-
+        }        
         private void btnNovo_Click(object sender, EventArgs e)
         {
             sound1();
@@ -284,6 +283,7 @@ namespace SistemaPet.subForms
             LimparCampos();
             textDescricao.Focus();
         }
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
             sound1();
@@ -298,7 +298,6 @@ namespace SistemaPet.subForms
             textDescricao.Focus();
             btnSalvar.Enabled = true;
         }
-
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             sound1();
@@ -360,11 +359,10 @@ namespace SistemaPet.subForms
         {
             sound2();
             LimparCampos();
-
         }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
             sound1();
             switch (opc)
             {
@@ -434,9 +432,6 @@ namespace SistemaPet.subForms
                 default:
                     break;
             }
-
-
-
         }
     }
 }

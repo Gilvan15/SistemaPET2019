@@ -125,7 +125,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Location = new System.Drawing.Point(580, 575);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(130, 40);
+            this.btnSalvar.Size = new System.Drawing.Size(120, 40);
             this.btnSalvar.TabIndex = 107;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -143,7 +143,7 @@
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
             this.btnLimpar.Location = new System.Drawing.Point(731, 575);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(130, 40);
+            this.btnLimpar.Size = new System.Drawing.Size(120, 40);
             this.btnLimpar.TabIndex = 106;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -161,7 +161,7 @@
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
             this.btnPesquisar.Location = new System.Drawing.Point(732, 344);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(130, 40);
+            this.btnPesquisar.Size = new System.Drawing.Size(120, 40);
             this.btnPesquisar.TabIndex = 105;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
@@ -179,7 +179,7 @@
             this.btnDeletar.ForeColor = System.Drawing.Color.White;
             this.btnDeletar.Location = new System.Drawing.Point(731, 259);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(130, 40);
+            this.btnDeletar.Size = new System.Drawing.Size(120, 40);
             this.btnDeletar.TabIndex = 104;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = false;
@@ -197,7 +197,7 @@
             this.btnNovo.ForeColor = System.Drawing.Color.White;
             this.btnNovo.Location = new System.Drawing.Point(732, 84);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(130, 40);
+            this.btnNovo.Size = new System.Drawing.Size(120, 40);
             this.btnNovo.TabIndex = 103;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
@@ -305,7 +305,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(732, 173);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(130, 40);
+            this.btnEditar.Size = new System.Drawing.Size(120, 40);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
