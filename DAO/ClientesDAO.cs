@@ -9,10 +9,10 @@ using System.Data;
 
 namespace DAO
 {
-    public class PessoaFisicaDAO
+    public class ClientesDAO
     {
         public int qtd;
-        public int Inserir(PessoaFisicaEnt objTabela)
+        public int Inserir(ClientesEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
             {
@@ -22,18 +22,17 @@ namespace DAO
                     SqlCommand cn = new SqlCommand();
                     cn.CommandType = CommandType.Text;
                     con.Open();
-                    cn.CommandText = "INSERT INTO Pessoa_Fisica ([nome], [rg], [cpf], [email], [telefone1], [telefone2], [rua], [numero], [bairro], [complemento], [id_funcao] ) VALUES (@nome, @rg, @cpf, @email, @telefone1, @telefone2, @rua, @numero, @bairro, @complemento, @id_funcao)";
+                    cn.CommandText = "INSERT INTO Cliente ([nome], [rg], [cpf], [email], [fone1], [fone2], [rua], [numero], [bairro], [complemento], [id_funcao] ) VALUES (@nome, @rg, @cpf, @email, @fone1, @fone2, @rua, @numero, @bairro, @complemento, @id_funcao)";
                     cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
                     cn.Parameters.Add("rg", SqlDbType.VarChar).Value = objTabela.Rg;
                     cn.Parameters.Add("cpf", SqlDbType.VarChar).Value = objTabela.Cpf;
                     cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
-                    cn.Parameters.Add("telefone1", SqlDbType.VarChar).Value = objTabela.Telefone1;
-                    cn.Parameters.Add("telefone2", SqlDbType.VarChar).Value = objTabela.Telefone2;
+                    cn.Parameters.Add("fone1", SqlDbType.VarChar).Value = objTabela.Fone1;
+                    cn.Parameters.Add("fone2", SqlDbType.VarChar).Value = objTabela.Fone2;
                     cn.Parameters.Add("rua", SqlDbType.VarChar).Value = objTabela.Rua;
                     cn.Parameters.Add("numero", SqlDbType.Int).Value = objTabela.Numero;
                     cn.Parameters.Add("bairro", SqlDbType.VarChar).Value = objTabela.Bairro;
                     cn.Parameters.Add("complemento", SqlDbType.VarChar).Value = objTabela.Complemento;
-                    cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Id_funcao;
                     cn.Connection = con;
                     qtd = cn.ExecuteNonQuery();
                 }
@@ -45,7 +44,7 @@ namespace DAO
             }
         }
 
-        public List<PessoaFisicaEnt> Buscar(PessoaFisicaEnt objTabela)
+        public List<ClientesEnt> Buscar(ClientesEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
             {
@@ -53,11 +52,11 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM Pessoa_Fisica WHERE nome like @nome";
+                cn.CommandText = "SELECT * FROM Cliente WHERE nome like @nome";
                 cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome + "%";
                 cn.Connection = con;
                 SqlDataReader dr;
-                List<PessoaFisicaEnt> lista = new List<PessoaFisicaEnt>();
+                List<ClientesEnt> lista = new List<ClientesEnt>();
 
                 dr = cn.ExecuteReader();
 
@@ -65,19 +64,18 @@ namespace DAO
                 {
                     while (dr.Read())
                     {
-                        PessoaFisicaEnt dado = new PessoaFisicaEnt();
+                        ClientesEnt dado = new ClientesEnt();
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
                         dado.Rg = Convert.ToString(dr["rg"]);
                         dado.Cpf = Convert.ToString(dr["cpf"]);
                         dado.Email = Convert.ToString(dr["email"]);
-                        dado.Telefone1 = Convert.ToString(dr["telefone1"]);
-                        dado.Telefone2 = Convert.ToString(dr["telefone2"]);
+                        dado.Fone1 = Convert.ToString(dr["fone1"]);
+                        dado.Fone2 = Convert.ToString(dr["fone2"]);
                         dado.Rua = Convert.ToString(dr["rua"]);
                         dado.Numero = Convert.ToInt32(dr["numero"]);
                         dado.Bairro = Convert.ToString(dr["bairro"]);
                         dado.Complemento = Convert.ToString(dr["complemento"]);
-                        dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
                         lista.Add(dado);
                     }
                 }
@@ -85,7 +83,7 @@ namespace DAO
             }
         }
 
-        public List<PessoaFisicaEnt> BuscarById(int id)
+        public List<ClientesEnt> BuscarById(int id)
         {
             using (SqlConnection con = new SqlConnection())
             {
@@ -93,11 +91,11 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM Pessoa_Fisica WHERE id = @id";
+                cn.CommandText = "SELECT * FROM Cliente WHERE id = @id";
                 cn.Parameters.Add("id", SqlDbType.Int).Value = id;
                 cn.Connection = con;
                 SqlDataReader dr;
-                List<PessoaFisicaEnt> lista = new List<PessoaFisicaEnt>();
+                List<ClientesEnt> lista = new List<ClientesEnt>();
 
                 dr = cn.ExecuteReader();
 
@@ -105,29 +103,26 @@ namespace DAO
                 {
                     while (dr.Read())
                     {
-                        PessoaFisicaEnt dado = new PessoaFisicaEnt();
+                        ClientesEnt dado = new ClientesEnt();
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
                         dado.Rg = Convert.ToString(dr["rg"]);
                         dado.Cpf = Convert.ToString(dr["cpf"]);
                         dado.Email = Convert.ToString(dr["email"]);
-                        dado.Telefone1 = Convert.ToString(dr["telefone1"]);
-                        dado.Telefone2 = Convert.ToString(dr["telefone2"]);
+                        dado.Fone1 = Convert.ToString(dr["fone1"]);
+                        dado.Fone2 = Convert.ToString(dr["fone2"]);
                         dado.Rua = Convert.ToString(dr["rua"]);
                         dado.Numero = Convert.ToInt32(dr["numero"]);
                         dado.Bairro = Convert.ToString(dr["bairro"]);
                         dado.Complemento = Convert.ToString(dr["complemento"]);
-                        dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
                         lista.Add(dado);
                     }
                 }
                 return lista;
             }
-
         }
 
-
-        public int Editar(PessoaFisicaEnt objTabela)
+        public int Editar(ClientesEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
             {
@@ -135,27 +130,25 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Pessoa_Fisica SET nome = @nome, rg = @rg, cpf = @cpf, email = @email, telefone1 = @telefone1, telefone2 = @telefone2, rua = @rua, numero = @numero, bairro = @bairro, complemento = @complemento, id_funcao = @id_funcao WHERE id = @id";
+                cn.CommandText = "UPDATE Cliente SET nome = @nome, rg = @rg, cpf = @cpf, email = @email, fone1 = @fone1, fone2 = @fone2, rua = @rua, numero = @numero, bairro = @bairro, complemento = @complemento, id_funcao = @id_funcao WHERE id = @id";
                 cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
                 cn.Parameters.Add("rg", SqlDbType.VarChar).Value = objTabela.Rg;
                 cn.Parameters.Add("cpf", SqlDbType.VarChar).Value = objTabela.Cpf;
                 cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
-                cn.Parameters.Add("telefone1", SqlDbType.VarChar).Value = objTabela.Telefone1;
-                cn.Parameters.Add("telefone2", SqlDbType.VarChar).Value = objTabela.Telefone2;
+                cn.Parameters.Add("fone1", SqlDbType.VarChar).Value = objTabela.Fone1;
+                cn.Parameters.Add("fone2", SqlDbType.VarChar).Value = objTabela.Fone2;
                 cn.Parameters.Add("rua", SqlDbType.VarChar).Value = objTabela.Rua;
                 cn.Parameters.Add("numero", SqlDbType.Int).Value = objTabela.Numero;
                 cn.Parameters.Add("bairro", SqlDbType.VarChar).Value = objTabela.Bairro;
                 cn.Parameters.Add("complemento", SqlDbType.VarChar).Value = objTabela.Complemento;
-                cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id_funcao);
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();
                 return qtd;
             }
-
         }
 
-        public int Excluir(PessoaFisicaEnt objTabela)
+        public int Excluir(ClientesEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())
             {
@@ -163,7 +156,7 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "DELETE FROM Pessoa_Fisica WHERE id = @id";
+                cn.CommandText = "DELETE FROM Cliente WHERE id = @id";
                 cn.Parameters.Add("id", SqlDbType.Int).Value = objTabela.Id;
                 cn.Connection = con;
                 int qtd = cn.ExecuteNonQuery();
@@ -171,7 +164,7 @@ namespace DAO
             }
         }
 
-        public List<PessoaFisicaEnt> Lista()
+        public List<ClientesEnt> Lista()
         {
             using (SqlConnection con = new SqlConnection())
             {
@@ -179,11 +172,11 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM Pessoa_Fisica ORDER BY nome ASC";
+                cn.CommandText = "SELECT * FROM Cliente ORDER BY nome ASC";
 
                 cn.Connection = con;
                 SqlDataReader dr;
-                List<PessoaFisicaEnt> lista = new List<PessoaFisicaEnt>();
+                List<ClientesEnt> lista = new List<ClientesEnt>();
 
                 dr = cn.ExecuteReader();
 
@@ -191,20 +184,19 @@ namespace DAO
                 {
                     while (dr.Read())
                     {
-                        PessoaFisicaEnt dado = new PessoaFisicaEnt();
+                        ClientesEnt dado = new ClientesEnt();
 
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
                         dado.Rg = Convert.ToString(dr["rg"]);
                         dado.Cpf = Convert.ToString(dr["cpf"]);
                         dado.Email = Convert.ToString(dr["email"]);
-                        dado.Telefone1 = Convert.ToString(dr["telefone1"]);
-                        dado.Telefone2 = Convert.ToString(dr["telefone2"]);
+                        dado.Fone1 = Convert.ToString(dr["fone1"]);
+                        dado.Fone2 = Convert.ToString(dr["fone2"]);
                         dado.Rua = Convert.ToString(dr["rua"]);
                         dado.Numero = Convert.ToInt32(dr["numero"]);
                         dado.Bairro = Convert.ToString(dr["bairro"]);
                         dado.Complemento = Convert.ToString(dr["complemento"]);
-                        dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
                         lista.Add(dado);
                     }
                 }

@@ -44,7 +44,7 @@
     <Compile Include="AnimalEnt.cs" />
     <Compile Include="FotoEnt.cs" />
     <Compile Include="FuncaoEnt.cs" />
-    <Compile Include="PessoaFisicaEnt.cs" />
+    <Compile Include="ClientesEnt.cs" />
     <Compile Include="ReciboEnt.cs" />
     <Compile Include="UsuarioEnt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

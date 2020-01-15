@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="AnimalModel.cs" />
     <Compile Include="FuncaoModel.cs" />
-    <Compile Include="PessoaFisicaModel.cs" />
+    <Compile Include="ClienteModel.cs" />
     <Compile Include="ReciboModel.cs" />
     <Compile Include="UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

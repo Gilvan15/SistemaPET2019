@@ -31,14 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncao));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnDeletar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.funcaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -54,6 +48,12 @@
             this.funcaoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.funcaoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnNovo = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnDeletar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnPesquisar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnLimpar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSalvar = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
@@ -62,39 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.funcaoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnNovo.Location = new System.Drawing.Point(736, 82);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(130, 40);
-            this.btnNovo.TabIndex = 53;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(736, 349);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(130, 40);
-            this.btnPesquisar.TabIndex = 63;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // textPesquisar
             // 
@@ -129,71 +96,6 @@
             this.pictureBox1.TabIndex = 61;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnEditar.Location = new System.Drawing.Point(736, 171);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(130, 40);
-            this.btnEditar.TabIndex = 54;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnDeletar
-            // 
-            this.btnDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeletar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnDeletar.Location = new System.Drawing.Point(736, 260);
-            this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(130, 40);
-            this.btnDeletar.TabIndex = 55;
-            this.btnDeletar.Text = "Deletar";
-            this.btnDeletar.UseVisualStyleBackColor = false;
-            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnLimpar.Location = new System.Drawing.Point(736, 574);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(130, 40);
-            this.btnLimpar.TabIndex = 57;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.Enabled = false;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnSalvar.Location = new System.Drawing.Point(571, 574);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(130, 40);
-            this.btnSalvar.TabIndex = 56;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // funcaoBindingSource
             // 
@@ -400,23 +302,239 @@
             this.dataGridView1.TabIndex = 69;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // btnNovo
+            // 
+            this.btnNovo.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovo.BorderRadius = 0;
+            this.btnNovo.ButtonText = "Novo";
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovo.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNovo.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNovo.Iconimage = null;
+            this.btnNovo.Iconimage_right = null;
+            this.btnNovo.Iconimage_right_Selected = null;
+            this.btnNovo.Iconimage_Selected = null;
+            this.btnNovo.IconMarginLeft = 0;
+            this.btnNovo.IconMarginRight = 0;
+            this.btnNovo.IconRightVisible = true;
+            this.btnNovo.IconRightZoom = 0D;
+            this.btnNovo.IconVisible = true;
+            this.btnNovo.IconZoom = 90D;
+            this.btnNovo.IsTab = false;
+            this.btnNovo.Location = new System.Drawing.Point(736, 82);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnNovo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnNovo.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNovo.selected = false;
+            this.btnNovo.Size = new System.Drawing.Size(130, 40);
+            this.btnNovo.TabIndex = 70;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNovo.Textcolor = System.Drawing.Color.White;
+            this.btnNovo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.BorderRadius = 0;
+            this.btnEditar.ButtonText = "Editar";
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnEditar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnEditar.Iconimage = null;
+            this.btnEditar.Iconimage_right = null;
+            this.btnEditar.Iconimage_right_Selected = null;
+            this.btnEditar.Iconimage_Selected = null;
+            this.btnEditar.IconMarginLeft = 0;
+            this.btnEditar.IconMarginRight = 0;
+            this.btnEditar.IconRightVisible = true;
+            this.btnEditar.IconRightZoom = 0D;
+            this.btnEditar.IconVisible = true;
+            this.btnEditar.IconZoom = 90D;
+            this.btnEditar.IsTab = false;
+            this.btnEditar.Location = new System.Drawing.Point(736, 168);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnEditar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnEditar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnEditar.selected = false;
+            this.btnEditar.Size = new System.Drawing.Size(130, 40);
+            this.btnEditar.TabIndex = 71;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEditar.Textcolor = System.Drawing.Color.White;
+            this.btnEditar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnDeletar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeletar.BorderRadius = 0;
+            this.btnDeletar.ButtonText = "Deletar";
+            this.btnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeletar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnDeletar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnDeletar.Iconimage = null;
+            this.btnDeletar.Iconimage_right = null;
+            this.btnDeletar.Iconimage_right_Selected = null;
+            this.btnDeletar.Iconimage_Selected = null;
+            this.btnDeletar.IconMarginLeft = 0;
+            this.btnDeletar.IconMarginRight = 0;
+            this.btnDeletar.IconRightVisible = true;
+            this.btnDeletar.IconRightZoom = 0D;
+            this.btnDeletar.IconVisible = true;
+            this.btnDeletar.IconZoom = 90D;
+            this.btnDeletar.IsTab = false;
+            this.btnDeletar.Location = new System.Drawing.Point(738, 254);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnDeletar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnDeletar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnDeletar.selected = false;
+            this.btnDeletar.Size = new System.Drawing.Size(130, 40);
+            this.btnDeletar.TabIndex = 72;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeletar.Textcolor = System.Drawing.Color.White;
+            this.btnDeletar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisar.BorderRadius = 0;
+            this.btnPesquisar.ButtonText = "Pesquisar";
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPesquisar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.Iconimage = null;
+            this.btnPesquisar.Iconimage_right = null;
+            this.btnPesquisar.Iconimage_right_Selected = null;
+            this.btnPesquisar.Iconimage_Selected = null;
+            this.btnPesquisar.IconMarginLeft = 0;
+            this.btnPesquisar.IconMarginRight = 0;
+            this.btnPesquisar.IconRightVisible = true;
+            this.btnPesquisar.IconRightZoom = 0D;
+            this.btnPesquisar.IconVisible = true;
+            this.btnPesquisar.IconZoom = 90D;
+            this.btnPesquisar.IsTab = false;
+            this.btnPesquisar.Location = new System.Drawing.Point(736, 340);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnPesquisar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnPesquisar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPesquisar.selected = false;
+            this.btnPesquisar.Size = new System.Drawing.Size(130, 40);
+            this.btnPesquisar.TabIndex = 73;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPesquisar.Textcolor = System.Drawing.Color.White;
+            this.btnPesquisar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.BorderRadius = 0;
+            this.btnLimpar.ButtonText = "Limpar";
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLimpar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLimpar.Iconimage = null;
+            this.btnLimpar.Iconimage_right = null;
+            this.btnLimpar.Iconimage_right_Selected = null;
+            this.btnLimpar.Iconimage_Selected = null;
+            this.btnLimpar.IconMarginLeft = 0;
+            this.btnLimpar.IconMarginRight = 0;
+            this.btnLimpar.IconRightVisible = true;
+            this.btnLimpar.IconRightZoom = 0D;
+            this.btnLimpar.IconVisible = true;
+            this.btnLimpar.IconZoom = 90D;
+            this.btnLimpar.IsTab = false;
+            this.btnLimpar.Location = new System.Drawing.Point(736, 574);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnLimpar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnLimpar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLimpar.selected = false;
+            this.btnLimpar.Size = new System.Drawing.Size(130, 40);
+            this.btnLimpar.TabIndex = 74;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimpar.Textcolor = System.Drawing.Color.White;
+            this.btnLimpar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalvar.BorderRadius = 0;
+            this.btnSalvar.ButtonText = "Salvar";
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSalvar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Iconimage = null;
+            this.btnSalvar.Iconimage_right = null;
+            this.btnSalvar.Iconimage_right_Selected = null;
+            this.btnSalvar.Iconimage_Selected = null;
+            this.btnSalvar.IconMarginLeft = 0;
+            this.btnSalvar.IconMarginRight = 0;
+            this.btnSalvar.IconRightVisible = true;
+            this.btnSalvar.IconRightZoom = 0D;
+            this.btnSalvar.IconVisible = true;
+            this.btnSalvar.IconZoom = 90D;
+            this.btnSalvar.IsTab = false;
+            this.btnSalvar.Location = new System.Drawing.Point(561, 574);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnSalvar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnSalvar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSalvar.selected = false;
+            this.btnSalvar.Size = new System.Drawing.Size(130, 40);
+            this.btnSalvar.TabIndex = 75;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSalvar.Textcolor = System.Drawing.Color.White;
+            this.btnSalvar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // frmFuncao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(880, 650);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bunifuCustomLabel8);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.textPesquisar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnDeletar);
-            this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.bunifuThinButton22);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.textDescricao);
@@ -441,15 +559,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button btnPesquisar;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textPesquisar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnSalvar;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textDescricao;
@@ -465,5 +576,11 @@
         private System.Windows.Forms.BindingSource funcaoBindingSource1;
         private System.Windows.Forms.BindingSource funcaoBindingSource2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNovo;
+        private Bunifu.Framework.UI.BunifuFlatButton btnEditar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnDeletar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPesquisar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnLimpar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSalvar;
     }
 }

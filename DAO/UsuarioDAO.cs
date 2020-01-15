@@ -17,17 +17,16 @@ namespace DAO
             
             using (SqlConnection con = new SqlConnection())
             {
-
                 try
                 {
-
                     con.ConnectionString = DAO.Properties.Settings.Default.banco;
                     SqlCommand cn = new SqlCommand();
                     cn.CommandType = CommandType.Text;
                     con.Open();
-                    cn.CommandText = "INSERT INTO Usuario ([nome], [email], [senha], [id_funcao]) VALUES (@nome, @email, @senha, @id_funcao)";
+                    cn.CommandText = "INSERT INTO Usuario ([nome], [email], [username], [senha], [id_funcao]) VALUES (@nome, @email, @username, @senha, @id_funcao)";
                     cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
                     cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
+                    cn.Parameters.Add("username", SqlDbType.VarChar).Value = objTabela.Username;
                     cn.Parameters.Add("senha", SqlDbType.VarChar).Value = objTabela.Senha;
                     cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = objTabela.Id_funcao;
                     cn.Connection = con;
@@ -68,6 +67,7 @@ namespace DAO
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
                         dado.Email = Convert.ToString(dr["email"]);
+                        dado.Username = Convert.ToString(dr["username"]);
                         dado.Senha = Convert.ToString(dr["senha"]);
                         dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
                         lista.Add(dado);
@@ -86,9 +86,10 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Usuario SET nome = @nome, email = @email, senha = @senha, id_funcao = @id_funcao WHERE id = @id";
+                cn.CommandText = "UPDATE Usuario SET nome = @nome, email = @email, username = @username, senha = @senha, id_funcao = @id_funcao WHERE id = @id";
                 cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
                 cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
+                cn.Parameters.Add("username", SqlDbType.VarChar).Value = objTabela.Username;
                 cn.Parameters.Add("senha", SqlDbType.VarChar).Value = objTabela.Senha;
                 cn.Parameters.Add("id_funcao", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id_funcao);
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
@@ -122,10 +123,10 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * FROM usuario WHERE email = @email AND senha = @senha ";
+                cn.CommandText = "SELECT * FROM usuario WHERE username = @username AND senha = @senha ";
                 cn.Connection = con;
 
-                cn.Parameters.Add("email", SqlDbType.VarChar).Value = obj.Email;
+                cn.Parameters.Add("username", SqlDbType.VarChar).Value = obj.Username;
                 cn.Parameters.Add("senha", SqlDbType.VarChar).Value = obj.Senha;
                 SqlDataReader dr;
 
@@ -137,13 +138,13 @@ namespace DAO
                     {
                         UsuarioEnt dado = new UsuarioEnt();
 
-                        dado.Email = Convert.ToString(dr["email"]);
+                        dado.Username = Convert.ToString(dr["username"]);
                         dado.Senha = Convert.ToString(dr["senha"]);
                     }
                 }
                 else
                 {
-                    obj.Email = null;
+                    obj.Username = null;
                     obj.Senha = null;
                 }
                 return obj;
@@ -174,6 +175,7 @@ namespace DAO
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
                         dado.Email = Convert.ToString(dr["email"]);
+                        dado.Username = Convert.ToString(dr["username"]);
                         dado.Senha = Convert.ToString(dr["senha"]);
                         dado.Id_funcao = Convert.ToInt32(dr["id_funcao"]);
                         lista.Add(dado);
@@ -205,7 +207,7 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT Usuario.[id], [Nome], [email], [senha], [descricao] FROM Usuario INNER JOIN Funcao ON Usuario.id_funcao = Funcao.id";
+                cn.CommandText = "SELECT Usuario.[id], [Nome], [email], [username], [senha], [descricao] FROM Usuario INNER JOIN Funcao ON Usuario.id_funcao = Funcao.id";
                 //"SELECT * FROM Usuario ORDER BY nome ASC";
 
 
@@ -241,18 +243,13 @@ namespace DAO
             {
                 con.ConnectionString = DAO.Properties.Settings.Default.banco;
                 con.Open();
-                string query = "SELECT Usuario.[id], [Nome], [email], [senha], [descricao] FROM Usuario INNER JOIN Funcao ON Usuario.id_funcao = Funcao.id";
-
+                string query = "SELECT Usuario.[id], [Nome], [email], [username], [senha], [descricao] FROM Usuario INNER JOIN Funcao ON Usuario.id_funcao = Funcao.id";
                 SqlCommand cmd = new SqlCommand(query, con);
-
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
-
                  return dt;
-
-
             }
         }
 

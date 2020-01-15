@@ -97,22 +97,22 @@ namespace SistemaPet
         {
             try
             {
-                if (textEmail.Text == string.Empty || textSenha.Text == string.Empty)
+                if (textUsername.Text == string.Empty || textSenha.Text == string.Empty)
                 {
                     sound3();
                     MessageBox.Show("Preencha o campo vazio!", "Aviso!", MessageBoxButtons.OK);
-                    textEmail.Focus();
+                    textUsername.Focus();
                     return;
                 }
 
                 UsuarioEnt obj = new UsuarioEnt();
-                obj.Email = textEmail.Text;
+                obj.Username = textUsername.Text;
                 obj.Senha = textSenha.Text;
 
                 obj = new UsuarioModel().Login(obj);
                 
 
-                if (obj.Email == null || obj.Senha == null)
+                if (obj.Username == null || obj.Senha == null)
                 {
                     sound3();
                     MessageBox.Show("Usuário ou Senha inválidos!", "Aviso!", MessageBoxButtons.OK);
@@ -133,21 +133,21 @@ namespace SistemaPet
         {
             try
             {
-                if (textEmail.Text == string.Empty || textSenha.Text == string.Empty)
+                if (textUsername.Text == string.Empty || textSenha.Text == string.Empty)
                 {
                     sound3();
                     MessageBox.Show("Preencha o campo vazio!", "Aviso!", MessageBoxButtons.OK);
-                    textEmail.Focus();
+                    textUsername.Focus();
                     return;
                 }
 
                 UsuarioEnt obj = new UsuarioEnt();
-                obj.Email = textEmail.Text;
+                obj.Username = textUsername.Text;
                 obj.Senha = textSenha.Text;
 
                 obj = new UsuarioModel().Login(obj);
 
-                if (obj.Email == null || obj.Senha == null)
+                if (obj.Username == null || obj.Senha == null)
                 {
                     sound3();
                     MessageBox.Show("Usuário ou Senha inválidos!", "Aviso!", MessageBoxButtons.OK);
@@ -167,7 +167,6 @@ namespace SistemaPet
 
         private void bunifuCustomLabel5_Click(object sender, EventArgs e)
         {
-
             sound1();
             frmRecuperarSenha frmRecp = new frmRecuperarSenha();
             this.Hide();

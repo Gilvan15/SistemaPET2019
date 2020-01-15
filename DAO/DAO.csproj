@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="AnimalDAO.cs" />
     <Compile Include="FuncaoDAO.cs" />
-    <Compile Include="PessoaFisicaDAO.cs" />
+    <Compile Include="ClientesDAO.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

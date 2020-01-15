@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.comboFuncao = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -64,11 +66,6 @@
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioTableAdapter = new SistemaPet.dbpetsepetsDataSetTableAdapters.UsuarioTableAdapter();
             this.usuarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idfuncaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -81,6 +78,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textUsername);
+            this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Controls.Add(this.comboFuncao);
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.btnPesquisar);
@@ -114,6 +113,39 @@
             this.panel1.Size = new System.Drawing.Size(880, 650);
             this.panel1.TabIndex = 0;
             // 
+            // textUsername
+            // 
+            this.textUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textUsername.HintForeColor = System.Drawing.Color.Empty;
+            this.textUsername.HintText = "";
+            this.textUsername.isPassword = false;
+            this.textUsername.LineFocusedColor = System.Drawing.Color.Blue;
+            this.textUsername.LineIdleColor = System.Drawing.Color.Gray;
+            this.textUsername.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textUsername.LineThickness = 3;
+            this.textUsername.Location = new System.Drawing.Point(93, 231);
+            this.textUsername.Margin = new System.Windows.Forms.Padding(5);
+            this.textUsername.Name = "textUsername";
+            this.textUsername.Size = new System.Drawing.Size(565, 29);
+            this.textUsername.TabIndex = 3;
+            this.textUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUsername_KeyPress);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(16, 240);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(68, 20);
+            this.bunifuCustomLabel1.TabIndex = 102;
+            this.bunifuCustomLabel1.Text = "Usuário:";
+            // 
             // comboFuncao
             // 
             this.comboFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,7 +153,7 @@
             this.comboFuncao.Location = new System.Drawing.Point(94, 344);
             this.comboFuncao.Name = "comboFuncao";
             this.comboFuncao.Size = new System.Drawing.Size(344, 28);
-            this.comboFuncao.TabIndex = 5;
+            this.comboFuncao.TabIndex = 6;
             this.comboFuncao.SelectedIndexChanged += new System.EventHandler(this.comboFuncao_SelectedIndexChanged);
             this.comboFuncao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboFuncao_KeyPress);
             // 
@@ -245,22 +277,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.senhaDataGridViewTextBoxColumn,
-            this.idfuncaoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.usuarioBindingSource2;
+            this.dataGridView1.DataSource = this.usuarioBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(32, 402);
             this.dataGridView1.Name = "dataGridView1";
@@ -274,7 +300,6 @@
             // usuarioBindingSource2
             // 
             this.usuarioBindingSource2.DataMember = "Usuario";
-            this.usuarioBindingSource2.DataSource = this.dbpetsepetsDataSet;
             // 
             // dbpetsepetsDataSet
             // 
@@ -309,7 +334,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(567, 575);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(130, 40);
-            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_2);
@@ -332,7 +357,7 @@
             this.CheckboxSenha.Checked = false;
             this.CheckboxSenha.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.CheckboxSenha.ForeColor = System.Drawing.Color.White;
-            this.CheckboxSenha.Location = new System.Drawing.Point(639, 282);
+            this.CheckboxSenha.Location = new System.Drawing.Point(639, 292);
             this.CheckboxSenha.Margin = new System.Windows.Forms.Padding(5);
             this.CheckboxSenha.Name = "CheckboxSenha";
             this.CheckboxSenha.Size = new System.Drawing.Size(20, 20);
@@ -342,7 +367,7 @@
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(18, 348);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(18, 351);
             this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(67, 20);
@@ -362,11 +387,11 @@
             this.textConfSenha.LineIdleColor = System.Drawing.Color.Gray;
             this.textConfSenha.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textConfSenha.LineThickness = 3;
-            this.textConfSenha.Location = new System.Drawing.Point(438, 273);
+            this.textConfSenha.Location = new System.Drawing.Point(435, 282);
             this.textConfSenha.Margin = new System.Windows.Forms.Padding(5);
             this.textConfSenha.Name = "textConfSenha";
             this.textConfSenha.Size = new System.Drawing.Size(194, 29);
-            this.textConfSenha.TabIndex = 4;
+            this.textConfSenha.TabIndex = 5;
             this.textConfSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textConfSenha.OnValueChanged += new System.EventHandler(this.textConfSenha_OnValueChanged);
             this.textConfSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textConfSenha_KeyPress);
@@ -385,7 +410,7 @@
             this.textEmail.LineIdleColor = System.Drawing.Color.Gray;
             this.textEmail.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textEmail.LineThickness = 3;
-            this.textEmail.Location = new System.Drawing.Point(94, 207);
+            this.textEmail.Location = new System.Drawing.Point(93, 179);
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(565, 29);
@@ -459,11 +484,11 @@
             this.textSenha.LineIdleColor = System.Drawing.Color.Gray;
             this.textSenha.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textSenha.LineThickness = 3;
-            this.textSenha.Location = new System.Drawing.Point(94, 273);
+            this.textSenha.Location = new System.Drawing.Point(93, 283);
             this.textSenha.Margin = new System.Windows.Forms.Padding(5);
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(200, 29);
-            this.textSenha.TabIndex = 3;
+            this.textSenha.TabIndex = 4;
             this.textSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textSenha.OnValueChanged += new System.EventHandler(this.textSenha_OnValueChanged_1);
             this.textSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSenha_KeyPress);
@@ -482,7 +507,7 @@
             this.textNome.LineIdleColor = System.Drawing.Color.Gray;
             this.textNome.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textNome.LineThickness = 3;
-            this.textNome.Location = new System.Drawing.Point(94, 141);
+            this.textNome.Location = new System.Drawing.Point(94, 127);
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(565, 29);
@@ -515,7 +540,7 @@
             this.bunifuCustomLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(305, 282);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(305, 292);
             this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(133, 20);
@@ -526,7 +551,7 @@
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(29, 282);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(18, 292);
             this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(60, 20);
@@ -537,7 +562,7 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(33, 216);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(33, 188);
             this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(52, 20);
@@ -548,7 +573,7 @@
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(30, 150);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(30, 136);
             this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(55, 20);
@@ -592,41 +617,6 @@
             // usuarioBindingSource1
             // 
             this.usuarioBindingSource1.DataMember = "Usuario";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // senhaDataGridViewTextBoxColumn
-            // 
-            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
-            this.senhaDataGridViewTextBoxColumn.HeaderText = "senha";
-            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
-            this.senhaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idfuncaoDataGridViewTextBoxColumn
-            // 
-            this.idfuncaoDataGridViewTextBoxColumn.DataPropertyName = "id_funcao";
-            this.idfuncaoDataGridViewTextBoxColumn.HeaderText = "id_funcao";
-            this.idfuncaoDataGridViewTextBoxColumn.Name = "idfuncaoDataGridViewTextBoxColumn";
-            this.idfuncaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmUsuario
             // 
@@ -696,10 +686,7 @@
         private System.Windows.Forms.BindingSource usuarioBindingSource1;
         private System.Windows.Forms.ComboBox comboFuncao;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idfuncaoDataGridViewTextBoxColumn;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textUsername;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textSenha = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnLogar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -76,25 +76,25 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textEmail
+            // textUsername
             // 
-            this.textEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textEmail.HintForeColor = System.Drawing.Color.Empty;
-            this.textEmail.HintText = "";
-            this.textEmail.isPassword = false;
-            this.textEmail.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textEmail.LineIdleColor = System.Drawing.Color.Gray;
-            this.textEmail.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.textEmail.LineThickness = 3;
-            this.textEmail.Location = new System.Drawing.Point(370, 145);
-            this.textEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(301, 33);
-            this.textEmail.TabIndex = 1;
-            this.textEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEmail_KeyPress);
+            this.textUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textUsername.HintForeColor = System.Drawing.Color.Empty;
+            this.textUsername.HintText = "";
+            this.textUsername.isPassword = false;
+            this.textUsername.LineFocusedColor = System.Drawing.Color.Blue;
+            this.textUsername.LineIdleColor = System.Drawing.Color.Gray;
+            this.textUsername.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textUsername.LineThickness = 3;
+            this.textUsername.Location = new System.Drawing.Point(370, 145);
+            this.textUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.textUsername.Name = "textUsername";
+            this.textUsername.Size = new System.Drawing.Size(301, 33);
+            this.textUsername.TabIndex = 1;
+            this.textUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEmail_KeyPress);
             // 
             // textSenha
             // 
@@ -120,7 +120,7 @@
             // btnLogar
             // 
             this.btnLogar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnLogar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogar.BorderRadius = 0;
             this.btnLogar.ButtonText = "Logar";
@@ -140,8 +140,8 @@
             this.btnLogar.IsTab = false;
             this.btnLogar.Location = new System.Drawing.Point(541, 392);
             this.btnLogar.Name = "btnLogar";
-            this.btnLogar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnLogar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnLogar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnLogar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnLogar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogar.selected = false;
             this.btnLogar.Size = new System.Drawing.Size(130, 40);
@@ -170,9 +170,9 @@
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(367, 125);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(45, 16);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(58, 16);
             this.bunifuCustomLabel2.TabIndex = 5;
-            this.bunifuCustomLabel2.Text = "Email:";
+            this.bunifuCustomLabel2.Text = "Usuário:";
             // 
             // bunifuCustomLabel3
             // 
@@ -338,7 +338,7 @@
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.textSenha);
-            this.Controls.Add(this.textEmail);
+            this.Controls.Add(this.textUsername);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -363,7 +363,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox textEmail;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textUsername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textSenha;
         private Bunifu.Framework.UI.BunifuFlatButton btnLogar;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;

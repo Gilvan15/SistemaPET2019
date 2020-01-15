@@ -114,8 +114,8 @@ namespace SistemaPet.subForms
         }
         private void CarregaCombo() 
         {
-            List<PessoaFisicaEnt> PessoaFList = new List<PessoaFisicaEnt>();
-            PessoaFList = new PessoaFisicaModel().Lista();
+            List<ClientesEnt> PessoaFList = new List<ClientesEnt>();
+            PessoaFList = new ClienteModel().Lista();
 
             foreach (var item in PessoaFList)
             {

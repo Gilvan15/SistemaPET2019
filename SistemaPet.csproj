@@ -88,6 +88,12 @@
     <Compile Include="subForms\frmCamera.Designer.cs">
       <DependentUpon>frmCamera.cs</DependentUpon>
     </Compile>
+    <Compile Include="subForms\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subForms\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="subForms\frmFuncao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +105,6 @@
     </Compile>
     <Compile Include="subForms\frmLogo.Designer.cs">
       <DependentUpon>frmLogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="subForms\frmPessoaFisica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="subForms\frmPessoaFisica.Designer.cs">
-      <DependentUpon>frmPessoaFisica.cs</DependentUpon>
     </Compile>
     <Compile Include="subForms\frmRecibo.cs">
       <SubType>Form</SubType>
@@ -150,9 +150,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmLogo.resx">
       <DependentUpon>frmLogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="subForms\frmPessoaFisica.resx">
-      <DependentUpon>frmPessoaFisica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmRecibo.resx">
       <DependentUpon>frmRecibo.cs</DependentUpon>

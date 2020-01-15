@@ -159,7 +159,7 @@ namespace SistemaPet
         }
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            AbrirFormWrapper(new frmPessoaFisica());
+            AbrirFormWrapper(new frmCliente());
         }
         private void btnMenuValores_Click(object sender, EventArgs e)
         {
@@ -233,10 +233,9 @@ namespace SistemaPet
         {
             AbrirFormWrapper(new frmCadastroPet());
         }
-
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
-            AbrirFormWrapper(new frmPessoaFisica());
+            AbrirFormWrapper(new frmCliente());
         }
     }
 }

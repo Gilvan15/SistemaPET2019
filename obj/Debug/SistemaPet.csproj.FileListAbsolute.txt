@@ -58,7 +58,6 @@ C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmCadastroPet.resou
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmCamera.resources
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmFuncao.resources
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmLogo.resources
-C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmPessoaFisica.resources
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmRecibo.resources
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmRecuperarSenha.resources
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmUsuario.resources

@@ -20,6 +20,7 @@ namespace SistemaPet.subForms
         UsuarioEnt objTabela = new UsuarioEnt();
         FuncaoEnt objFuncao = new FuncaoEnt();
         string pasta_aplicacao = "";
+        int verificString = 0;
         int id_funcao;
         private string opc = "";
         public frmUsuario()
@@ -33,6 +34,7 @@ namespace SistemaPet.subForms
             textNome.Enabled = true;
             textEmail.Enabled = true;
             textSenha.Enabled = true;
+            textUsername.Enabled = true;
             textConfSenha.Enabled = true;
             comboFuncao.Enabled = true;
         }
@@ -42,6 +44,7 @@ namespace SistemaPet.subForms
             textNome.Enabled = false;
             textEmail.Enabled = false;
             textSenha.Enabled = false;
+            textUsername.Enabled = false;
             textConfSenha.Enabled = false;
             comboFuncao.Enabled = false;
         }
@@ -56,6 +59,9 @@ namespace SistemaPet.subForms
             comboFuncao.Text = null;
             textPesquisar.Text = null;
             btnSalvar.Enabled = false;
+            verificString = 0;
+            VerificPlaceHolder();
+            
         }
         private void CarregarCombo()
         {
@@ -77,7 +83,21 @@ namespace SistemaPet.subForms
             CarregarCombo();
             CarregarGrid();
             DesabilitarCampos();
+            VerificPlaceHolder();
         }
+
+
+        private void VerificPlaceHolder() 
+        {
+
+            if (verificString == 0 )
+            {
+                textUsername.Text = "Somente o primeiro nome";
+                textUsername.ForeColor = Color.Gray;
+            }
+
+        }
+
         private void CarregarGrid() 
         {
             try
@@ -89,8 +109,9 @@ namespace SistemaPet.subForms
                 dataGridView1.Columns[0].HeaderText = "ID";
                 dataGridView1.Columns[1].HeaderText = "NOME";
                 dataGridView1.Columns[2].HeaderText = "EMAIL";
-                dataGridView1.Columns[3].HeaderText = "SENHA";
-                dataGridView1.Columns[4].HeaderText = "FUNÇÃO";
+                dataGridView1.Columns[3].HeaderText = "USUÁRIO";
+                dataGridView1.Columns[4].HeaderText = "SENHA";
+                dataGridView1.Columns[5].HeaderText = "FUNÇÃO";
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
@@ -130,6 +151,7 @@ namespace SistemaPet.subForms
                         {
                             objTabela.Nome = textNome.Text;
                             objTabela.Email = textEmail.Text;
+                            objTabela.Username = textUsername.Text;
                             objTabela.Senha = textSenha.Text;
                             objTabela.Id_funcao = id_funcao;
 
@@ -165,6 +187,7 @@ namespace SistemaPet.subForms
                             objTabela.Id = Convert.ToInt32(textCod.Text);
                             objTabela.Nome = textNome.Text;
                             objTabela.Email = textEmail.Text;
+                            objTabela.Username = textUsername.Text;
                             objTabela.Senha = textSenha.Text;
                             objTabela.Id_funcao = id_funcao;
 
@@ -229,8 +252,9 @@ namespace SistemaPet.subForms
                 textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textNome.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textEmail.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                textSenha.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                comboFuncao.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textUsername.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textSenha.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                comboFuncao.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -297,7 +321,6 @@ namespace SistemaPet.subForms
                 MessageBox.Show("Ocorreu um error ao excluir o registro: " + ex.Message);
             }
         }
-
         private void btnPesquisar_Click_1(object sender, EventArgs e)
         {
             sound1();
@@ -314,9 +337,9 @@ namespace SistemaPet.subForms
                 textPesquisar.Visible = false;
             }
         }
-
         private void textConfSenha_OnValueChanged(object sender, EventArgs e)
         {
+
             textConfSenha.isPassword = true;
 
             if (textSenha.Text == textConfSenha.Text)
@@ -413,7 +436,7 @@ namespace SistemaPet.subForms
         {
             if (e.KeyChar == 13)
             {
-                textSenha.Focus();
+                textUsername.Focus();
             }
             
         }
@@ -442,6 +465,26 @@ namespace SistemaPet.subForms
             {
                 btnSalvar.Focus();
             }
+        }        
+        private void textUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (verificString == 0)
+            {
+                textUsername.Text = "";
+                textUsername.ForeColor = Color.Black;
+                verificString = 1;
+            }
+            else 
+            {
+                VerificPlaceHolder();
+            }
+
+            if (e.KeyChar == 13)
+            {
+                textSenha.Focus();
+            }
+
+
         }
     }
 }
