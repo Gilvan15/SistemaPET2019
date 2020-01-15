@@ -183,12 +183,14 @@ namespace DAO
                     foreach (var item in lista)
                     {
                         obj.Email = item.Email;
+                        obj.Username = item.Username;
                         obj.Senha = item.Senha;
                     }
                 }
                 else
                 {
                     obj.Email = null;
+                    obj.Username = null;
                     obj.Senha = null;
                 }
                 return obj;

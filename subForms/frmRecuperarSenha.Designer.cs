@@ -71,9 +71,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(3, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 22);
+            this.label2.Size = new System.Drawing.Size(172, 22);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Recuperar Senha:";
+            this.label2.Text = "Recuperar Login:";
             // 
             // Fechar
             // 
@@ -123,9 +123,9 @@
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(281, 101);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(308, 16);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(302, 16);
             this.bunifuCustomLabel2.TabIndex = 7;
-            this.bunifuCustomLabel2.Text = "Insira o Email cadastrado para recuperar a Senha.";
+            this.bunifuCustomLabel2.Text = "Insira o Email cadastrado para recuperar o Login.";
             // 
             // btnLogar
             // 

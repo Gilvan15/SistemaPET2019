@@ -172,5 +172,15 @@ namespace SistemaPet
             this.Hide();
             frmRecp.ShowDialog();
         }
+
+        private void bunifuCustomLabel5_MouseHover(object sender, EventArgs e)
+        {
+            bunifuCustomLabel5.Font = new Font(bunifuCustomLabel5.Font, FontStyle.Bold);
+        }
+
+        private void bunifuCustomLabel5_MouseLeave(object sender, EventArgs e)
+        {
+            bunifuCustomLabel5.Font = new Font(bunifuCustomLabel5.Font, FontStyle.Regular);
+        }
     }
 }

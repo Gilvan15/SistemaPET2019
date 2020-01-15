@@ -74,8 +74,8 @@ namespace SistemaPet.subForms
 
                     mail.From = new MailAddress("gilvanx10@gmail.com");
                     mail.To.Add(Textemail); // para
-                    mail.Subject = "Pets e Pets Recuperação de Senha"; // assunto
-                    mail.Body = "Sua senha Cadastrada no Sistema Pets e Pets é: "  + obj.Senha; // mensagem
+                    mail.Subject = "Pets e Pets Recuperação Login"; // assunto
+                    mail.Body = "Seu nome de Usuário: " + obj.Username + ", Senha: " + obj.Senha; // mensagem
 
                     using (var smtp = new SmtpClient("smtp.gmail.com"))
                     {

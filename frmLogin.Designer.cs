@@ -313,10 +313,12 @@
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.DarkRed;
             this.bunifuCustomLabel5.Location = new System.Drawing.Point(513, 296);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(114, 16);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(108, 16);
             this.bunifuCustomLabel5.TabIndex = 21;
-            this.bunifuCustomLabel5.Text = "Recuperar Senha";
+            this.bunifuCustomLabel5.Text = "Recuperar Login";
             this.bunifuCustomLabel5.Click += new System.EventHandler(this.bunifuCustomLabel5_Click);
+            this.bunifuCustomLabel5.MouseLeave += new System.EventHandler(this.bunifuCustomLabel5_MouseLeave);
+            this.bunifuCustomLabel5.MouseHover += new System.EventHandler(this.bunifuCustomLabel5_MouseHover);
             // 
             // frmLogin
             // 
