@@ -140,110 +140,8 @@ namespace SistemaPet.subForms
         }
         private void btnSalvar_Click_2(object sender, EventArgs e)
         {
-            sound1();
-            switch (opc)
-            {
-                case "Salvar":
-                    try
-                    {
-                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
-                        if (result1 == DialogResult.Yes)
-                        {
-                            objTabela.Nome = textNome.Text;
-                            objTabela.Email = textEmail.Text;
-                            objTabela.Username = textUsername.Text;
-                            objTabela.Senha = textSenha.Text;
-                            objTabela.Id_funcao = id_funcao;
-
-                            int x = UsuarioModel.Inseir(objTabela);
-
-                            if (x > 0)
-                            {
-                                MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
-                                LimparCampos();
-                                DesabilitarCampos();
-                                CarregarGrid();
-                                btnSalvar.Enabled = false;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
-                            }
-                        }
-                        else {return;}
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
-                    }
-                 break;
-                
-                case "Editar":
-                    try
-                    {
-                        DialogResult result2 = MessageBox.Show("Confima a Edição do registro?", "Aviso!", MessageBoxButtons.YesNo);
-                        if (result2 == DialogResult.Yes)
-                        {
-                            objTabela.Id = Convert.ToInt32(textCod.Text);
-                            objTabela.Nome = textNome.Text;
-                            objTabela.Email = textEmail.Text;
-                            objTabela.Username = textUsername.Text;
-                            objTabela.Senha = textSenha.Text;
-                            objTabela.Id_funcao = id_funcao;
-
-                            int x = UsuarioModel.Editar(objTabela);
-
-                            if (x > 0)
-                            {
-                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
-                                LimparCampos();
-                                DesabilitarCampos();
-                                CarregarGrid();
-                                btnSalvar.Enabled = false;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
-                                btnSalvar.Enabled = false;
-                            }
-                        }
-                        else { return; }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Editar ERROR: " + ex.Message);
-                    }
-                    break;
-                /*
-                                case "BuscarPorId":
-                                    try
-                                    {
-                                        objFuncao.Id = id_funcao;
-                                        List<FuncaoEnt> lista = new List<FuncaoEnt>();
-                                        lista = new FuncaoModel().BuscarPorId(objFuncao);
-                                        foreach (var item in lista)
-                                        {
-                                            id_funcao = item.Id;
-                                        }
-
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        MessageBox.Show("Error ao Buscar por ID: " + ex.Message);
-                                    }
-                                    break;
-                                    */
-                default:
-                    break;
-            }
-        }
-        private void btnLimpar_Click_1(object sender, EventArgs e)
-        {
-            sound2();
-            LimparCampos();
-            DesabilitarCampos();
-            btnSalvar.Enabled = false;
-        }
+            
+        }        
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -261,82 +159,9 @@ namespace SistemaPet.subForms
                 MessageBox.Show("Error DataGrid: TESTE! " + ex.Message);
             }
         }
-        private void btnNovo_Click_1(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Salvar";
-            HabilitarCampos();
-            LimparCampos();
-            textNome.Focus();
-        }
-        private void btnEditar_Click_1(object sender, EventArgs e)
-        {
-            sound1();
-            if (textCod.Text == "")
-            {
-                sound3();
-                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
-                return;
-            }
-            opc = "Editar";
-            HabilitarCampos();
-            textNome.Focus();
-            btnSalvar.Enabled = true;
-        }
-        private void btnDeletar_Click_1(object sender, EventArgs e)
-        {
-            sound1();
-            try
-            {
-                if (textCod.Text == Convert.ToString(null) || textNome.Text == "")
-                {
-                    sound3();
-                    MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
-                    return;
-                }
-
-                DialogResult result1 = MessageBox.Show("Confima a Exclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
-                if (result1 == DialogResult.Yes)
-                {
-                    objTabela.Id = Convert.ToInt32(textCod.Text);
-                    int x = UsuarioModel.Excluir(objTabela);
-
-                    if (x > 0)
-                    {
-                        sound2();
-                        LimparCampos();
-                        DesabilitarCampos();
-                        CarregarGrid();
-                        MessageBox.Show(string.Format("Registro  excluído com sucesso!"));
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error ao Tentar Excluir o Registro");
-                    }
-                }
-                else { return; }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocorreu um error ao excluir o registro: " + ex.Message);
-            }
-        }
-        private void btnPesquisar_Click_1(object sender, EventArgs e)
-        {
-            sound1();
-            if (pictureBox1.Visible == false)
-            {
-                pictureBox1.Visible = true;
-                textPesquisar.Visible = true;
-                textPesquisar.Text = null;
-                textPesquisar.Focus();
-            }
-            else
-            {
-                pictureBox1.Visible = false;
-                textPesquisar.Visible = false;
-            }
-        }
+        
+        
+        
         private void textConfSenha_OnValueChanged(object sender, EventArgs e)
         {
 
@@ -484,7 +309,204 @@ namespace SistemaPet.subForms
                 textSenha.Focus();
             }
 
+        }
 
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            sound1();
+            opc = "Salvar";
+            HabilitarCampos();
+            LimparCampos();
+            textNome.Focus();
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            try
+            {
+                if (textCod.Text == Convert.ToString(null) || textNome.Text == "")
+                {
+                    sound3();
+                    MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                    return;
+                }
+
+                DialogResult result1 = MessageBox.Show("Confima a Exclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                if (result1 == DialogResult.Yes)
+                {
+                    objTabela.Id = Convert.ToInt32(textCod.Text);
+                    int x = UsuarioModel.Excluir(objTabela);
+
+                    if (x > 0)
+                    {
+                        sound2();
+                        LimparCampos();
+                        DesabilitarCampos();
+                        CarregarGrid();
+                        MessageBox.Show(string.Format("Registro  excluído com sucesso!"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error ao Tentar Excluir o Registro");
+                    }
+                }
+                else { return; }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um error ao excluir o registro: " + ex.Message);
+            }
+        }
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            if (pictureBox1.Visible == false)
+            {
+                pictureBox1.Visible = true;
+                textPesquisar.Visible = true;
+                textPesquisar.Text = null;
+                textPesquisar.Focus();
+            }
+            else
+            {
+                pictureBox1.Visible = false;
+                textPesquisar.Visible = false;
+            }
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            if (textCod.Text == "")
+            {
+                sound3();
+                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+            opc = "Editar";
+            HabilitarCampos();
+            textNome.Focus();
+            btnSalvar.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textCod.Text = null;
+            textNome.Text = null;
+            textEmail.Text = null;
+            textSenha.Text = null;
+            textConfSenha.Text = null;
+            CheckboxSenha.Checked = false;
+            comboFuncao.Text = null;
+            textPesquisar.Text = null;
+            btnSalvar.Enabled = false;
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            sound2();
+            LimparCampos();
+            DesabilitarCampos();
+            btnSalvar.Enabled = false;
+        }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            switch (opc)
+            {
+                case "Salvar":
+                    try
+                    {
+                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result1 == DialogResult.Yes)
+                        {
+                            objTabela.Nome = textNome.Text;
+                            objTabela.Email = textEmail.Text;
+                            objTabela.Username = textUsername.Text;
+                            objTabela.Senha = textSenha.Text;
+                            objTabela.Id_funcao = id_funcao;
+
+                            int x = UsuarioModel.Inseir(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
+                    }
+                    break;
+
+                case "Editar":
+                    try
+                    {
+                        DialogResult result2 = MessageBox.Show("Confima a Edição do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result2 == DialogResult.Yes)
+                        {
+                            objTabela.Id = Convert.ToInt32(textCod.Text);
+                            objTabela.Nome = textNome.Text;
+                            objTabela.Email = textEmail.Text;
+                            objTabela.Username = textUsername.Text;
+                            objTabela.Senha = textSenha.Text;
+                            objTabela.Id_funcao = id_funcao;
+
+                            int x = UsuarioModel.Editar(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
+                                btnSalvar.Enabled = false;
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Editar ERROR: " + ex.Message);
+                    }
+                    break;
+                /*
+                                case "BuscarPorId":
+                                    try
+                                    {
+                                        objFuncao.Id = id_funcao;
+                                        List<FuncaoEnt> lista = new List<FuncaoEnt>();
+                                        lista = new FuncaoModel().BuscarPorId(objFuncao);
+                                        foreach (var item in lista)
+                                        {
+                                            id_funcao = item.Id;
+                                        }
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Error ao Buscar por ID: " + ex.Message);
+                                    }
+                                    break;
+                                    */
+                default:
+                    break;
+            }
         }
     }
 }

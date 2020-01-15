@@ -330,12 +330,12 @@
             this.btnNovo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnNovo.OnHoverTextColor = System.Drawing.Color.White;
             this.btnNovo.selected = false;
-            this.btnNovo.Size = new System.Drawing.Size(130, 40);
+            this.btnNovo.Size = new System.Drawing.Size(120, 40);
             this.btnNovo.TabIndex = 70;
             this.btnNovo.Text = "Novo";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNovo.Textcolor = System.Drawing.Color.White;
-            this.btnNovo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEditar
@@ -366,12 +366,12 @@
             this.btnEditar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnEditar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEditar.selected = false;
-            this.btnEditar.Size = new System.Drawing.Size(130, 40);
+            this.btnEditar.Size = new System.Drawing.Size(120, 40);
             this.btnEditar.TabIndex = 71;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEditar.Textcolor = System.Drawing.Color.White;
-            this.btnEditar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeletar
@@ -402,12 +402,12 @@
             this.btnDeletar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnDeletar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDeletar.selected = false;
-            this.btnDeletar.Size = new System.Drawing.Size(130, 40);
+            this.btnDeletar.Size = new System.Drawing.Size(120, 40);
             this.btnDeletar.TabIndex = 72;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDeletar.Textcolor = System.Drawing.Color.White;
-            this.btnDeletar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnPesquisar
@@ -438,12 +438,12 @@
             this.btnPesquisar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnPesquisar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPesquisar.selected = false;
-            this.btnPesquisar.Size = new System.Drawing.Size(130, 40);
+            this.btnPesquisar.Size = new System.Drawing.Size(120, 40);
             this.btnPesquisar.TabIndex = 73;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPesquisar.Textcolor = System.Drawing.Color.White;
-            this.btnPesquisar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnLimpar
@@ -474,12 +474,12 @@
             this.btnLimpar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnLimpar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLimpar.selected = false;
-            this.btnLimpar.Size = new System.Drawing.Size(130, 40);
+            this.btnLimpar.Size = new System.Drawing.Size(120, 40);
             this.btnLimpar.TabIndex = 74;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLimpar.Textcolor = System.Drawing.Color.White;
-            this.btnLimpar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSalvar
@@ -510,12 +510,12 @@
             this.btnSalvar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnSalvar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSalvar.selected = false;
-            this.btnSalvar.Size = new System.Drawing.Size(130, 40);
+            this.btnSalvar.Size = new System.Drawing.Size(120, 40);
             this.btnSalvar.TabIndex = 75;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSalvar.Textcolor = System.Drawing.Color.White;
-            this.btnSalvar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // frmFuncao
