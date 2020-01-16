@@ -22,11 +22,11 @@ namespace DAO
                     SqlCommand cn = new SqlCommand();
                     cn.CommandType = CommandType.Text;
                     con.Open();
-                    cn.CommandText = "INSERT INTO Cliente ([nome], [rg], [cpf], [email], [fone1], [fone2], [rua], [numero], [bairro], [complemento], [id_funcao] ) VALUES (@nome, @rg, @cpf, @email, @fone1, @fone2, @rua, @numero, @bairro, @complemento, @id_funcao)";
+                    cn.CommandText = "INSERT INTO Cliente ([nome], [email], [rg], [cpf], [fone1], [fone2], [rua], [numero], [bairro], [complemento]) VALUES (@nome, @email, @rg, @cpf, @fone1, @fone2, @rua, @numero, @bairro, @complemento)";
                     cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
+                    cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
                     cn.Parameters.Add("rg", SqlDbType.VarChar).Value = objTabela.Rg;
                     cn.Parameters.Add("cpf", SqlDbType.VarChar).Value = objTabela.Cpf;
-                    cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
                     cn.Parameters.Add("fone1", SqlDbType.VarChar).Value = objTabela.Fone1;
                     cn.Parameters.Add("fone2", SqlDbType.VarChar).Value = objTabela.Fone2;
                     cn.Parameters.Add("rua", SqlDbType.VarChar).Value = objTabela.Rua;
@@ -130,7 +130,7 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Cliente SET nome = @nome, rg = @rg, cpf = @cpf, email = @email, fone1 = @fone1, fone2 = @fone2, rua = @rua, numero = @numero, bairro = @bairro, complemento = @complemento, id_funcao = @id_funcao WHERE id = @id";
+                cn.CommandText = "UPDATE Cliente SET nome = @nome, rg = @rg, cpf = @cpf, email = @email, fone1 = @fone1, fone2 = @fone2, rua = @rua, numero = @numero, bairro = @bairro, complemento = @complemento WHERE id = @id";
                 cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
                 cn.Parameters.Add("rg", SqlDbType.VarChar).Value = objTabela.Rg;
                 cn.Parameters.Add("cpf", SqlDbType.VarChar).Value = objTabela.Cpf;
@@ -188,9 +188,9 @@ namespace DAO
 
                         dado.Id = Convert.ToInt32(dr["id"]);
                         dado.Nome = Convert.ToString(dr["nome"]);
+                        dado.Email = Convert.ToString(dr["email"]);
                         dado.Rg = Convert.ToString(dr["rg"]);
                         dado.Cpf = Convert.ToString(dr["cpf"]);
-                        dado.Email = Convert.ToString(dr["email"]);
                         dado.Fone1 = Convert.ToString(dr["fone1"]);
                         dado.Fone2 = Convert.ToString(dr["fone2"]);
                         dado.Rua = Convert.ToString(dr["rua"]);
