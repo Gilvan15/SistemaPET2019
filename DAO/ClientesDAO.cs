@@ -30,7 +30,7 @@ namespace DAO
                     cn.Parameters.Add("fone1", SqlDbType.VarChar).Value = objTabela.Fone1;
                     cn.Parameters.Add("fone2", SqlDbType.VarChar).Value = objTabela.Fone2;
                     cn.Parameters.Add("rua", SqlDbType.VarChar).Value = objTabela.Rua;
-                    cn.Parameters.Add("numero", SqlDbType.Int).Value = objTabela.Numero;
+                    cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
                     cn.Parameters.Add("bairro", SqlDbType.VarChar).Value = objTabela.Bairro;
                     cn.Parameters.Add("complemento", SqlDbType.VarChar).Value = objTabela.Complemento;
                     cn.Connection = con;
@@ -73,7 +73,7 @@ namespace DAO
                         dado.Fone1 = Convert.ToString(dr["fone1"]);
                         dado.Fone2 = Convert.ToString(dr["fone2"]);
                         dado.Rua = Convert.ToString(dr["rua"]);
-                        dado.Numero = Convert.ToInt32(dr["numero"]);
+                        dado.Numero = Convert.ToString(dr["numero"]);
                         dado.Bairro = Convert.ToString(dr["bairro"]);
                         dado.Complemento = Convert.ToString(dr["complemento"]);
                         lista.Add(dado);
@@ -112,7 +112,7 @@ namespace DAO
                         dado.Fone1 = Convert.ToString(dr["fone1"]);
                         dado.Fone2 = Convert.ToString(dr["fone2"]);
                         dado.Rua = Convert.ToString(dr["rua"]);
-                        dado.Numero = Convert.ToInt32(dr["numero"]);
+                        dado.Numero = Convert.ToString(dr["numero"]);
                         dado.Bairro = Convert.ToString(dr["bairro"]);
                         dado.Complemento = Convert.ToString(dr["complemento"]);
                         lista.Add(dado);
@@ -130,15 +130,15 @@ namespace DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "UPDATE Cliente SET nome = @nome, rg = @rg, cpf = @cpf, email = @email, fone1 = @fone1, fone2 = @fone2, rua = @rua, numero = @numero, bairro = @bairro, complemento = @complemento WHERE id = @id";
+                cn.CommandText = "UPDATE Cliente SET nome = @nome, email = @email, rg = @rg, cpf = @cpf, fone1 = @fone1, fone2 = @fone2, rua = @rua, numero = @numero, bairro = @bairro, complemento = @complemento WHERE id = @id";
                 cn.Parameters.Add("nome", SqlDbType.VarChar).Value = objTabela.Nome;
+                cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
                 cn.Parameters.Add("rg", SqlDbType.VarChar).Value = objTabela.Rg;
                 cn.Parameters.Add("cpf", SqlDbType.VarChar).Value = objTabela.Cpf;
-                cn.Parameters.Add("email", SqlDbType.VarChar).Value = objTabela.Email;
                 cn.Parameters.Add("fone1", SqlDbType.VarChar).Value = objTabela.Fone1;
                 cn.Parameters.Add("fone2", SqlDbType.VarChar).Value = objTabela.Fone2;
                 cn.Parameters.Add("rua", SqlDbType.VarChar).Value = objTabela.Rua;
-                cn.Parameters.Add("numero", SqlDbType.Int).Value = objTabela.Numero;
+                cn.Parameters.Add("numero", SqlDbType.VarChar).Value = objTabela.Numero;
                 cn.Parameters.Add("bairro", SqlDbType.VarChar).Value = objTabela.Bairro;
                 cn.Parameters.Add("complemento", SqlDbType.VarChar).Value = objTabela.Complemento;
                 cn.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(objTabela.Id);
@@ -194,7 +194,7 @@ namespace DAO
                         dado.Fone1 = Convert.ToString(dr["fone1"]);
                         dado.Fone2 = Convert.ToString(dr["fone2"]);
                         dado.Rua = Convert.ToString(dr["rua"]);
-                        dado.Numero = Convert.ToInt32(dr["numero"]);
+                        dado.Numero = Convert.ToString(dr["numero"]);
                         dado.Bairro = Convert.ToString(dr["bairro"]);
                         dado.Complemento = Convert.ToString(dr["complemento"]);
                         lista.Add(dado);

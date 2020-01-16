@@ -84,9 +84,9 @@
             this.textUsername.HintForeColor = System.Drawing.Color.Empty;
             this.textUsername.HintText = "";
             this.textUsername.isPassword = false;
-            this.textUsername.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textUsername.LineIdleColor = System.Drawing.Color.Gray;
-            this.textUsername.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textUsername.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textUsername.LineThickness = 3;
             this.textUsername.Location = new System.Drawing.Point(370, 145);
             this.textUsername.Margin = new System.Windows.Forms.Padding(4);
@@ -104,9 +104,9 @@
             this.textSenha.HintForeColor = System.Drawing.Color.Empty;
             this.textSenha.HintText = "";
             this.textSenha.isPassword = true;
-            this.textSenha.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textSenha.LineIdleColor = System.Drawing.Color.Gray;
-            this.textSenha.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textSenha.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textSenha.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textSenha.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textSenha.LineThickness = 3;
             this.textSenha.Location = new System.Drawing.Point(370, 255);
             this.textSenha.Margin = new System.Windows.Forms.Padding(4);

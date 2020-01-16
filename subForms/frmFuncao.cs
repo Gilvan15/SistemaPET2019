@@ -340,7 +340,6 @@ namespace SistemaPet.subForms
             catch (Exception ex)
             {
                 sound3();
-
                 MessageBox.Show("Registro vinculado a outra tabela!", "Exclusão Negada!", MessageBoxButtons.OK);
             }
         }

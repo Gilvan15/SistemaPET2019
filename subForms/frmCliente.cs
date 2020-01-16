@@ -17,6 +17,7 @@ namespace SistemaPet.subForms
     public partial class frmCliente : Form
     {
         ClientesEnt objTabela = new ClientesEnt();
+        
         private string opc = "";
         string pasta_aplicacao = "";
         
@@ -30,9 +31,11 @@ namespace SistemaPet.subForms
         {
             LimparCampos();
             textNome.Enabled = false;
+            textEmail.Enabled = false;
+            textTelefone1.Enabled = false;
+            textTelefone2.Enabled = false;
             textRg.Enabled = false;
             textCpf.Enabled = false;
-            textEmail.Enabled = false;
             textRua.Enabled = false;
             textNumero.Enabled = false;
             textBairro.Enabled = false;
@@ -43,37 +46,53 @@ namespace SistemaPet.subForms
             textCod.Text = null;
             textNome.Text = null;
             textEmail.Text = null;
-            textRg.Text = null;
-            textCpf.Text = null;
             textTelefone1.Text = null;
             textTelefone2.Text = null;
+            textRg.Text = null;
+            textCpf.Text = null;
             textRua.Text = null;
             textNumero.Text = null;
             textBairro.Text = null;
             textComplemento.Text = null;
+            btnSalvar.Enabled = false;
         }
 
         private void HabilitarCampos()
         {
             textNome.Enabled = true;
             textEmail.Enabled = true;
-            textRg.Enabled = true;
-            textCpf.Enabled = true;
             textTelefone1.Enabled = true;
             textTelefone2.Enabled = true;
+            textRg.Enabled = true;
+            textCpf.Enabled = true;
             textRua.Enabled = true;
             textNumero.Enabled = true;
             textBairro.Enabled = true;
             textComplemento.Enabled = true;
         }
-        private void ListarGrid()
+        private void CarregarGrid()
         {
-            try
+             try
             {
                 List<ClientesEnt> lista = new List<ClientesEnt>();
                 lista = new ClienteModel().Lista();
-                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = lista;
+
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "NOME";
+                dataGridView1.Columns[2].HeaderText = "EMAIL";
+                dataGridView1.Columns[3].HeaderText = "RG";
+                dataGridView1.Columns[4].HeaderText = "CPF";
+                dataGridView1.Columns[5].HeaderText = "FONE1";
+                dataGridView1.Columns[6].HeaderText = "FONE2";
+                dataGridView1.Columns[7].HeaderText = "RUA";
+                dataGridView1.Columns[8].HeaderText = "NÚMERO";
+                dataGridView1.Columns[9].HeaderText = "BAIRRO";
+                dataGridView1.Columns[10].HeaderText = "COMPLEMENTO";
+                dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             }
             catch (Exception ex)
             {
@@ -115,7 +134,7 @@ namespace SistemaPet.subForms
                         objTabela.Fone1 = textTelefone1.Text;
                         objTabela.Fone2 = textTelefone2.Text;
                         objTabela.Rua = textRua.Text;
-                        objTabela.Numero = Convert.ToInt32(textNumero.Text);
+                        objTabela.Numero = textNumero.Text;
                         objTabela.Bairro = textBairro.Text;
                         objTabela.Complemento = textComplemento.Text;
 
@@ -125,7 +144,7 @@ namespace SistemaPet.subForms
                         {
                             MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                             DesabilitarCampos();
-                            ListarGrid();
+                            CarregarGrid();
                         }
                         else
                         {
@@ -158,7 +177,7 @@ namespace SistemaPet.subForms
                         {
                             MessageBox.Show("Registro  excluído com suceso!", "Aviso!", MessageBoxButtons.OK);
                             DesabilitarCampos();
-                            ListarGrid();
+                            CarregarGrid();
                         }
                         else
                         {
@@ -195,7 +214,7 @@ namespace SistemaPet.subForms
                             objTabela.Fone1 = textTelefone1.Text;
                             objTabela.Fone2 = textTelefone2.Text;
                             objTabela.Rua = textRua.Text;
-                            objTabela.Numero = Convert.ToInt32(textNumero.Text);
+                            objTabela.Numero = textNumero.Text;
                             objTabela.Bairro = textBairro.Text;
                             objTabela.Complemento = textComplemento.Text;
 
@@ -205,7 +224,7 @@ namespace SistemaPet.subForms
                             {
                                 MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
                                 DesabilitarCampos();
-                                ListarGrid();
+                                CarregarGrid();
                             }
                             else
                             {
@@ -243,24 +262,67 @@ namespace SistemaPet.subForms
         private void btnNovo_Click(object sender, EventArgs e)
         {
             sound1();
-            opc = "Novo";
-            InicarOpc();
+            opc = "Salvar";
+            HabilitarCampos();
+            LimparCampos();
+            textNome.Focus();
+            btnSalvar.Enabled = true;
+
+
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             sound1();
+            if (textCod.Text == "")
+            {
+                sound3();
+                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
             opc = "Editar";
-            InicarOpc();
+            HabilitarCampos();
+            textNome.Focus();
+            btnSalvar.Enabled = true;
         }
-
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             sound1();
-            opc = "Excluir";
-            InicarOpc();
+            try
+            {
+                if (textCod.Text == "" )
+                {
+                    sound3();
+                    MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                    return;
+                }
+                DialogResult result1 = MessageBox.Show("Confima a Exclusão do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                if (result1 == DialogResult.Yes)
+                {
+                    objTabela.Id = Convert.ToInt32(textCod.Text);
+                    int x = ClienteModel.Excluir(objTabela);
+                    if (x > 0)
+                    {
+                        sound2();
+                        LimparCampos();
+                        DesabilitarCampos();
+                        CarregarGrid();
+                        MessageBox.Show(string.Format("Registro  excluído com sucesso!"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error ao Tentar Excluir o Registro");
+                    }
+                }
+                else { return; }
+            }
+            catch (Exception ex)
+            {
+                sound3();
+                MessageBox.Show("Registro vinculado a outra tabela!", "Exclusão Negada!", MessageBoxButtons.OK);
+            }
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             sound1();
@@ -277,27 +339,146 @@ namespace SistemaPet.subForms
                 textPesquisar.Visible = false;
             }
         }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             sound2();
             LimparCampos();
             DesabilitarCampos();
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             sound1();
-            opc = "Salvar";
+
+            if (textNome.Text == string.Empty)
+            {
+                sound3();
+                MessageBox.Show("Impossivel salvar registro vazio!", "Aviso!", MessageBoxButtons.OK);
+                textNome.Focus();
+                LimparCampos();
+                DesabilitarCampos();
+                return;
+            }
+
+
+            switch (opc)
+            {
+                case "Salvar":
+                    try
+                    {
+                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result1 == DialogResult.Yes)
+                        {
+                            objTabela.Nome = textNome.Text;
+                            objTabela.Email = textEmail.Text;
+                            objTabela.Fone1 = textTelefone1.Text;
+                            objTabela.Fone2 = textTelefone2.Text;
+                            objTabela.Rg = textRg.Text;
+                            objTabela.Cpf = textCpf.Text;
+                            objTabela.Rua = textRua.Text;
+                            objTabela.Numero = textNumero.Text;
+                            objTabela.Bairro = textBairro.Text;
+                            objTabela.Complemento = textComplemento.Text;
+                            int x = ClienteModel.Inseir(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu um error tentar salvar o registro:" + ex.Message);
+                    }
+                    break;
+
+                case "Editar":
+                    try
+                    {
+                        DialogResult result2 = MessageBox.Show("Confima a Edição do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result2 == DialogResult.Yes)
+                        {
+                            objTabela.Id = Convert.ToInt32(textCod.Text);
+                            objTabela.Nome = textNome.Text;
+                            objTabela.Email = textEmail.Text;
+                            objTabela.Fone1 = textTelefone1.Text;
+                            objTabela.Fone2 = textTelefone2.Text;
+                            objTabela.Rg = textRg.Text;
+                            objTabela.Cpf = textCpf.Text;
+                            objTabela.Rua = textRua.Text;
+                            objTabela.Numero = textNumero.Text;
+                            objTabela.Bairro = textBairro.Text;
+                            objTabela.Complemento = textComplemento.Text;
+                            int x = ClienteModel.Editar(objTabela);
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                            }
+                        }
+                        else 
+                        {
+                            LimparCampos();
+                            DesabilitarCampos();
+                            return; 
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Editar ERROR: " + ex.Message);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+            CarregarGrid();
+            DesabilitarCampos();
+        }
+
+        private void textPesquisar_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textPesquisar.Text == "")
+            {
+                CarregarGrid();
+                return;
+            }
+            opc = "Buscar";
             InicarOpc();
+        }
+
+        private void textNome_OnValueChanged(object sender, EventArgs e)
+        {
+           textNome.Text.ToUpper();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                HabilitarCampos();
+                //HabilitarCampos();
                 textCod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textNome.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textEmail.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -313,20 +494,10 @@ namespace SistemaPet.subForms
             catch (Exception ex)
             {
 
+
                 MessageBox.Show("Error DataGrid: " + ex.Message);
             }
-        }
 
-        private void frmCliente_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'dbpetsepetsDataSet1.Cliente'. Você pode movê-la ou removê-la conforme necessário.
-            this.clienteTableAdapter.Fill(this.dbpetsepetsDataSet1.Cliente);
-            // TODO: esta linha de código carrega dados na tabela 'dbpetsepetsDataSet.Cliente'. Você pode movê-la ou removê-la conforme necessário.
-            this.clienteTableAdapter.Fill(this.dbpetsepetsDataSet.Cliente);
-            // TODO: esta linha de código carrega dados na tabela 'dbpetsepetsDataSet.Cliente'. Você pode movê-la ou removê-la conforme necessário.
-            this.clienteTableAdapter.Fill(this.dbpetsepetsDataSet.Cliente);
-            ListarGrid();
-            DesabilitarCampos();
         }
     }
 }

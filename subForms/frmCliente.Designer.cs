@@ -29,9 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fone1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complementoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -65,38 +80,24 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
-            this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbpetsepetsDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbpetsepetsDataSet1 = new SistemaPet.dbpetsepetsDataSet();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new SistemaPet.dbpetsepetsDataSetTableAdapters.ClienteTableAdapter();
             this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dbpetsepetsDataSet1 = new SistemaPet.dbpetsepetsDataSet();
-            this.dbpetsepetsDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fone1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ruaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complementoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,10 +144,22 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -160,18 +173,115 @@
             this.numeroDataGridViewTextBoxColumn,
             this.bairroDataGridViewTextBoxColumn,
             this.complementoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.clienteBindingSource3;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 389);
+            this.dataGridView1.DataSource = this.clienteBindingSource2;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 393);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(855, 193);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(859, 162);
             this.dataGridView1.TabIndex = 161;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rgDataGridViewTextBoxColumn
+            // 
+            this.rgDataGridViewTextBoxColumn.DataPropertyName = "rg";
+            this.rgDataGridViewTextBoxColumn.HeaderText = "rg";
+            this.rgDataGridViewTextBoxColumn.Name = "rgDataGridViewTextBoxColumn";
+            this.rgDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cpfDataGridViewTextBoxColumn
+            // 
+            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
+            this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
+            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fone1DataGridViewTextBoxColumn
+            // 
+            this.fone1DataGridViewTextBoxColumn.DataPropertyName = "fone1";
+            this.fone1DataGridViewTextBoxColumn.HeaderText = "fone1";
+            this.fone1DataGridViewTextBoxColumn.Name = "fone1DataGridViewTextBoxColumn";
+            this.fone1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fone2DataGridViewTextBoxColumn
+            // 
+            this.fone2DataGridViewTextBoxColumn.DataPropertyName = "fone2";
+            this.fone2DataGridViewTextBoxColumn.HeaderText = "fone2";
+            this.fone2DataGridViewTextBoxColumn.Name = "fone2DataGridViewTextBoxColumn";
+            this.fone2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ruaDataGridViewTextBoxColumn
+            // 
+            this.ruaDataGridViewTextBoxColumn.DataPropertyName = "rua";
+            this.ruaDataGridViewTextBoxColumn.HeaderText = "rua";
+            this.ruaDataGridViewTextBoxColumn.Name = "ruaDataGridViewTextBoxColumn";
+            this.ruaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bairroDataGridViewTextBoxColumn
+            // 
+            this.bairroDataGridViewTextBoxColumn.DataPropertyName = "bairro";
+            this.bairroDataGridViewTextBoxColumn.HeaderText = "bairro";
+            this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
+            this.bairroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // complementoDataGridViewTextBoxColumn
+            // 
+            this.complementoDataGridViewTextBoxColumn.DataPropertyName = "complemento";
+            this.complementoDataGridViewTextBoxColumn.HeaderText = "complemento";
+            this.complementoDataGridViewTextBoxColumn.Name = "complementoDataGridViewTextBoxColumn";
+            this.complementoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteBindingSource2
+            // 
+            this.clienteBindingSource2.DataMember = "Cliente";
+            this.clienteBindingSource2.DataSource = this.dbpetsepetsDataSetBindingSource;
+            // 
+            // dbpetsepetsDataSetBindingSource
+            // 
+            this.dbpetsepetsDataSetBindingSource.DataSource = this.dbpetsepetsDataSet;
+            this.dbpetsepetsDataSetBindingSource.Position = 0;
+            // 
+            // dbpetsepetsDataSet
+            // 
+            this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
+            this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
             this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -284,9 +394,9 @@
             this.textTelefone2.HintForeColor = System.Drawing.Color.Empty;
             this.textTelefone2.HintText = "";
             this.textTelefone2.isPassword = false;
-            this.textTelefone2.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textTelefone2.LineIdleColor = System.Drawing.Color.Gray;
-            this.textTelefone2.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textTelefone2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textTelefone2.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textTelefone2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textTelefone2.LineThickness = 3;
             this.textTelefone2.Location = new System.Drawing.Point(430, 234);
             this.textTelefone2.Margin = new System.Windows.Forms.Padding(5);
@@ -317,9 +427,9 @@
             this.textTelefone1.HintForeColor = System.Drawing.Color.Empty;
             this.textTelefone1.HintText = "";
             this.textTelefone1.isPassword = false;
-            this.textTelefone1.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textTelefone1.LineIdleColor = System.Drawing.Color.Gray;
-            this.textTelefone1.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textTelefone1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textTelefone1.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textTelefone1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textTelefone1.LineThickness = 3;
             this.textTelefone1.Location = new System.Drawing.Point(74, 234);
             this.textTelefone1.Margin = new System.Windows.Forms.Padding(5);
@@ -360,9 +470,9 @@
             this.textEmail.HintForeColor = System.Drawing.Color.Empty;
             this.textEmail.HintText = "";
             this.textEmail.isPassword = false;
-            this.textEmail.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textEmail.LineIdleColor = System.Drawing.Color.Gray;
-            this.textEmail.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textEmail.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textEmail.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textEmail.LineThickness = 3;
             this.textEmail.Location = new System.Drawing.Point(74, 178);
             this.textEmail.Margin = new System.Windows.Forms.Padding(5);
@@ -380,9 +490,9 @@
             this.textComplemento.HintForeColor = System.Drawing.Color.Empty;
             this.textComplemento.HintText = "";
             this.textComplemento.isPassword = false;
-            this.textComplemento.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textComplemento.LineIdleColor = System.Drawing.Color.Gray;
-            this.textComplemento.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textComplemento.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textComplemento.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textComplemento.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textComplemento.LineThickness = 3;
             this.textComplemento.Location = new System.Drawing.Point(440, 343);
             this.textComplemento.Margin = new System.Windows.Forms.Padding(5);
@@ -401,9 +511,9 @@
             this.textBairro.HintForeColor = System.Drawing.Color.Empty;
             this.textBairro.HintText = "";
             this.textBairro.isPassword = false;
-            this.textBairro.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textBairro.LineIdleColor = System.Drawing.Color.Gray;
-            this.textBairro.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textBairro.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textBairro.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textBairro.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textBairro.LineThickness = 3;
             this.textBairro.Location = new System.Drawing.Point(74, 343);
             this.textBairro.Margin = new System.Windows.Forms.Padding(5);
@@ -421,9 +531,9 @@
             this.textNumero.HintForeColor = System.Drawing.Color.Empty;
             this.textNumero.HintText = "";
             this.textNumero.isPassword = false;
-            this.textNumero.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textNumero.LineIdleColor = System.Drawing.Color.Gray;
-            this.textNumero.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textNumero.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textNumero.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textNumero.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textNumero.LineThickness = 3;
             this.textNumero.Location = new System.Drawing.Point(559, 290);
             this.textNumero.Margin = new System.Windows.Forms.Padding(5);
@@ -442,9 +552,9 @@
             this.textRua.HintForeColor = System.Drawing.Color.Empty;
             this.textRua.HintText = "";
             this.textRua.isPassword = false;
-            this.textRua.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textRua.LineIdleColor = System.Drawing.Color.Gray;
-            this.textRua.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textRua.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textRua.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textRua.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textRua.LineThickness = 3;
             this.textRua.Location = new System.Drawing.Point(74, 290);
             this.textRua.Margin = new System.Windows.Forms.Padding(5);
@@ -462,9 +572,9 @@
             this.textCpf.HintForeColor = System.Drawing.Color.Empty;
             this.textCpf.HintText = "";
             this.textCpf.isPassword = false;
-            this.textCpf.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textCpf.LineIdleColor = System.Drawing.Color.Gray;
-            this.textCpf.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textCpf.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textCpf.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textCpf.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textCpf.LineThickness = 3;
             this.textCpf.Location = new System.Drawing.Point(542, 178);
             this.textCpf.Margin = new System.Windows.Forms.Padding(5);
@@ -482,9 +592,9 @@
             this.textRg.HintForeColor = System.Drawing.Color.Empty;
             this.textRg.HintText = "";
             this.textRg.isPassword = false;
-            this.textRg.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textRg.LineIdleColor = System.Drawing.Color.Gray;
-            this.textRg.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textRg.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textRg.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textRg.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textRg.LineThickness = 3;
             this.textRg.Location = new System.Drawing.Point(348, 178);
             this.textRg.Margin = new System.Windows.Forms.Padding(5);
@@ -503,9 +613,9 @@
             this.textNome.HintForeColor = System.Drawing.Color.Empty;
             this.textNome.HintText = "";
             this.textNome.isPassword = false;
-            this.textNome.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textNome.LineIdleColor = System.Drawing.Color.Gray;
-            this.textNome.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textNome.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textNome.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textNome.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textNome.LineThickness = 3;
             this.textNome.Location = new System.Drawing.Point(74, 122);
             this.textNome.Margin = new System.Windows.Forms.Padding(5);
@@ -513,6 +623,7 @@
             this.textNome.Size = new System.Drawing.Size(636, 29);
             this.textNome.TabIndex = 135;
             this.textNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNome.OnValueChanged += new System.EventHandler(this.textNome_OnValueChanged);
             // 
             // bunifuCustomLabel5
             // 
@@ -605,9 +716,9 @@
             this.textPesquisar.HintForeColor = System.Drawing.Color.Empty;
             this.textPesquisar.HintText = "";
             this.textPesquisar.isPassword = false;
-            this.textPesquisar.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textPesquisar.LineIdleColor = System.Drawing.Color.Gray;
-            this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textPesquisar.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textPesquisar.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textPesquisar.LineThickness = 3;
             this.textPesquisar.Location = new System.Drawing.Point(277, 67);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
@@ -616,6 +727,7 @@
             this.textPesquisar.TabIndex = 131;
             this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textPesquisar.Visible = false;
+            this.textPesquisar.OnValueChanged += new System.EventHandler(this.textPesquisar_OnValueChanged);
             // 
             // textCod
             // 
@@ -626,9 +738,9 @@
             this.textCod.HintForeColor = System.Drawing.Color.Empty;
             this.textCod.HintText = "";
             this.textCod.isPassword = false;
-            this.textCod.LineFocusedColor = System.Drawing.Color.Blue;
-            this.textCod.LineIdleColor = System.Drawing.Color.Gray;
-            this.textCod.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textCod.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.textCod.LineIdleColor = System.Drawing.Color.Chocolate;
+            this.textCod.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.textCod.LineThickness = 3;
             this.textCod.Location = new System.Drawing.Point(74, 66);
             this.textCod.Margin = new System.Windows.Forms.Padding(5);
@@ -696,15 +808,20 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // dbpetsepetsDataSet
+            // clienteBindingSource3
             // 
-            this.dbpetsepetsDataSet.DataSetName = "dbpetsepetsDataSet";
-            this.dbpetsepetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.clienteBindingSource3.DataMember = "Cliente";
+            this.clienteBindingSource3.DataSource = this.dbpetsepetsDataSet1BindingSource;
             // 
-            // dbpetsepetsDataSetBindingSource
+            // dbpetsepetsDataSet1BindingSource
             // 
-            this.dbpetsepetsDataSetBindingSource.DataSource = this.dbpetsepetsDataSet;
-            this.dbpetsepetsDataSetBindingSource.Position = 0;
+            this.dbpetsepetsDataSet1BindingSource.DataSource = this.dbpetsepetsDataSet1;
+            this.dbpetsepetsDataSet1BindingSource.Position = 0;
+            // 
+            // dbpetsepetsDataSet1
+            // 
+            this.dbpetsepetsDataSet1.DataSetName = "dbpetsepetsDataSet";
+            this.dbpetsepetsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // clienteBindingSource
             // 
@@ -719,93 +836,6 @@
             // 
             this.clienteBindingSource1.DataMember = "Cliente";
             this.clienteBindingSource1.DataSource = this.dbpetsepetsDataSetBindingSource;
-            // 
-            // clienteBindingSource2
-            // 
-            this.clienteBindingSource2.DataMember = "Cliente";
-            this.clienteBindingSource2.DataSource = this.dbpetsepetsDataSetBindingSource;
-            // 
-            // dbpetsepetsDataSet1
-            // 
-            this.dbpetsepetsDataSet1.DataSetName = "dbpetsepetsDataSet";
-            this.dbpetsepetsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dbpetsepetsDataSet1BindingSource
-            // 
-            this.dbpetsepetsDataSet1BindingSource.DataSource = this.dbpetsepetsDataSet1;
-            this.dbpetsepetsDataSet1BindingSource.Position = 0;
-            // 
-            // clienteBindingSource3
-            // 
-            this.clienteBindingSource3.DataMember = "Cliente";
-            this.clienteBindingSource3.DataSource = this.dbpetsepetsDataSet1BindingSource;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // rgDataGridViewTextBoxColumn
-            // 
-            this.rgDataGridViewTextBoxColumn.DataPropertyName = "rg";
-            this.rgDataGridViewTextBoxColumn.HeaderText = "rg";
-            this.rgDataGridViewTextBoxColumn.Name = "rgDataGridViewTextBoxColumn";
-            // 
-            // cpfDataGridViewTextBoxColumn
-            // 
-            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
-            this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
-            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
-            // 
-            // fone1DataGridViewTextBoxColumn
-            // 
-            this.fone1DataGridViewTextBoxColumn.DataPropertyName = "fone1";
-            this.fone1DataGridViewTextBoxColumn.HeaderText = "fone1";
-            this.fone1DataGridViewTextBoxColumn.Name = "fone1DataGridViewTextBoxColumn";
-            // 
-            // fone2DataGridViewTextBoxColumn
-            // 
-            this.fone2DataGridViewTextBoxColumn.DataPropertyName = "fone2";
-            this.fone2DataGridViewTextBoxColumn.HeaderText = "fone2";
-            this.fone2DataGridViewTextBoxColumn.Name = "fone2DataGridViewTextBoxColumn";
-            // 
-            // ruaDataGridViewTextBoxColumn
-            // 
-            this.ruaDataGridViewTextBoxColumn.DataPropertyName = "rua";
-            this.ruaDataGridViewTextBoxColumn.HeaderText = "rua";
-            this.ruaDataGridViewTextBoxColumn.Name = "ruaDataGridViewTextBoxColumn";
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            // 
-            // bairroDataGridViewTextBoxColumn
-            // 
-            this.bairroDataGridViewTextBoxColumn.DataPropertyName = "bairro";
-            this.bairroDataGridViewTextBoxColumn.HeaderText = "bairro";
-            this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
-            // 
-            // complementoDataGridViewTextBoxColumn
-            // 
-            this.complementoDataGridViewTextBoxColumn.DataPropertyName = "complemento";
-            this.complementoDataGridViewTextBoxColumn.HeaderText = "complemento";
-            this.complementoDataGridViewTextBoxColumn.Name = "complementoDataGridViewTextBoxColumn";
             // 
             // frmCliente
             // 
@@ -822,16 +852,16 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -839,7 +869,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnPesquisar;
@@ -882,6 +911,7 @@
         private System.Windows.Forms.BindingSource dbpetsepetsDataSet1BindingSource;
         private dbpetsepetsDataSet dbpetsepetsDataSet1;
         private System.Windows.Forms.BindingSource clienteBindingSource3;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
