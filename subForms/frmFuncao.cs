@@ -253,6 +253,12 @@ namespace SistemaPet.subForms
             player.Play();
         }
 
+        public void sound4()
+        {
+            SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\avisovoz.wav");
+            player.Play();
+        }
+
         private void textDescricao_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -289,7 +295,7 @@ namespace SistemaPet.subForms
             sound1();
             if (textCod.Text == "")
             {
-                sound3();
+                sound4();
                 MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
                 return;
             }

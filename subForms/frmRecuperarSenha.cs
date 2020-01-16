@@ -68,10 +68,8 @@ namespace SistemaPet.subForms
             else 
             {
                // MessageBox.Show("Result: " + obj.Senha);
-
                 try
                 {
-
                     mail.From = new MailAddress("gilvanx10@gmail.com");
                     mail.To.Add(Textemail); // para
                     mail.Subject = "Pets e Pets Recuperação Login"; // assunto

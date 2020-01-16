@@ -145,6 +145,9 @@
     <EmbeddedResource Include="subForms\frmCamera.resx">
       <DependentUpon>frmCamera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="subForms\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmFuncao.resx">
       <DependentUpon>frmFuncao.cs</DependentUpon>
     </EmbeddedResource>
