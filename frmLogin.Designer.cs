@@ -149,7 +149,7 @@
             this.btnLogar.Text = "Logar";
             this.btnLogar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogar.Textcolor = System.Drawing.Color.White;
-            this.btnLogar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             this.btnLogar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnLogar_KeyPress);
             // 
@@ -216,7 +216,7 @@
             this.bunifuFlatButton2.Text = "Sair";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // pictureBox7

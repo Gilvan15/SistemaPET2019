@@ -43,7 +43,7 @@ namespace SistemaPet.subForms
             textReferentea1.Text = refer1;
             textReferentea2.Text = refer2;
             textEmitente.Text = emitent;
-            textCnpj.Text = emitent;
+            textCnpj.Text = cnpj;
             //DesabilitarCampos();
             apenasLeitura();
             //HabilitarCampos();
@@ -114,18 +114,7 @@ namespace SistemaPet.subForms
             btnFecharRecibo.Visible = true;
             btnImprimir.Visible = true;
        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            sound1();
-            btnImprimir.Visible = false;
-            btnFecharRecibo.Visible = false;
-            CaptureScreen();
-            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-            printDocument1.Print();
-            btnImprimir.Visible = true;
-            btnFecharRecibo.Visible = true;
-        }
+                
 
         private void HabilitarCampos()
         {
@@ -210,12 +199,6 @@ namespace SistemaPet.subForms
             }
         }
 
-
-        private void btnFecharRecibo_Click(object sender, EventArgs e)
-        {
-            sound1();
-            this.Close();
-        }
         public void sound1()
         {
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\click.wav");
@@ -231,141 +214,11 @@ namespace SistemaPet.subForms
             SoundPlayer player = new SoundPlayer(pasta_aplicacao + "wavs\\aviso.wav");
             player.Play();
         }
-
-        private void btnPrepararImpressao_Click(object sender, EventArgs e)
-        {
-            sound1();
-
-            if (textNumeroRecibo.Text == string.Empty) 
-            {
-                sound3();
-                MessageBox.Show("Salve primeiro o registro para preparar a impressão ok!", "AVISO!", MessageBoxButtons.OK);
-                return;
-            }
-
-            Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text, 
-                textRecebemosde.Text, textImportanciade1.Text, textImportanciade2.Text, 
-                textReferentea1.Text, textReferentea2.Text, textEmitente.Text, textCnpj.Text);
-            frmrec.TopMost = true;
-            frmrec.Show();
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            sound1();
-            opc = "Salvar";
-            HabilitarCampos();
-            atualizaData();
-            LimparCampos();
-            //textValorRecibo.Text = Convert.ToDouble(textValorRecibo.Text).ToString("C");
-            textValorRecibo.Focus();
-        }
+        
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            sound1();
-            if (opc == "") {return;}
-
-            switch (opc)
-            {
-                case "Salvar":
-                    try
-                    {
-                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
-                        if (result1 == DialogResult.Yes)
-                        {
-                            
-                            objTabela.Valor = textValorRecibo.Text;
-                            objTabela.Recebemosde = textRecebemosde.Text;
-                            objTabela.Importancia1 = textImportanciade1.Text;
-                            objTabela.Importancia2 = textImportanciade2.Text;
-                            objTabela.Referentea1 = textReferentea1.Text;
-                            objTabela.Referentea2 = textReferentea2.Text;
-                            objTabela.Emitente = textEmitente.Text;
-                            objTabela.Cnpj = textCnpj.Text;
-                            objTabela.Data = DateTime.Now;
-
-                            int x = ReciboModel.Inseir(objTabela);
-
-                            if (x > 0)
-                            {
-                                MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
-                                LimparCampos();
-                                DesabilitarCampos();
-                                CarregarGrid();
-                                btnSalvar.Enabled = false;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
-                            }
-                        }
-                        else { return; }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
-                    }
-                    break;
-
-                case "Editar":
-                    try
-                    {
-                        DialogResult result2 = MessageBox.Show("Confima a Edição do registro?", "Aviso!", MessageBoxButtons.YesNo);
-                        if (result2 == DialogResult.Yes)
-                        {
-                            objTabela.Id = Convert.ToInt32(textNumeroRecibo.Text);
-                            objTabela.Valor = textValorRecibo.Text;
-                            objTabela.Recebemosde = textRecebemosde.Text;
-                            objTabela.Importancia1 = textImportanciade1.Text;
-                            objTabela.Importancia2 = textImportanciade2.Text;
-                            objTabela.Referentea1 = textReferentea1.Text;
-                            objTabela.Referentea2 = textReferentea2.Text;
-                            objTabela.Emitente = textEmitente.Text;
-                            objTabela.Cnpj = textCnpj.Text;
-                            
-
-                            int x = ReciboModel.Editar(objTabela);
-
-                            if (x > 0)
-                            {
-                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
-                                LimparCampos();
-                                DesabilitarCampos();
-                                CarregarGrid();
-                                btnSalvar.Enabled = false;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
-                                btnSalvar.Enabled = false;
-                            }
-                        }
-                        else { return; }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Editar ERROR: " + ex.Message);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            sound1();
-            if (textNumeroRecibo.Text == "")
-            {
-                sound3();
-                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
-                return;
-            }
-            opc = "Editar";
-            HabilitarCampos();
-            textValorRecibo.Focus();
-            btnSalvar.Enabled = true;
-        }
+            
+        }        
         private void btnDeletar_Click_1(object sender, EventArgs e)
         {
             sound1();
@@ -404,32 +257,6 @@ namespace SistemaPet.subForms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            sound2();
-            LimparCampos();
-            DesabilitarCampos();
-            btnSalvar.Enabled = false;
-        }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            sound1();
-            if (pictureBox1.Visible == false)
-            {
-                pictureBox1.Visible = true;
-                textPesquisar.Visible = true;
-                textPesquisar.Text = null;
-                textPesquisar.Focus();
-            }
-            else
-            {
-                pictureBox1.Visible = false;
-                textPesquisar.Visible = false;
-            }
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -444,6 +271,7 @@ namespace SistemaPet.subForms
                 textEmitente.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 textCnpj.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 lbldata.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                btnSalvar.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -562,6 +390,220 @@ namespace SistemaPet.subForms
             {
                 btnSalvar.Focus();
             }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            sound2();
+            LimparCampos();
+            DesabilitarCampos();
+            btnSalvar.Enabled = false;
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            if (pictureBox1.Visible == false)
+            {
+                pictureBox1.Visible = true;
+                textPesquisar.Visible = true;
+                textPesquisar.Text = null;
+                textPesquisar.Focus();
+            }
+            else
+            {
+                pictureBox1.Visible = false;
+                textPesquisar.Visible = false;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            sound1();
+            if (textNumeroRecibo.Text == "")
+            {
+                sound3();
+                MessageBox.Show("Selecione primeiro um Registro!", "Aviso!", MessageBoxButtons.OK);
+                return;
+            }
+            opc = "Editar";
+            HabilitarCampos();
+            textValorRecibo.Focus();
+            btnSalvar.Enabled = true;
+
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            sound1();
+            if (opc == "") { return; }
+
+            switch (opc)
+            {
+                case "Salvar":
+                    try
+                    {
+                        DialogResult result1 = MessageBox.Show("Confima salvação do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result1 == DialogResult.Yes)
+                        {
+
+                            objTabela.Valor = textValorRecibo.Text;
+                            objTabela.Recebemosde = textRecebemosde.Text;
+                            objTabela.Importancia1 = textImportanciade1.Text;
+                            objTabela.Importancia2 = textImportanciade2.Text;
+                            objTabela.Referentea1 = textReferentea1.Text;
+                            objTabela.Referentea2 = textReferentea2.Text;
+                            objTabela.Emitente = textEmitente.Text;
+                            objTabela.Cnpj = textCnpj.Text;
+                            objTabela.Data = DateTime.Now;
+
+                            int x = ReciboModel.Inseir(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar cadastrar Usuário!", "Aviso!", MessageBoxButtons.OK);
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu um error tentar salvar Registro:" + ex.Message);
+                        btnSalvar.Enabled = false;
+                    }
+                    break;
+
+                case "Editar":
+                    try
+                    {
+                        DialogResult result2 = MessageBox.Show("Confima a Edição do registro?", "Aviso!", MessageBoxButtons.YesNo);
+                        if (result2 == DialogResult.Yes)
+                        {
+                            objTabela.Id = Convert.ToInt32(textNumeroRecibo.Text);
+                            objTabela.Valor = textValorRecibo.Text;
+                            objTabela.Recebemosde = textRecebemosde.Text;
+                            objTabela.Importancia1 = textImportanciade1.Text;
+                            objTabela.Importancia2 = textImportanciade2.Text;
+                            objTabela.Referentea1 = textReferentea1.Text;
+                            objTabela.Referentea2 = textReferentea2.Text;
+                            objTabela.Emitente = textEmitente.Text;
+                            objTabela.Cnpj = textCnpj.Text;
+
+
+                            int x = ReciboModel.Editar(objTabela);
+
+                            if (x > 0)
+                            {
+                                MessageBox.Show("Registro Editado com sucesso!", "Aviso!", MessageBoxButtons.OK);
+                                LimparCampos();
+                                DesabilitarCampos();
+                                CarregarGrid();
+                                btnSalvar.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error ao Tentar Editar o Registro", "Aviso!", MessageBoxButtons.OK);
+                                btnSalvar.Enabled = false;
+                            }
+                        }
+                        else { return; }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Editar ERROR: " + ex.Message);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void AbrirsegundoPlano() 
+        {
+            frmPanodeFundo.AbrirPanodeFundo();
+        }
+
+        public void FecharPanodeFundo() 
+        {
+            frmPanodeFundo.FecharPanodeFundo();
+        }
+        
+
+
+        private void btnPrepararImpressao_Click(object sender, EventArgs e)
+        {
+            sound1();
+
+            
+
+            if (Application.OpenForms.OfType<frmRecibo>().Count() > 1)
+            {
+                MessageBox.Show("O Recibo já está aberto!");
+            }
+            else
+            {
+                if (textNumeroRecibo.Text == string.Empty)
+                {
+                    sound3();
+                    MessageBox.Show("Salve primeiro o registro para preparar a impressão ok!", "AVISO!", MessageBoxButtons.OK);
+                    return;
+                }
+
+                AbrirsegundoPlano();
+                Form frmrec = new frmRecibo(textValorRecibo.Text, textNumeroRecibo.Text,
+                    textRecebemosde.Text, textImportanciade1.Text, textImportanciade2.Text,
+                    textReferentea1.Text, textReferentea2.Text, textEmitente.Text, textCnpj.Text);
+                frmrec.TopMost = true;
+                frmrec.Show();
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            sound1();
+            btnSalvar.Enabled = true;
+            opc = "Salvar";
+            HabilitarCampos();
+            atualizaData();
+            LimparCampos();
+            //textValorRecibo.Text = Convert.ToDouble(textValorRecibo.Text).ToString("C");
+            textValorRecibo.Focus();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                sound1();
+                btnImprimir.Visible = false;
+                btnFecharRecibo.Visible = false;
+                CaptureScreen();
+                printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+                printDocument1.Print();
+                btnImprimir.Visible = true;
+                btnFecharRecibo.Visible = true;
+              
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error de Impressão: "  + ex);
+            }
+            
+        }
+
+        private void btnFecharRecibo_Click(object sender, EventArgs e)
+        {
+            sound1();
+            this.Close();
+            FecharPanodeFundo();
         }
     }
 }

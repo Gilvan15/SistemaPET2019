@@ -66,3 +66,4 @@ C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.csproj.CopyComplete
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.exe
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.pdb
 C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmCliente.resources
+C:\Repositorio\SistemaPET2019\obj\Debug\SistemaPet.subForms.frmPanodeFundo.resources

@@ -36,9 +36,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textCnpj = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.btnPrepararImpressao = new System.Windows.Forms.Button();
-            this.btnFecharRecibo = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,25 +51,33 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbldata = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFecharRecibo = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.textNumeroRecibo = new System.Windows.Forms.TextBox();
             this.textValorRecibo = new System.Windows.Forms.TextBox();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.textPesquisar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnPrepararImpressao = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dbpetsepetsDataSet = new SistemaPet.dbpetsepetsDataSet();
             this.dbpetsepetsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).BeginInit();
@@ -105,7 +110,7 @@
             this.textEmitente.Name = "textEmitente";
             this.textEmitente.Size = new System.Drawing.Size(389, 33);
             this.textEmitente.TabIndex = 6;
-            this.textEmitente.Text = "PETS & PETS RACOES E ACESSORIOS";
+            this.textEmitente.Text = "PETS & PETS RAÇÕES E ACESSÓRIOS";
             this.textEmitente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textAssinatura
@@ -166,56 +171,6 @@
             this.textCnpj.TabIndex = 7;
             this.textCnpj.Text = "33.555.177/0001-03";
             this.textCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // btnPrepararImpressao
-            // 
-            this.btnPrepararImpressao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrepararImpressao.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrepararImpressao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrepararImpressao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrepararImpressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrepararImpressao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnPrepararImpressao.Location = new System.Drawing.Point(713, 524);
-            this.btnPrepararImpressao.Name = "btnPrepararImpressao";
-            this.btnPrepararImpressao.Size = new System.Drawing.Size(124, 47);
-            this.btnPrepararImpressao.TabIndex = 95;
-            this.btnPrepararImpressao.Text = "Preparar Impressão";
-            this.btnPrepararImpressao.UseVisualStyleBackColor = false;
-            this.btnPrepararImpressao.Click += new System.EventHandler(this.btnPrepararImpressao_Click);
-            // 
-            // btnFecharRecibo
-            // 
-            this.btnFecharRecibo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFecharRecibo.BackColor = System.Drawing.Color.Transparent;
-            this.btnFecharRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFecharRecibo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnFecharRecibo.Location = new System.Drawing.Point(713, 398);
-            this.btnFecharRecibo.Name = "btnFecharRecibo";
-            this.btnFecharRecibo.Size = new System.Drawing.Size(124, 32);
-            this.btnFecharRecibo.TabIndex = 96;
-            this.btnFecharRecibo.Text = "Fechar Recibo";
-            this.btnFecharRecibo.UseVisualStyleBackColor = false;
-            this.btnFecharRecibo.Visible = false;
-            this.btnFecharRecibo.Click += new System.EventHandler(this.btnFecharRecibo_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnImprimir.Location = new System.Drawing.Point(713, 439);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(124, 33);
-            this.btnImprimir.TabIndex = 97;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Visible = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // pictureBox2
             // 
@@ -420,12 +375,8 @@
             this.panel1.Controls.Add(this.textNumeroRecibo);
             this.panel1.Controls.Add(this.textValorRecibo);
             this.panel1.Controls.Add(this.lbldata);
-            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnNovo);
-            this.panel1.Controls.Add(this.btnFecharRecibo);
             this.panel1.Controls.Add(this.textReferentea2);
-            this.panel1.Controls.Add(this.btnPrepararImpressao);
             this.panel1.Controls.Add(this.textReferentea1);
             this.panel1.Controls.Add(this.bunifuCustomLabel2);
             this.panel1.Controls.Add(this.textAssinatura);
@@ -443,11 +394,49 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(857, 576);
             this.panel1.TabIndex = 98;
+            // 
+            // btnFecharRecibo
+            // 
+            this.btnFecharRecibo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFecharRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnFecharRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFecharRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnFecharRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnFecharRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFecharRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFecharRecibo.ForeColor = System.Drawing.Color.White;
+            this.btnFecharRecibo.Location = new System.Drawing.Point(666, 603);
+            this.btnFecharRecibo.Name = "btnFecharRecibo";
+            this.btnFecharRecibo.Size = new System.Drawing.Size(113, 25);
+            this.btnFecharRecibo.TabIndex = 117;
+            this.btnFecharRecibo.Text = "Fechar Recibo";
+            this.btnFecharRecibo.UseVisualStyleBackColor = false;
+            this.btnFecharRecibo.Visible = false;
+            this.btnFecharRecibo.Click += new System.EventHandler(this.btnFecharRecibo_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(785, 603);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(82, 25);
+            this.btnImprimir.TabIndex = 116;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Visible = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // textNumeroRecibo
             // 
@@ -468,46 +457,56 @@
             this.textValorRecibo.TextChanged += new System.EventHandler(this.textValorRecibo_TextChanged_1);
             this.textValorRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textValorRecibo_KeyPress);
             // 
-            // btnNovo
+            // panel3
             // 
-            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnNovo.Location = new System.Drawing.Point(713, 481);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(124, 34);
-            this.btnNovo.TabIndex = 94;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Location = new System.Drawing.Point(546, 397);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(297, 172);
+            this.panel3.TabIndex = 100;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(33, 150);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(242, 15);
+            this.label10.TabIndex = 104;
+            this.label10.Text = "Email: contato@petsepetsam.com.br";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(62, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(154, 15);
+            this.label9.TabIndex = 103;
+            this.label9.Text = "Fone: (92) 98433-8895";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(33, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(229, 15);
+            this.label8.TabIndex = 102;
+            this.label8.Text = "End: Rua da Paz Bairro Compensa";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(564, 403);
+            this.pictureBox3.Location = new System.Drawing.Point(87, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(147, 140);
+            this.pictureBox3.Size = new System.Drawing.Size(127, 112);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 100;
+            this.pictureBox3.TabIndex = 101;
             this.pictureBox3.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.textPesquisar);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.btnSalvar);
-            this.panel2.Controls.Add(this.btnPesquisar);
-            this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Location = new System.Drawing.Point(12, 723);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(856, 44);
-            this.panel2.TabIndex = 104;
             // 
             // textPesquisar
             // 
@@ -523,10 +522,10 @@
             this.textPesquisar.LineIdleColor = System.Drawing.Color.Gray;
             this.textPesquisar.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textPesquisar.LineThickness = 3;
-            this.textPesquisar.Location = new System.Drawing.Point(565, 10);
+            this.textPesquisar.Location = new System.Drawing.Point(417, 18);
             this.textPesquisar.Margin = new System.Windows.Forms.Padding(5);
             this.textPesquisar.Name = "textPesquisar";
-            this.textPesquisar.Size = new System.Drawing.Size(284, 29);
+            this.textPesquisar.Size = new System.Drawing.Size(427, 35);
             this.textPesquisar.TabIndex = 110;
             this.textPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textPesquisar.Visible = false;
@@ -535,73 +534,132 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(527, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(371, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 109;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
-            // button1
+            // panel2
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.button1.Location = new System.Drawing.Point(396, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 34);
-            this.button1.TabIndex = 108;
-            this.button1.Text = "Limpar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnNovo);
+            this.panel2.Controls.Add(this.btnPrepararImpressao);
+            this.panel2.Controls.Add(this.btnSalvar);
+            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.btnPesquisar);
+            this.panel2.Controls.Add(this.textPesquisar);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.btnLimpar);
+            this.panel2.Location = new System.Drawing.Point(12, 723);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(856, 62);
+            this.panel2.TabIndex = 104;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.White;
+            this.btnNovo.Location = new System.Drawing.Point(295, 3);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(70, 50);
+            this.btnNovo.TabIndex = 115;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnPrepararImpressao
+            // 
+            this.btnPrepararImpressao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnPrepararImpressao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrepararImpressao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnPrepararImpressao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnPrepararImpressao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrepararImpressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrepararImpressao.ForeColor = System.Drawing.Color.White;
+            this.btnPrepararImpressao.Location = new System.Drawing.Point(175, 3);
+            this.btnPrepararImpressao.Name = "btnPrepararImpressao";
+            this.btnPrepararImpressao.Size = new System.Drawing.Size(114, 50);
+            this.btnPrepararImpressao.TabIndex = 114;
+            this.btnPrepararImpressao.Text = "Preparar Impressão";
+            this.btnPrepararImpressao.UseVisualStyleBackColor = false;
+            this.btnPrepararImpressao.Click += new System.EventHandler(this.btnPrepararImpressao_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnSalvar.Location = new System.Drawing.Point(4, 5);
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Location = new System.Drawing.Point(3, 2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(124, 34);
-            this.btnSalvar.TabIndex = 8;
+            this.btnSalvar.Size = new System.Drawing.Size(82, 25);
+            this.btnSalvar.TabIndex = 113;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(3, 28);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(82, 25);
+            this.btnEditar.TabIndex = 112;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
             this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnPesquisar.Location = new System.Drawing.Point(266, 5);
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisar.Location = new System.Drawing.Point(87, 2);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(124, 34);
-            this.btnPesquisar.TabIndex = 106;
+            this.btnPesquisar.Size = new System.Drawing.Size(82, 25);
+            this.btnPesquisar.TabIndex = 111;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // btnEditar
+            // btnLimpar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
-            this.btnEditar.Location = new System.Drawing.Point(134, 5);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(124, 34);
-            this.btnEditar.TabIndex = 105;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(188)))), ((int)(((byte)(80)))));
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(101)))), ((int)(((byte)(39)))));
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(208)))), ((int)(((byte)(238)))));
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Location = new System.Drawing.Point(87, 28);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(82, 25);
+            this.btnLimpar.TabIndex = 108;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // dataGridView1
             // 
@@ -634,6 +692,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(880, 788);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.btnFecharRecibo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -645,9 +705,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbpetsepetsDataSetBindingSource)).EndInit();
@@ -662,9 +724,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textCnpj;
-        private System.Windows.Forms.Button btnPrepararImpressao;
-        private System.Windows.Forms.Button btnFecharRecibo;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private System.Windows.Forms.Label label1;
@@ -680,12 +739,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbldata;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textPesquisar;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -693,6 +747,18 @@
         private System.Windows.Forms.BindingSource dbpetsepetsDataSetBindingSource;
         private SistemaPet.dbpetsepetsDataSet dbpetsepetsDataSet;
         private System.Windows.Forms.TextBox textNumeroRecibo;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnPrepararImpressao;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnFecharRecibo;
     }
 }

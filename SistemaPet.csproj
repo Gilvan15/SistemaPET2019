@@ -106,6 +106,12 @@
     <Compile Include="subForms\frmLogo.Designer.cs">
       <DependentUpon>frmLogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="subForms\frmPanodeFundo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subForms\frmPanodeFundo.Designer.cs">
+      <DependentUpon>frmPanodeFundo.cs</DependentUpon>
+    </Compile>
     <Compile Include="subForms\frmRecibo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmLogo.resx">
       <DependentUpon>frmLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subForms\frmPanodeFundo.resx">
+      <DependentUpon>frmPanodeFundo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subForms\frmRecibo.resx">
       <DependentUpon>frmRecibo.cs</DependentUpon>

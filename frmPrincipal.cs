@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SistemaPet.subForms;
 using System.Media;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace SistemaPet
 {
@@ -119,7 +120,9 @@ namespace SistemaPet
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             string str = "" +  Convert.ToChar(174);
-            lblFooter.Text = "Sistema de Controle Pets e Pets Banho e Tosa " + str + " | Fone: 3238-14+95/99944-7754";
+            lblFooter.Text = "PETS & PETS RAÇÕES E ACESSÓRIOS " + str + " CNPJ: 33.555.177/0001-03 | Fone: 3238-1495/99944-7754";
+            string tmp = "0";
+            label1.Text = Convert.ToString($"Pets " + tmp.Replace("0","e" ) + " Pets");
             ocutarPaineis();
             bunifuTLog.Show(pictlogo);
             sond1();
